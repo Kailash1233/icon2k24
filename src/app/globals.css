@@ -1,3 +1,41 @@
+<<<<<<< HEAD
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: green;
+}
+li {
+    list-style-type: none;
+}
+ul li a {
+    list-style-type: none;
+    color:white;
+}
+.navbar {
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+.navbar .menu-first{
+    flex: 1;
+}
+.navbar ul.menu-center {
+    display: flex;
+    flex: 5;
+    justify-content: space-around;
+}
+.navbar .menu-last{
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+}
+
+=======
 ul {
   list-style: none;
   padding: 0;
@@ -5,3 +43,4 @@ ul {
   display: flex;
   justify-content: center;
 }
+>>>>>>> b47c34794753be77311eeb2559704126863db507
