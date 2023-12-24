@@ -9,6 +9,7 @@ const Home = () => {
       <Navbar />
       <Homepage />
       <h1>Welcome to the Home Page!</h1>
+      <p>Hello world!!!</p>
     </div>
   );
 };
