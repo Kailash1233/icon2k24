@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
     margin: 0;
     padding: 0;
@@ -34,3 +35,12 @@ ul li a {
     justify-content: space-around;
 }
 
+=======
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+>>>>>>> b47c34794753be77311eeb2559704126863db507
