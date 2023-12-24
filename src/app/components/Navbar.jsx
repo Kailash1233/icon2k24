@@ -1,13 +1,10 @@
+
 import Link from 'next/link';
 
 const Navbar = () => {
   return (
-    <nav className='navbar'>
-      <div className='menu-first'>
-        <img src=" " alt="icon2k24 logo" />
-      </div>
-
-      <ul className='menu-center'>
+    <nav className='nav'>
+      <ul>
         <li>
           <Link href="/">Home</Link>
         </li>
@@ -20,14 +17,13 @@ const Navbar = () => {
         <li>
           <Link href="/contact">Contact Us</Link>
         </li>
+        <li>
+          <Link href="/contact">Register Now</Link>
+        </li>
       </ul>
-
-      <div className="menu-last">
-      <button className='login'> Log in </button>
-      <button className='signin'> Sign in </button>
-      </div>
     </nav>
   );
 };
 
 export default Navbar;
+
