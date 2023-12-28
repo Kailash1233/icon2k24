@@ -1,38 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+
+
+/* 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body{
-    background-color:black;
-    color: white;
+    background-color:white;
+    color: black;
 }
 li {
     list-style-type: none;
 }
 ul li a {
     list-style-type: none;
-    color:white;
+    color:black;
+}
+.container {
+    margin: 20px;
+    padding: 10px;
+}
+.container::after{
+    content: '';
+    display: block;
+    margin-top: 15px;
+    height: 2px;
+    width: 100%;
+    background-color: aquamarine;
 }
 .navbar {
-    margin: 10px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    height: 50px;
-}
-.navbar .menu-first{
-    flex: 1;
-}
-.navbar ul.menu-center {
-    display: flex;
-    flex: 5;
-    justify-content: space-around;
-}
-.navbar .menu-last{
-    display: flex;
-    flex: 1;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
+ul.navbar-elements {
+    display: flex;
+    gap: 40px;
+} */
