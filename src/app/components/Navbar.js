@@ -1,30 +1,27 @@
-
-import Link from 'next/link';
-
-const Navbar = () => {
-  return (
-    <nav className='nav'>
+import Link from "next/link"
+const Navbar = () =>{
+  return(
+    <div>
+      <nav className='nav'>
       <ul>
         <li>
           <Link href="/">Home</Link>
         </li>
         <li>
-          <Link href="/about">About</Link>
+          <Link href="/pages/about">about</Link>
         </li>
         <li>
-          <Link href="/events">Events</Link>
+          <Link href="/pages/event">Events</Link>
         </li>
         <li>
-          <Link href="/contact">Contact Us</Link>
+          <Link href="/pages/contact">Contact Us</Link>
         </li>
         <li>
-          <Link href="/contact">Register Now</Link>
+          <Link href="/pages/contact">Register Now</Link>
         </li>
       </ul>
     </nav>
-  );
-};
-
-export default Navbar;
-
-
+    </div>
+  )
+}
+export default Navbar
