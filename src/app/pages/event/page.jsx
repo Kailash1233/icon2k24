@@ -380,12 +380,9 @@ const Event = () => {
         { name: "Alice Brown", contact: "alice@example.com" },
       ],
     },
-
-    // Add more non-technical events with similar structure
   ];
 
   const handleEventClick = (event) => {
-    // Toggle between expanding and collapsing the event
     setExpandedEvent((prevExpandedEvent) =>
       prevExpandedEvent && prevExpandedEvent.name === event.name ? null : event
     );
@@ -394,7 +391,6 @@ const Event = () => {
   return (
     <div className="min-h-screen flex justify-center items-center bg-gray-100">
       <div className="max-w-4xl w-full bg-white p-8 rounded-lg shadow-lg">
-        {/* Technical Events */}
         <h1 className="text-3xl font-bold mb-6 text-center">
           Technical Events
         </h1>
