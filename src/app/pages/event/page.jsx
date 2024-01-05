@@ -407,7 +407,7 @@ const Event = () => {
               >
                 {/* Replace with actual image path */}
                 <img
-                  src="/path/to/your/image.jpg"
+                  src="https://cdn2.vectorstock.com/i/1000x1000/92/76/presentation-on-flip-chart-paper-vector-17699276.jpg"
                   alt={`Event ${index + 1}`}
                   className="w-full h-40 object-cover mb-4 rounded-md"
                 />
@@ -501,7 +501,7 @@ const Event = () => {
               >
                 {/* Replace with actual image path */}
                 <img
-                  src="/path/to/your/image.jpg"
+                  src="https://cdn2.vectorstock.com/i/1000x1000/92/76/presentation-on-flip-chart-paper-vector-17699276.jpg"
                   alt={`Event ${index + 1}`}
                   className="w-full h-40 object-cover mb-4 rounded-md"
                 />
