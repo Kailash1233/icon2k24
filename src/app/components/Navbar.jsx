@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import lazyone from "../images/lazyone.jpg";
+// import lazyone from "../images/lazyone.jpg";
+import sit from "../images/icon.png";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
 const Navbar = () => {
@@ -15,7 +16,7 @@ const Navbar = () => {
         <div>
           <Link href={"/"}>
             <Image
-              src={lazyone}
+              src={sit}
               alt="logo"
               width={100}
               height={100}
