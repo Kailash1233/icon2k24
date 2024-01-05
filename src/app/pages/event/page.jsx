@@ -11,6 +11,8 @@ const Event = () => {
   const technicalEvents = [
     {
       name: "PAPERINA",
+      image:
+        "https://lh3.googleusercontent.com/proxy/mrB361zEpERGBuvpWH1JyCMxU3uhPALm2cDrvrVBgx_L_wt48sw0FE2k8MdBG5ne5VqljcAYAgCH1MPIJg",
       description:
         "Engage with the brightest minds as participants showcase their research prowess on diverse topics, spanning from groundbreaking innovations to pressing global issues. Witness a symphony of ideas, innovation, and eloquence as they vie for recognition and the coveted title. Join us for an inspiring celebration of knowledge, where academic excellence meets the thrill of competition.",
       date: "2024-01-15",
@@ -44,6 +46,8 @@ const Event = () => {
     },
     {
       name: "Treasure Hunt",
+      image:
+        "https://www.hiya.ie/wp-content/uploads/2017/07/Treasure-Hunt-1024x522.jpg",
       description: "Description for Technical Event 1",
       date: "2024-01-15",
       time: "10:00 AM - 2:00 PM",
@@ -57,6 +61,8 @@ const Event = () => {
     },
     {
       name: "Algo",
+      image:
+        "https://media.licdn.com/dms/image/D4D12AQEhDfraZKQbwg/article-cover_image-shrink_600_2000/0/1696415621707?e=2147483647&v=beta&t=sbp5FHd0jjJ9XW2dD3Mz_Xc1dK1FP9Ii6CMf861mW-0",
       description: "Description for Technical Event 1",
       date: "2024-01-15",
       time: "10:00 AM - 2:00 PM",
@@ -70,6 +76,8 @@ const Event = () => {
     },
     {
       name: "DATABASE DETECTIVES",
+      image:
+        "https://external-preview.redd.it/the-sql-murder-mystery-v0-Zu_P4esxGEjEWlvnmM2kGPGPirGMVMj3IGT72Ua--d4.jpg?auto=webp&s=98cf60e1f1a261ac451da48937e9a544fee34ea1",
       description:
         "Investigate in the captivating world of SQL Police Department as you engage with our Crime-Solving Scenarios—a real-time challenge where participants must crack cases using SQL.",
       date: "2024-01-15",
@@ -104,6 +112,8 @@ const Event = () => {
   const nonTechnicalEvents = [
     {
       name: "BOUNDRY BATTLE",
+      image:
+        "https://lh5.googleusercontent.com/p/AF1QipMRmmtQwjIk_55_CuOyGcNeB15JnHg1WQ0qtMJQ=w1440-h810-k-no",
       description:
         "Explore the high-energy world of box cricket, where teams vie for victory in a confined arena, creating an intense and close-knit atmosphere. Our event blends traditional cricket excitement with a unique twist, played in a compact space that demands quick thinking, agility, and strategic gameplay. Join us for a thrilling competition, where the excitement of cricket meets dynamic twists, promising an engaging and strategic showdown.",
       date: "2024-01-16",
@@ -136,6 +146,8 @@ const Event = () => {
     },
     {
       name: "IGNITE THE STAGE",
+      image:
+        "https://i.pinimg.com/736x/2f/9a/8a/2f9a8a127c509789c1820126c759e799.jpg",
       description:
         "Get ready to witness a dazzling display of hidden talents, both bold and brilliant, independent and intertwined! This isn't just a competition; it's a celebration of human creativity in all its diverse forms. From fire-breathing dragons to dancing fairies, channel the epic spirit of ancient lore through your talent. Sing ballads of forgotten heroes, paint tales on canvas, tap-dance on Olympus's peaks, or juggle lightning bolts like Zeus himself!  Prepare to be captivated by: solo and group performances.",
       date: "2024-01-16",
@@ -167,6 +179,8 @@ const Event = () => {
     },
     {
       name: "ADRENALINE RUSH",
+      image:
+        "https://media.licdn.com/dms/image/D5612AQESaWZd_8zpxg/article-cover_image-shrink_720_1280/0/1682518375359?e=2147483647&v=beta&t=uVPtaV7KWMUtaaeS9Pg5NqUGbjSXg9PbwtVJfZY0R2Q",
       description:
         "Adrenaline Rush is an exciting and challenging three-round event that will test your speed and agility. In each round, contestants will compete in a series of fun and thrilling games related to tamil, english and hindi movies and songs, where the winner of each round will advance to the next stage while the others will be eliminated. The first round- Lyric-oh-holic, where contestants must find the missing words or lines in the song lyrics. The second round- Connextions, where contestants should connect the picture displayed in the screen to guess the word. In the final round- Gesture guess, where the contestants  act out movies, phrases or words, creating a fun and lively guessing challenge for their teams.",
       date: "2024-01-16",
@@ -207,6 +221,8 @@ const Event = () => {
     },
     {
       name: "BIDDING BASH",
+      image:
+        "https://cdn.dnaindia.com/sites/default/files/styles/full/public/2018/01/30/645915-csk-auction-iplt20.jpg",
       description:
         "BIDDING BASH/IPL AUCTION is an event where The Teams bid for the IPL players and create a squad. The teams will be given the names of the IPL teams and virtual money using which they can buy players in the auction.",
       date: "2024-01-16",
@@ -281,7 +297,7 @@ const Event = () => {
               >
                 {/* Replace with actual image path */}
                 <img
-                  src="https://cdn2.vectorstock.com/i/1000x1000/92/76/presentation-on-flip-chart-paper-vector-17699276.jpg"
+                  src={event.image}
                   alt={`Event ${index + 1}`}
                   className="w-full h-40 object-cover mb-4 rounded-md"
                 />
@@ -375,7 +391,7 @@ const Event = () => {
               >
                 {/* Replace with actual image path */}
                 <img
-                  src="https://cdn2.vectorstock.com/i/1000x1000/92/76/presentation-on-flip-chart-paper-vector-17699276.jpg"
+                  src={event.image}
                   alt={`Event ${index + 1}`}
                   className="w-full h-40 object-cover mb-4 rounded-md"
                 />
