@@ -48,11 +48,11 @@ const Footer = () => {
 
             {/* Instagram Icon and Text */}
             <div className="text-gray-500 flex flex-wrap text-xs items-center mt-1">
-                <p className="mr-4 ml-20">Privacy Policy</p>
+                <p className="mr-4 ml-24">Privacy Policy</p>
                 <p className="mr-4 mb-0">Terms & Conditions</p>
                 <p className="mr-4">Code of Conduct</p>
                 <p className="mr-64">Copyright @2024 SIT</p>
-                <p className="mr-40"></p>
+                <p className="ml-52"></p>
                 <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
                     <svg className="h-6 w-6 text-white ml-64" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" />
