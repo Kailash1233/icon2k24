@@ -1,37 +1,26 @@
-'use client'
-import { useEffect } from "react";
-const Home = () => {
-  useEffect(() => {
-    // Disable scrolling on mount
-    document.body.style.overflow = 'hidden';
+import Head from 'next/head';
+import React from 'react';
 
-    // Re-enable scrolling when the component unmounts
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, []);
+const Home = () => {
   return (
-    <><div className="relative h-screen">
-        <video
-          autoPlay
-          loop
-          muted
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src={require("./images/video.mp4")} autoPlay muted loop/>
-          {/* Add additional source elements for other video formats */}
-        </video>
-        {/* Your content on top of the video */}
-        <div className="relative z-10">
-          <div className="flex text-white justify-center items-center h-60">
-            <div className="">this the home page</div>
-          </div>
-        </div>
-      </div></>
-  
+    <div className="relative">
+      <video
+        autoPlay
+        muted
+        loop
+        className="min-w-full min-h-full object-cover absolute top-0 left-0 z-0"
+      >
+        <source src={require("./images/video.mp4")} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen">
+        {/* Your content here */}
+        <h1 className="text-4xl font-bold text-white mb-4">Welcome to My Website</h1>
+        <p className="text-lg text-white">This is the home page content</p>
+      </div>
+    </div>
   );
 };
 
 export default Home;
-
-
