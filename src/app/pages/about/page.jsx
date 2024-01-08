@@ -1,9 +1,17 @@
 import React from "react";
 
 const About = () => {
+  const shadowStyle = "0px 4px 8px rgba(0, 255, 255, 0.6)"; // Cyan shadow effect
+
   return (
-    <div id="about" className="min-h-screen flex flex-col justify-center items-center bg-gray-100">
-      <div className="max-w-4xl w-full bg-white p-8 rounded-lg shadow-lg mb-6">
+    <div
+      id="about"
+      className="min-h-screen flex flex-col justify-center items-center bg-black text-white"
+    >
+      <div
+        className="max-w-4xl w-full bg-black p-8 rounded-lg shadow-lg mb-6"
+        style={{ boxShadow: shadowStyle }}
+      >
         <h1 className="text-3xl font-bold mb-6 text-center">About Crescent</h1>
         <p className="text-lg mb-4">
           Established in 1984, B.S. Abdur Rahman Crescent Institute of Science
@@ -21,9 +29,10 @@ const About = () => {
         </p>
       </div>
 
-      <div className="max-w-4xl w-full bg-white p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center mb-6">
-        {" "}
-        {/* Adjusted margin from mb-8 to my-8 */}
+      <div
+        className="max-w-4xl w-full bg-black p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center mb-6"
+        style={{ boxShadow: shadowStyle }}
+      >
         <div className="md:w-1/2 mb-4 md:mb-0">
           <h1 className="text-3xl font-bold mb-4 md:mb-6">About Us</h1>
           <p className="text-lg mb-4">
@@ -53,8 +62,10 @@ const About = () => {
         </div>
       </div>
 
-      <div className="max-w-4xl w-full bg-white p-8 rounded-lg shadow-lg mb-6 ">
-        {" "}
+      <div
+        className="max-w-4xl w-full bg-black p-8 rounded-lg shadow-lg mb-6"
+        style={{ boxShadow: shadowStyle }}
+      >
         <h1 className="text-2xl font-bold mb-6 text-center">Sponsors</h1>
         <div className="flex justify-around">
           <img
