@@ -39,7 +39,7 @@ const Navbar = () => {
             <Link href="/pages/contact">
               <li className="hover:bg-orange-600 uppercase px-3">Contact Us</li>
             </Link>
-            <Link href="/pages/contact">
+            <Link href="/pages/register">
               <li className="hover:bg-orange-600 uppercase px-3">
                 Register Now
               </li>
@@ -96,7 +96,7 @@ const Navbar = () => {
                 Contact us
               </li>
             </Link>
-            <Link href="/pages/contact">
+            <Link href="/pages/register">
               <li
                 onClick={() => setOpenMenu(false)}
                 className="cursor-pointer py-3"
