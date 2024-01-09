@@ -1,12 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaCalendarCheck, FaLocationArrow } from "react-icons/fa";
+import { FaCalendarCheck } from "react-icons/fa";
 import { MdWatchLater } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 
 const Event = () => {
   const [expandedEvent, setExpandedEvent] = useState(null);
+
+  const shadowStyle = "0px 4px 8px rgba(0, 255, 255, 0.8)";
 
   const technicalEvents = [
     {
@@ -38,10 +40,10 @@ const Event = () => {
           </li>
         </ol>
       ),
-      feeDetails: "Registration Fee: $20",
+      feeDetails: "Registration Fee: ₹100",
       coordinators: [
-        { name: "John Doe", contact: "john@example.com" },
-        { name: "Jane Smith", contact: "jane@example.com" },
+        { name: "Jeevida R", contact: "9999999999" },
+        { name: "Shafla Fathima", contact: "9999999999" },
       ],
     },
     {
@@ -53,10 +55,10 @@ const Event = () => {
       time: "10:00 AM - 2:00 PM",
       venue: "Tech Auditorium",
       rules: "Some rules for Technical Event 1",
-      feeDetails: "Registration Fee: $20",
+      feeDetails: "Registration Fee: ₹100",
       coordinators: [
-        { name: "John Doe", contact: "john@example.com" },
-        { name: "Jane Smith", contact: "jane@example.com" },
+        { name: "Kailash G", contact: "99999999999" },
+        { name: "Kamalesh K B", contact: "8888888888" },
       ],
     },
     {
@@ -68,10 +70,10 @@ const Event = () => {
       time: "10:00 AM - 2:00 PM",
       venue: "Tech Auditorium",
       rules: "Some rules for Technical Event 1",
-      feeDetails: "Registration Fee: $20",
+      feeDetails: "Registration Fee: ₹100",
       coordinators: [
-        { name: "John Doe", contact: "john@example.com" },
-        { name: "Jane Smith", contact: "jane@example.com" },
+        { name: "Mohamed Moideen Halith", contact: "777777777777" },
+        { name: "Prem Kumar V", contact: "99999999999" },
       ],
     },
     {
@@ -100,13 +102,12 @@ const Event = () => {
           </li>
         </ol>
       ),
-      feeDetails: "Registration Fee: $20",
+      feeDetails: "Registration Fee: ₹100",
       coordinators: [
-        { name: "John Doe", contact: "john@example.com" },
-        { name: "Jane Smith", contact: "jane@example.com" },
+        { name: "Syed Riyaz K", contact: "6666666666" },
+        { name: "Fariha Hiba", contact: "99999999999" },
       ],
     },
-    // Add more technical events with similar structure
   ];
 
   const nonTechnicalEvents = [
@@ -138,10 +139,10 @@ const Event = () => {
           </li>
         </ol>
       ),
-      feeDetails: "Registration Fee: $15",
+      feeDetails: "Registration Fee: ₹800",
       coordinators: [
-        { name: "Bob Johnson", contact: "bob@example.com" },
-        { name: "Alice Brown", contact: "alice@example.com" },
+        { name: "Vigneshwaran K", contact: "77777777777" },
+        { name: "Yugesh S", contact: "66666666666" },
       ],
     },
     {
@@ -171,10 +172,11 @@ const Event = () => {
           </li>
         </ol>
       ),
-      feeDetails: "Registration Fee: $15",
+      feeDetails: "Registration Fee: ₹100",
       coordinators: [
-        { name: "Bob Johnson", contact: "bob@example.com" },
-        { name: "Alice Brown", contact: "alice@example.com" },
+        { name: "Intasar", contact: "999999999" },
+        { name: "Jabir", contact: "999999999" },
+        { name: "Avinash", contact: "999999999" },
       ],
     },
     {
@@ -213,10 +215,10 @@ const Event = () => {
           </li>
         </ol>
       ),
-      feeDetails: "Registration Fee: $15",
+      feeDetails: "Registration Fee: ₹100",
       coordinators: [
-        { name: "Bob Johnson", contact: "bob@example.com" },
-        { name: "Alice Brown", contact: "alice@example.com" },
+        { name: "Suhail I", contact: "77777777777" },
+        { name: "Abdul Rahman M S", contact: "66666666666" },
       ],
     },
     {
@@ -264,10 +266,10 @@ const Event = () => {
           </li>
         </ol>
       ),
-      feeDetails: "Registration Fee: $15",
+      feeDetails: "Registration Fee: ₹100",
       coordinators: [
-        { name: "Bob Johnson", contact: "bob@example.com" },
-        { name: "Alice Brown", contact: "alice@example.com" },
+        { name: "Mohamed Afsar", contact: "999999999" },
+        { name: "Mohamed Suhail B", contact: "999999999" },
       ],
     },
   ];
@@ -279,8 +281,11 @@ const Event = () => {
   };
 
   return (
-    <div className="min-h-screen flex justify-center items-center bg-gray-100">
-      <div className="max-w-4xl w-full bg-white p-8 rounded-lg shadow-lg">
+    <div className="min-h-screen flex justify-center items-center bg-black">
+      <div
+        className="max-w-4xl w-full bg-black text-white p-8 rounded-lg shadow-lg"
+        style={{ boxShadow: shadowStyle }}
+      >
         <h1 className="text-3xl font-bold mb-6 text-center">
           Technical Events
         </h1>
@@ -290,12 +295,12 @@ const Event = () => {
               <div
                 className={`border p-4 rounded-md cursor-pointer ${
                   expandedEvent && expandedEvent.name === event.name
-                    ? "bg-blue-100"
+                    ? "bg-cyan-100 text-black"
                     : ""
                 }`}
+                style={{ boxShadow: shadowStyle }}
                 onClick={() => handleEventClick(event)}
               >
-                {/* Replace with actual image path */}
                 <img
                   src={event.image}
                   alt={`Event ${index + 1}`}
@@ -311,25 +316,25 @@ const Event = () => {
                     {expandedEvent.name}
                   </h1>
                   <div className="flex items-center mb-4">
-                    <span className="mr-2">Date:</span>
-                    <span className="text-blue-400">{expandedEvent.date}</span>
-                    <span className="ml-4">
+                    <span className="mr-2">
                       <FaCalendarCheck />
                     </span>
+                    <span className="text-blue-400">{expandedEvent.date}</span>
+                    <span className="ml-4"></span>
                   </div>
                   <div className="flex items-center mb-4">
-                    <span className="mr-2">Time:</span>
-                    <span className="text-blue-400">{expandedEvent.time}</span>
-                    <span className="ml-4">
+                    <span className="mr-2">
                       <MdWatchLater />
                     </span>
+                    <span className="text-blue-400">{expandedEvent.time}</span>
+                    <span className="ml-4"></span>
                   </div>
                   <div className="flex items-center mb-4">
-                    <span className="mr-2">Venue:</span>
-                    <span className="text-blue-400">{expandedEvent.venue}</span>
-                    <span className="ml-4">
+                    <span className="mr-2">
                       <FaLocationDot />
                     </span>
+                    <span className="text-blue-400">{expandedEvent.venue}</span>
+                    <span className="ml-4"></span>
                   </div>
 
                   {/* Event Description */}
@@ -384,9 +389,10 @@ const Event = () => {
               <div
                 className={`border p-4 rounded-md cursor-pointer ${
                   expandedEvent && expandedEvent.name === event.name
-                    ? "bg-green-100"
+                    ? "bg-teal-200 text-black"
                     : ""
                 }`}
+                style={{ boxShadow: shadowStyle }}
                 onClick={() => handleEventClick(event)}
               >
                 {/* Replace with actual image path */}
