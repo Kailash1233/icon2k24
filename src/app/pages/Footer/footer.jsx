@@ -56,7 +56,7 @@ const Footer = () => {
         {/* Instagram Icon and Text aligned horizontally in mobile view with left margin */}
         <div className="flex items-center ml-2 md:ml-52 mb-2">
           <a
-            href="https://www.instagram.com"
+            href="https://www.instagram.com/icon_2k24?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
             target="_blank"
             rel="noopener noreferrer"
             className="ml-2"
@@ -79,7 +79,7 @@ const Footer = () => {
             </svg>
           </a>
           <a
-            href="https://www.instagram.com"
+            href="https://www.instagram.com/icon_2k24?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
             target="_blank"
             rel="noopener noreferrer"
             className="text-xs text-gray-300 ml-0 md:ml-0"

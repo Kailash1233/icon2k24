@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import lazyone from "../images/lazyone.jpg";
+import lazyone from "../images/lazyone.gif";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
 const Navbar = () => {
@@ -10,7 +10,7 @@ const Navbar = () => {
     setOpenMenu(!openMenu);
   };
   return (
-    <nav className="w-full h-24 shadow-xl bg-gray-950">
+<nav className="w-full h-24 shadow-xl bg-black">
       <div className="flex justify-between items-center h-full w-full px-5 2xl:px-16 text-white ">
         <div>
           <Link href={"/"}>
@@ -28,19 +28,19 @@ const Navbar = () => {
         <div className="hidden md:flex">
           <ul className="hidden md:flex gap-10">
             <Link href="/">
-              <li className="hover:bg-orange-600 uppercase px-3">Home</li>
+              <li className="hover:bg-gray-600 uppercase px-3">Home</li>
             </Link>
             <Link href="/pages/about">
-              <li className="hover:bg-orange-600 uppercase px-3">About</li>
+              <li className="hover:bg-gray-600 uppercase px-3">About</li>
             </Link>
             <Link href="/pages/event">
-              <li className="hover:bg-orange-600 uppercase px-3">Events</li>
+              <li className="hover:bg-gray-600 uppercase px-3">Events</li>
             </Link>
             <Link href="/pages/contact">
-              <li className="hover:bg-orange-600 uppercase px-3">Contact Us</li>
+              <li className="hover:bg-gray-600 uppercase px-3">Contact Us</li>
             </Link>
             <Link href="/pages/register">
-              <li className="hover:bg-orange-600 uppercase px-3">
+              <li className="hover:bg-gray-600 uppercase px-3">
                 Register Now
               </li>
             </Link>

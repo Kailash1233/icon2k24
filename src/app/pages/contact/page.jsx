@@ -1,8 +1,8 @@
 import React from "react";
-import Image from "next/image";
-import logoImage from "../../images/logo.png";
-import sitimage from "../../images/sitlogo.jpeg";
 import Footer from "../Footer/footer";
+
+
+
 
 const members = [
   {
@@ -71,7 +71,7 @@ const Page = () => {
           ))}
         </div>
       </div>
-      <Footer />
+     <Footer />
     </div>
   );
 };
