@@ -4,6 +4,7 @@ import './globals.css';
 import Navbar from './components/Navbar';
 import Footer from './pages/Footer/footer';
 
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
@@ -20,6 +21,7 @@ export default function RootLayout() {
         <LazyLoadedComponent dynamicImport={() => import('./pages/about/page')} />
         <LazyLoadedComponent dynamicImport={() => import('./pages/event/page')} />
         <LazyLoadedComponent dynamicImport={() => import('./pages/contact/page')} />
+        {children}
         <Footer />
       </body>
     </html>
