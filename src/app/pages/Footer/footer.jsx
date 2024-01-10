@@ -1,11 +1,22 @@
+"use client";
+import Link from "next/link";
 import React from 'react';
 import Image from 'next/image';
 import logoImage from '../../images/logo.png';
 import sitImage from '../../images/sitlogo.jpeg';
+import { useState } from "react";
 
 const Footer = () => {
+  const [openMenu, setOpenMenu] = useState(false);
+  const handleClick = () => {
+    setOpenMenu(!openMenu);
+  };
   return (
     <div className="bg-black p-4 w-full">
+      <div className="border-t border-gray-900 shadow h-7 mx-50 mt-4"></div>
+
+
+
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
 
         {/* Logos on the left side */}
@@ -31,13 +42,26 @@ const Footer = () => {
 
         {/* Navigation Links in the middle */}
         <div className="text-white text-sm font-bold flex items-center flex-wrap">
-          <a href="#" className="nav-link mr-4">Home</a>
-          <span className="text-gray-500 mx-2 mr-4">|</span>
-          <a href="#" className="nav-link mr-4">About</a>
-          <span className="text-gray-500 mx-2 mr-4">|</span>
-          <a href="#" className="nav-link mr-4">Events</a>
-          <span className="text-gray-500 mx-2 mr-4">|</span>
-          <a href="#" className="nav-link">Contact</a>
+          <ul className="list-none p-0 m-0 flex">
+            <Link href="/">
+              <li className="mr-2 md:mr-4">Home</li>
+            </Link>
+            <span className="text-gray-500 mx-2 mr-4">|</span>
+
+            <Link href="/pages/about">
+              <li className="mr-2 md:mr-4">About</li>
+            </Link>
+            <span className="text-gray-500 mx-2 mr-4">|</span>
+
+            <Link href="/pages/event">
+              <li className="mr-2 md:mr-4">Events</li>
+            </Link>
+            <span className="text-gray-500 mr-2 md:mr-4">|</span>
+
+            <Link href="/pages/contact">
+              <li>Contact Us</li>
+            </Link>
+          </ul>
         </div>
       </div>
 
@@ -52,7 +76,7 @@ const Footer = () => {
         <p className="md:mr-4 mb-2 md:mb-0">Copyright @2024 SIT</p>
         <p className="md:mr-64 mb-2 md:mb-0"></p>
         <p className="md:mr-64 mb-2 md:mb-0"></p>
-        
+
         {/* Instagram Icon and Text aligned horizontally in mobile view with left margin */}
         <div className="flex items-center ml-2 md:ml-52 mb-2">
           <a
