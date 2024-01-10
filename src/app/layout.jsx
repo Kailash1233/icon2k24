@@ -21,7 +21,6 @@ export default function RootLayout() {
         <LazyLoadedComponent dynamicImport={() => import('./pages/about/page')} />
         <LazyLoadedComponent dynamicImport={() => import('./pages/event/page')} />
         <LazyLoadedComponent dynamicImport={() => import('./pages/contact/page')} />
-        {children}
         <Footer />
       </body>
     </html>

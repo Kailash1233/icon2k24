@@ -1,4 +1,3 @@
-// Navbar.js
 "use client";
 import Link from "next/link";
 import Image from "next/image";
@@ -22,10 +21,10 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full h-24 shadow-xl bg-black fixed top-0 z-50">
+    <nav className="w-full h-24 shadow-xl bg-black relative md:sticky md:top-0 md:z-50">
       <div className="flex justify-between items-center h-full w-full px-5 2xl:px-16 text-white">
         <div>
-          <Link href={"/"}>
+          <ScrollLink to="home" spy={true} smooth={true} offset={-70} duration={500}>
             <Image
               src={lazyone}
               alt="logo"
@@ -34,27 +33,27 @@ const Navbar = () => {
               className="cursor-pointer"
               priority
             />
-          </Link>
+          </ScrollLink>
         </div>
         <div className="hidden md:flex">
           <ul className="hidden md:flex gap-10">
             <ScrollLink to="home" spy={true} smooth={true} offset={-70} duration={500}>
-              <li className="hover:underline uppercase px-3" onClick={() => setOpenMenu(false)}>
+              <li className="hover:underline uppercase px-3 cursor-pointer" onClick={() => setOpenMenu(false)}>
                 Home
               </li>
             </ScrollLink>
             <ScrollLink to="about" spy={true} smooth={true} offset={-70} duration={500}>
-              <li className="hover:underline uppercase px-3" onClick={() => setOpenMenu(false)}>
+              <li className="hover:underline uppercase px-3 cursor-pointer" onClick={() => setOpenMenu(false)}>
                 About
               </li>
             </ScrollLink>
             <ScrollLink to="events" spy={true} smooth={true} offset={-70} duration={500}>
-              <li className="hover:underline uppercase px-3" onClick={() => setOpenMenu(false)}>
+              <li className="hover:underline uppercase px-3 cursor-pointer" onClick={() => setOpenMenu(false)}>
                 Events
               </li>
             </ScrollLink>
             <ScrollLink to="contact" spy={true} smooth={true} offset={-70} duration={500}>
-              <li className="hover:underline uppercase px-3" onClick={() => setOpenMenu(false)}>
+              <li className="hover:underline uppercase px-3 cursor-pointer" onClick={() => setOpenMenu(false)}>
                 Contact Us
               </li>
             </ScrollLink>
@@ -73,7 +72,50 @@ const Navbar = () => {
           </div>
           <div className="flex-col py-6 text-white">
             <ul>
-              {/* ... (same as before) */}
+              <ScrollLink to="home" spy={true} smooth={true} offset={-70} duration={500}>
+                <li
+                  onClick={() => {
+                    setOpenMenu(false);
+                    scrollToComponent('home');
+                  }}
+                  className="cursor-pointer py-3"
+                >
+                  Home
+                </li>
+              </ScrollLink>
+              <ScrollLink to="about" spy={true} smooth={true} offset={-70} duration={500}>
+                <li
+                  onClick={() => {
+                    setOpenMenu(false);
+                    scrollToComponent('about');
+                  }}
+                  className="cursor-pointer py-3"
+                >
+                  About
+                </li>
+              </ScrollLink>
+              <ScrollLink to="events" spy={true} smooth={true} offset={-70} duration={500}>
+                <li
+                  onClick={() => {
+                    setOpenMenu(false);
+                    scrollToComponent('events');
+                  }}
+                  className="cursor-pointer py-3"
+                >
+                  Events
+                </li>
+              </ScrollLink>
+              <ScrollLink to="contact" spy={true} smooth={true} offset={-70} duration={500}>
+                <li
+                  onClick={() => {
+                    setOpenMenu(false);
+                    scrollToComponent('contact');
+                  }}
+                  className="cursor-pointer py-3"
+                >
+                  Contact Us
+                </li>
+              </ScrollLink>
             </ul>
           </div>
         </div>
