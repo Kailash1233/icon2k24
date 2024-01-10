@@ -15,7 +15,6 @@
     "@hookform/resolvers": "^3.3.4",
     "autoprefixer": "^10.4.16",
     "file-loader": "^6.2.0",
-    "flipdown": "^0.3.2",
     "next": "14.0.4",
     "next-videos": "^1.4.1",
     "postcss": "^8.4.32",
