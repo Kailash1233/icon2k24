@@ -6,26 +6,26 @@ const members = [
     name: "MOHAMED SALMAN FARIZ M",
     role: "President",
     phone: "+91 63803-93289",
-    email: "john@example.com",
+    email: "salmanfarris2002@gmail.com",
   },
   {
     name: "CHOUMYA M",
     role: "Vice President",
-    phone: "+91 892504 59696",
-    email: "jane@example.com",
+    phone: "+91 89250-59696",
+    email: "choumya0703@gmail.com",
   },
   {
     name: "MOHAMED AMEERDEEN S",
     role: "Vice President",
-    phone: "555-123-4567",
-    email: "bob@example.com",
+    phone: "+91 91593-55501",
+    email: "ideenameer404@gmail.com",
   },
 ];
 
 
 const Page = () => {
   return (
-    <div className="bg-black text-white min-h-screen flex flex-col items-center justify-center">
+    <div id="contact" className="bg-black text-white min-h-screen flex flex-col items-center justify-center">
       <div className="min-h-screen flex flex-col items-center justify-center">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {members.map((member, index) => (
