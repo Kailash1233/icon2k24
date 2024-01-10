@@ -50,11 +50,57 @@ const Event = () => {
       name: "TECH QUEST",
       image:
         "https://www.hiya.ie/wp-content/uploads/2017/07/Treasure-Hunt-1024x522.jpg",
-      description: "Description for Technical Event 1",
+      description: (
+        <ul>
+          <li>TECHNICAL TREASURE HUNT</li>
+          <li>
+            Dive into the captivating realm of technology with 'Tech Quest,' a
+            thrilling technical treasure hunt designed for tech enthusiasts!
+            Navigate through a series of challenges, puzzles, and clues spanning
+            coding, debugging, encryption/decryption techniques, technical
+            quizzes, and more. Showcase your technical prowess, compete for the
+            ultimate treasure, and immerse yourself in a dynamic and
+            exhilarating competition that celebrates innovation, creativity, and
+            technical expertise.
+          </li>
+        </ul>
+      ),
       date: "2024-01-15",
       time: "12:00 PM - 1:15 PM",
       venue: "IT LAB 1",
-      rules: "Some rules for Technical Event 1",
+      rules: (
+        <ol>
+          <li>
+            • Participants are required to produce college ID without fail.
+          </li>
+          <li>
+            • Teams should consist of 3 members, maintaining consistent members
+            throughout the event.
+          </li>
+          <li>
+            • Challenges will be presented in various formats, including coding
+            tasks, debugging exercises, encryption/decryption puzzles, and
+            technical quizzes.
+          </li>
+          <li>
+            • Participants must adhere to specified rules, guidelines, and time
+            frames for each challenge.
+          </li>
+          <li>
+            • Fair play is essential, and any form of cheating, plagiarism, or
+            unethical behavior will result in immediate disqualification.
+          </li>
+          <li>
+            • Winners will be determined based on overall performance, scores,
+            and completion of challenges, with prizes and recognition
+            distributed accordingly.
+          </li>
+          <li>
+            • The event organizers reserve the right to change the rules and
+            regulations of the event at any time.
+          </li>
+        </ol>
+      ),
       feeDetails: "Registration Fee: ₹100",
       coordinators: [
         { name: "Kailash G", contact: "99999999999" },
@@ -65,11 +111,35 @@ const Event = () => {
       name: "ALGORITHM ARENA",
       image:
         "https://media.licdn.com/dms/image/D4D12AQEhDfraZKQbwg/article-cover_image-shrink_600_2000/0/1696415621707?e=2147483647&v=beta&t=sbp5FHd0jjJ9XW2dD3Mz_Xc1dK1FP9Ii6CMf861mW-0",
-      description: "Description for Technical Event 1",
+      description:
+        "Join us for an exciting event where participants turn the given algorithm into actual code. This event isn't just about winning; it's about enjoying the journey of coding. They'll tackle different challenges and show off their coding abilities, from understanding the algorithm to finding better solutions in actual code",
       date: "2024-01-15",
       time: "12:00 PM - 1:15 PM",
       venue: "IT LAB 2",
-      rules: "Some rules for Technical Event 1",
+      rules: (
+        <ol>
+          <li>
+            • Participants are required to produce college ID without fail.
+          </li>
+          <li>• It is an individual event.</li>
+          <li>
+            • Participants will be given an algorithm from which they have to
+            solve.
+          </li>
+          <li>
+            • Participants should know anyone of the programming languages
+            (C/C++/Java/Python).
+          </li>
+          <li>
+            • The decision made by judges is final and binding on all
+            participants.
+          </li>
+          <li>
+            • The event organizers reserve the right to change the rules and
+            regulations of the event at any time.
+          </li>
+        </ol>
+      ),
       feeDetails: "Registration Fee: ₹100",
       coordinators: [
         { name: "Mohamed Moideen Halith", contact: "777777777777" },
@@ -281,7 +351,10 @@ const Event = () => {
   };
 
   return (
-    <div id ="events" className="min-h-screen flex justify-center items-center bg-black">
+    <div
+      id="events"
+      className="min-h-screen flex justify-center items-center bg-black"
+    >
       <div
         className="max-w-4xl w-full bg-black text-white p-8 rounded-lg shadow-lg"
         style={{ boxShadow: shadowStyle }}

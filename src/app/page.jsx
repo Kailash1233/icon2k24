@@ -6,10 +6,7 @@ const Home = () => {
   const [isScrollLocked, setScrollLocked] = useState(true);
 
   useEffect(() => {
-    // Disable scrolling on mount
     setScrollLocked(true);
-
-
 
     return () => {
       setScrollLocked(false);
