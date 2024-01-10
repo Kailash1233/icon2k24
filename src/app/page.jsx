@@ -1,4 +1,5 @@
 "use client";
+import Footer from "./pages/Footer/footer";
 import { useEffect } from "react";
 const Home = () => {
   useEffect(() => {
@@ -28,6 +29,7 @@ const Home = () => {
             <div className="">this the home page</div>
           </div>
         </div>
+        <Footer />
       </div>
     </>
   );
