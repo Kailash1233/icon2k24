@@ -8,7 +8,7 @@ import { FaLocationDot } from "react-icons/fa6";
 const Event = () => {
   const [expandedEvent, setExpandedEvent] = useState(null);
 
-  const shadowStyle = "0px 4px 8px rgba(0, 255, 255, 0.8)";
+  const shadowStyle = "0px 4px 8px rgba(255, 255, 255, 0.8)";
 
   const technicalEvents = [
     {
@@ -18,8 +18,8 @@ const Event = () => {
       description:
         "Engage with the brightest minds as participants showcase their research prowess on diverse topics, spanning from groundbreaking innovations to pressing global issues. Witness a symphony of ideas, innovation, and eloquence as they vie for recognition and the coveted title. Join us for an inspiring celebration of knowledge, where academic excellence meets the thrill of competition.",
       date: "2024-01-15",
-      time: "10:00 AM - 2:00 PM",
-      venue: "Tech Auditorium",
+      time: "11:30 AM",
+      venue: "IT CONFERENCE HALL",
       rules: (
         <ol>
           <li>• Participants must present a valid college ID.</li>
@@ -47,13 +47,13 @@ const Event = () => {
       ],
     },
     {
-      name: "Treasure Hunt",
+      name: "TECH QUEST",
       image:
         "https://www.hiya.ie/wp-content/uploads/2017/07/Treasure-Hunt-1024x522.jpg",
       description: "Description for Technical Event 1",
       date: "2024-01-15",
-      time: "10:00 AM - 2:00 PM",
-      venue: "Tech Auditorium",
+      time: "12:00 PM - 1:15 PM",
+      venue: "IT LAB 1",
       rules: "Some rules for Technical Event 1",
       feeDetails: "Registration Fee: ₹100",
       coordinators: [
@@ -62,13 +62,13 @@ const Event = () => {
       ],
     },
     {
-      name: "Algo",
+      name: "ALGORITHM ARENA",
       image:
         "https://media.licdn.com/dms/image/D4D12AQEhDfraZKQbwg/article-cover_image-shrink_600_2000/0/1696415621707?e=2147483647&v=beta&t=sbp5FHd0jjJ9XW2dD3Mz_Xc1dK1FP9Ii6CMf861mW-0",
       description: "Description for Technical Event 1",
       date: "2024-01-15",
-      time: "10:00 AM - 2:00 PM",
-      venue: "Tech Auditorium",
+      time: "12:00 PM - 1:15 PM",
+      venue: "IT LAB 2",
       rules: "Some rules for Technical Event 1",
       feeDetails: "Registration Fee: ₹100",
       coordinators: [
@@ -83,8 +83,8 @@ const Event = () => {
       description:
         "Investigate in the captivating world of SQL Police Department as you engage with our Crime-Solving Scenarios—a real-time challenge where participants must crack cases using SQL.",
       date: "2024-01-15",
-      time: "10:00 AM - 2:00 PM",
-      venue: "Tech Auditorium",
+      time: "11:00 AM - 12:00 PM",
+      venue: "IT LAB 2",
       rules: (
         <ol>
           <li>
@@ -112,14 +112,14 @@ const Event = () => {
 
   const nonTechnicalEvents = [
     {
-      name: "BOUNDRY BATTLE",
+      name: "JOLLY OH JUMKHANA",
       image:
         "https://lh3.googleusercontent.com/p/AF1QipMRmmtQwjIk_55_CuOyGcNeB15JnHg1WQ0qtMJQ=w1080-h608-p-k-no-v0",
       description:
         "Explore the high-energy world of box cricket, where teams vie for victory in a confined arena, creating an intense and close-knit atmosphere. Our event blends traditional cricket excitement with a unique twist, played in a compact space that demands quick thinking, agility, and strategic gameplay. Join us for a thrilling competition, where the excitement of cricket meets dynamic twists, promising an engaging and strategic showdown.",
       date: "2024-01-16",
-      time: "2:00 PM - 5:00 PM",
-      venue: "Non-Tech Hall",
+      time: "11:00 AM - 1:00 PM",
+      venue: "Crescent Auditorium",
       rules: (
         <ol>
           <li>
@@ -152,8 +152,8 @@ const Event = () => {
       description:
         "Get ready to witness a dazzling display of hidden talents, both bold and brilliant, independent and intertwined! This isn't just a competition; it's a celebration of human creativity in all its diverse forms. From fire-breathing dragons to dancing fairies, channel the epic spirit of ancient lore through your talent. Sing ballads of forgotten heroes, paint tales on canvas, tap-dance on Olympus's peaks, or juggle lightning bolts like Zeus himself!  Prepare to be captivated by: solo and group performances.",
       date: "2024-01-16",
-      time: "2:00 PM - 5:00 PM",
-      venue: "Non-Tech Hall",
+      time: "2:30 PM",
+      venue: "Auditorium",
       rules: (
         <ol>
           <li>
@@ -186,8 +186,8 @@ const Event = () => {
       description:
         "Adrenaline Rush is an exciting and challenging three-round event that will test your speed and agility. In each round, contestants will compete in a series of fun and thrilling games related to tamil, english and hindi movies and songs, where the winner of each round will advance to the next stage while the others will be eliminated. The first round- Lyric-oh-holic, where contestants must find the missing words or lines in the song lyrics. The second round- Connextions, where contestants should connect the picture displayed in the screen to guess the word. In the final round- Gesture guess, where the contestants  act out movies, phrases or words, creating a fun and lively guessing challenge for their teams.",
       date: "2024-01-16",
-      time: "2:00 PM - 5:00 PM",
-      venue: "Non-Tech Hall",
+      time: "11:00 AM - 1:00 PM",
+      venue: "IT LAB 3",
       rules: (
         <ol>
           <li>ROUND 1: LYRIC-OH-HOLIC</li>
@@ -228,8 +228,8 @@ const Event = () => {
       description:
         "BIDDING BASH/IPL AUCTION is an event where The Teams bid for the IPL players and create a squad. The teams will be given the names of the IPL teams and virtual money using which they can buy players in the auction.",
       date: "2024-01-16",
-      time: "2:00 PM - 5:00 PM",
-      venue: "Non-Tech Hall",
+      time: "11:15 AM - 2:15 PM",
+      venue: "Seminar Hall 1 (or) Crescent Auditorium",
       rules: (
         <ol>
           <li>

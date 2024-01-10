@@ -9,7 +9,8 @@ const Home = () => {
     // Disable scrolling on mount
     setScrollLocked(true);
 
-    // Re-enable scrolling when the component unmounts
+
+
     return () => {
       setScrollLocked(false);
     };
@@ -25,7 +26,6 @@ const Home = () => {
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src={require("./images/video.mp4")} autoPlay muted loop />
-          {/* Add additional source elements for other video formats */}
         </video>
         {/* Your content on top of the video */}
         <div className="relative z-10">
