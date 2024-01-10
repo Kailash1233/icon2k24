@@ -6,19 +6,19 @@ const members = [
     name: "MOHAMED SALMAN FARIZ M",
     role: "President",
     phone: "+91 63803-93289",
-    email: "john@example.com",
+    email: "salmanfarris2002@gmail.com",
   },
   {
     name: "CHOUMYA M",
     role: "Vice President",
-    phone: "+91 892504 59696",
-    email: "jane@example.com",
+    phone: "+91 89250-59696",
+    email: "choumya0703@gmail.com",
   },
   {
     name: "MOHAMED AMEERDEEN S",
     role: "Vice President",
-    phone: "555-123-4567",
-    email: "bob@example.com",
+    phone: "+91 91593-55501",
+    email: "ideenameer404@gmail.com",
   },
 ];
 

@@ -1,19 +1,23 @@
 "use client";
+import React, { useEffect, useState } from "react";
 import Footer from "./pages/Footer/footer";
-import { useEffect } from "react";
+
 const Home = () => {
+  const [isScrollLocked, setScrollLocked] = useState(true);
+
   useEffect(() => {
     // Disable scrolling on mount
-    document.body.style.overflow = "hidden";
+    setScrollLocked(true);
 
     // Re-enable scrolling when the component unmounts
     return () => {
-      document.body.style.overflow = "unset";
+      setScrollLocked(false);
     };
   }, []);
+
   return (
     <>
-      <div className="relative h-screen">
+      <div className={`relative h-screen ${isScrollLocked ? "overflow-hidden" : ""}`}>
         <video
           autoPlay
           loop
@@ -26,7 +30,7 @@ const Home = () => {
         {/* Your content on top of the video */}
         <div className="relative z-10">
           <div className="flex text-white justify-center items-center h-60">
-            <div className="">this the home page</div>
+            <div className="">This is the home page</div>
           </div>
         </div>
         <Footer />
