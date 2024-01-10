@@ -4,18 +4,20 @@ import Image from "next/image";
 import lazyone from "../images/lazyone.gif";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
-import About from "../pages/about/page";
-import Event from "../pages/event/page";
-import Page from "../pages/contact/page";
-import RegistrationForm from "../pages/register/page";
-
-
+import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
 
   const handleClick = () => {
     setOpenMenu(!openMenu);
+  };
+
+  const scrollToComponent = (componentId) => {
+    scroll.scrollTo(componentId, {
+      duration: 500, // You can adjust the scroll duration as needed
+      smooth: 'easeInOutQuart',
+    });
   };
 
   return (
@@ -33,24 +35,28 @@ const Navbar = () => {
             />
           </Link>
         </div>
-        {/* navbar lists */}
         <div className="hidden md:flex">
           <ul className="hidden md:flex gap-10">
-            <Link href="/">
-              <li className="hover:underline uppercase px-3">Home</li>
-            </Link>
-            <Link href="/pages/about">
-              <li className="hover:underline uppercase px-3">About</li>
-            </Link>
-            <Link href="/pages/event">
-              <li className="hover:underline uppercase px-3">Events</li>
-            </Link>
-            <Link href="/pages/contact">
-              <li className="hover:underline uppercase px-3">Contact Us</li>
-            </Link>
-            <Link href="/pages/register">
-              <li className="hover:underline uppercase px-3">Register Now</li>
-            </Link>
+            <ScrollLink to="home" spy={true} smooth={true} offset={-70} duration={500}>
+              <li className="hover:underline uppercase px-3" onClick={() => setOpenMenu(false)}>
+                Home
+              </li>
+            </ScrollLink>
+            <ScrollLink to="about" spy={true} smooth={true} offset={-70} duration={500}>
+              <li className="hover:underline uppercase px-3" onClick={() => setOpenMenu(false)}>
+                About
+              </li>
+            </ScrollLink>
+            <ScrollLink to="events" spy={true} smooth={true} offset={-70} duration={500}>
+              <li className="hover:underline uppercase px-3" onClick={() => setOpenMenu(false)}>
+                Events
+              </li>
+            </ScrollLink>
+            <ScrollLink to="contact" spy={true} smooth={true} offset={-70} duration={500}>
+              <li className="hover:underline uppercase px-3" onClick={() => setOpenMenu(false)}>
+                Contact Us
+              </li>
+            </ScrollLink>
           </ul>
         </div>
         <div onClick={handleClick} className="md:hidden cursor-pointer pl-24">
@@ -66,46 +72,61 @@ const Navbar = () => {
           </div>
           <div className="flex-col py-6 text-white">
             <ul>
-              <Link href="/">
+              <ScrollLink to="home" spy={true} smooth={true} offset={-70} duration={500}>
                 <li
-                  onClick={() => setOpenMenu(false)}
+                  onClick={() => {
+                    setOpenMenu(false);
+                    scrollToComponent('home');
+                  }}
                   className="cursor-pointer py-3"
                 >
                   Home
                 </li>
-              </Link>
-              <Link href="/pages/about">
+              </ScrollLink>
+              <ScrollLink to="about" spy={true} smooth={true} offset={-70} duration={500}>
                 <li
-                  onClick={() => setOpenMenu(false)}
+                  onClick={() => {
+                    setOpenMenu(false);
+                    scrollToComponent('about');
+                  }}
                   className="cursor-pointer py-3"
                 >
                   About
                 </li>
-              </Link>
-              <Link href="/pages/event">
+              </ScrollLink>
+              <ScrollLink to="events" spy={true} smooth={true} offset={-70} duration={500}>
                 <li
-                  onClick={() => setOpenMenu(false)}
+                  onClick={() => {
+                    setOpenMenu(false);
+                    scrollToComponent('events');
+                  }}
                   className="cursor-pointer py-3"
                 >
                   Events
                 </li>
-              </Link>
-              <Link href="/pages/contact">
+              </ScrollLink>
+              <ScrollLink to="contact" spy={true} smooth={true} offset={-70} duration={500}>
                 <li
-                  onClick={() => setOpenMenu(false)}
+                  onClick={() => {
+                    setOpenMenu(false);
+                    scrollToComponent('contact');
+                  }}
                   className="cursor-pointer py-3"
                 >
-                  Contact us
+                  Contact Us
                 </li>
-              </Link>
-              <Link href="/pages/register">
+              </ScrollLink>
+              <ScrollLink to="register" spy={true} smooth={true} offset={-70} duration={500}>
                 <li
-                  onClick={() => setOpenMenu(false)}
+                  onClick={() => {
+                    setOpenMenu(false);
+                    scrollToComponent('register');
+                  }}
                   className="cursor-pointer py-3"
                 >
                   Register Now
                 </li>
-              </Link>
+              </ScrollLink>
             </ul>
           </div>
         </div>

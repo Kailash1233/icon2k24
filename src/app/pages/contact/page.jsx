@@ -25,7 +25,7 @@ const members = [
 
 const Page = () => {
   return (
-    <div className="bg-black text-white min-h-screen flex flex-col items-center justify-center">
+    <div id="contact" className="bg-black text-white min-h-screen flex flex-col items-center justify-center">
       <div className="min-h-screen flex flex-col items-center justify-center">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {members.map((member, index) => (

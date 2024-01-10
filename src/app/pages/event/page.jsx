@@ -281,7 +281,7 @@ const Event = () => {
   };
 
   return (
-    <div className="min-h-screen flex justify-center items-center bg-black">
+    <div id ="events" className="min-h-screen flex justify-center items-center bg-black">
       <div
         className="max-w-4xl w-full bg-black text-white p-8 rounded-lg shadow-lg"
         style={{ boxShadow: shadowStyle }}

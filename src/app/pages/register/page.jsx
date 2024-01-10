@@ -30,7 +30,7 @@ const RegistrationForm = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto p-4 bg-gray-100 shadow-md rounded-md">
+    <div id="register" className="max-w-md mx-auto p-4 bg-gray-100 shadow-md rounded-md">
       {!submitted ? (
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
