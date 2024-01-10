@@ -6,10 +6,7 @@ const Home = () => {
   const [isScrollLocked, setScrollLocked] = useState(true);
 
   useEffect(() => {
-    // Disable scrolling on mount
     setScrollLocked(true);
-
-
 
     return () => {
       setScrollLocked(false);
@@ -18,7 +15,11 @@ const Home = () => {
 
   return (
     <>
-      <div className={`relative h-screen ${isScrollLocked ? "overflow-hidden" : ""}`}>
+      <div
+        className={`relative h-screen ${
+          isScrollLocked ? "overflow-hidden" : ""
+        }`}
+      >
         <video
           autoPlay
           loop
