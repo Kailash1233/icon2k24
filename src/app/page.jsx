@@ -17,7 +17,7 @@ const Home = () => {
 
   return (
     <>
-      <div className={`relative h-screen ${isScrollLocked ? "overflow-hidden" : ""}`}>
+      <div id="home" className={`relative h-screen ${isScrollLocked ? "overflow-hidden" : ""}`}>
         <video
           autoPlay
           loop

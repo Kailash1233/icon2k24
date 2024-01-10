@@ -5,21 +5,26 @@ import Image from 'next/image';
 import logoImage from '../../images/logo.png';
 import sitImage from '../../images/sitlogo.jpeg';
 import { useState } from "react";
+import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 
 const Footer = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const handleClick = () => {
     setOpenMenu(!openMenu);
   };
+
+  const scrollToComponent = (componentId) => {
+    scroll.scrollTo(componentId, {
+      duration: 500,
+      smooth: 'easeInOutQuart',
+    });
+  };
+
   return (
     <div className="bg-black p-4 w-full">
       <div className="border-t border-gray-900 shadow h-7 mx-50 mt-4"></div>
 
-
-
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-
-        {/* Logos on the left side */}
         <div className="flex items-center mb-4 md:mb-0">
           <Image
             src={logoImage}
@@ -40,35 +45,40 @@ const Footer = () => {
           />
         </div>
 
-        {/* Navigation Links in the middle */}
         <div className="text-white text-sm font-bold flex items-center flex-wrap">
           <ul className="list-none p-0 m-0 flex">
-            <Link href="/">
-              <li className="mr-2 md:mr-4">Home</li>
-            </Link>
+            <ScrollLink to="home" spy={true} smooth={true} offset={-70} duration={500}>
+              <li className="mr-2 md:mr-4 cursor-pointer" onClick={() => setOpenMenu(false)}>
+                Home
+              </li>
+            </ScrollLink>
             <span className="text-gray-500 mx-2 mr-4">|</span>
 
-            <Link href="/pages/about">
-              <li className="mr-2 md:mr-4">About</li>
-            </Link>
+            <ScrollLink to="about" spy={true} smooth={true} offset={-70} duration={500}>
+              <li className="mr-2 md:mr-4 cursor-pointer" onClick={() => setOpenMenu(false)}>
+                About
+              </li>
+            </ScrollLink>
             <span className="text-gray-500 mx-2 mr-4">|</span>
 
-            <Link href="/pages/event">
-              <li className="mr-2 md:mr-4">Events</li>
-            </Link>
+            <ScrollLink to="events" spy={true} smooth={true} offset={-70} duration={500}>
+              <li className="mr-2 md:mr-4 cursor-pointer" onClick={() => setOpenMenu(false)}>
+                Events
+              </li>
+            </ScrollLink>
             <span className="text-gray-500 mr-2 md:mr-4">|</span>
 
-            <Link href="/pages/contact">
-              <li>Contact Us</li>
-            </Link>
+            <ScrollLink to="contact" spy={true} smooth={true} offset={-70} duration={500}>
+              <li className="cursor-pointer" onClick={() => setOpenMenu(false)}>
+                Contact Us
+              </li>
+            </ScrollLink>
           </ul>
         </div>
       </div>
 
-      {/* Horizontal Line */}
       <div className="border-t border-gray-500 h-5 mx-4 md:mx-20 mt-4"></div>
 
-      {/* Instagram Icon and Text */}
       <div className="text-gray-500 flex flex-wrap text-xs items-center mt-4 ml-2 md:ml-20">
         <p className="mr-2 md:mr-4 mb-2 md:mb-0">Privacy Policy</p>
         <p className="mr-2 md:mr-4 mb-2 md:mb-0">Terms & Conditions</p>
@@ -77,7 +87,6 @@ const Footer = () => {
         <p className="md:mr-64 mb-2 md:mb-0"></p>
         <p className="md:mr-64 mb-2 md:mb-0"></p>
 
-        {/* Instagram Icon and Text aligned horizontally in mobile view with left margin */}
         <div className="flex items-center ml-2 md:ml-52 mb-2">
           <a
             href="https://www.instagram.com/icon_2k24?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="

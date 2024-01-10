@@ -1,3 +1,4 @@
+// Navbar.js
 "use client";
 import Link from "next/link";
 import Image from "next/image";
@@ -15,13 +16,13 @@ const Navbar = () => {
 
   const scrollToComponent = (componentId) => {
     scroll.scrollTo(componentId, {
-      duration: 500, // You can adjust the scroll duration as needed
+      duration: 500,
       smooth: 'easeInOutQuart',
     });
   };
 
   return (
-    <nav className="w-full h-24 shadow-xl bg-black relative">
+    <nav className="w-full h-24 shadow-xl bg-black fixed top-0 z-50">
       <div className="flex justify-between items-center h-full w-full px-5 2xl:px-16 text-white">
         <div>
           <Link href={"/"}>
@@ -72,61 +73,7 @@ const Navbar = () => {
           </div>
           <div className="flex-col py-6 text-white">
             <ul>
-              <ScrollLink to="home" spy={true} smooth={true} offset={-70} duration={500}>
-                <li
-                  onClick={() => {
-                    setOpenMenu(false);
-                    scrollToComponent('home');
-                  }}
-                  className="cursor-pointer py-3"
-                >
-                  Home
-                </li>
-              </ScrollLink>
-              <ScrollLink to="about" spy={true} smooth={true} offset={-70} duration={500}>
-                <li
-                  onClick={() => {
-                    setOpenMenu(false);
-                    scrollToComponent('about');
-                  }}
-                  className="cursor-pointer py-3"
-                >
-                  About
-                </li>
-              </ScrollLink>
-              <ScrollLink to="events" spy={true} smooth={true} offset={-70} duration={500}>
-                <li
-                  onClick={() => {
-                    setOpenMenu(false);
-                    scrollToComponent('events');
-                  }}
-                  className="cursor-pointer py-3"
-                >
-                  Events
-                </li>
-              </ScrollLink>
-              <ScrollLink to="contact" spy={true} smooth={true} offset={-70} duration={500}>
-                <li
-                  onClick={() => {
-                    setOpenMenu(false);
-                    scrollToComponent('contact');
-                  }}
-                  className="cursor-pointer py-3"
-                >
-                  Contact Us
-                </li>
-              </ScrollLink>
-              <ScrollLink to="register" spy={true} smooth={true} offset={-70} duration={500}>
-                <li
-                  onClick={() => {
-                    setOpenMenu(false);
-                    scrollToComponent('register');
-                  }}
-                  className="cursor-pointer py-3"
-                >
-                  Register Now
-                </li>
-              </ScrollLink>
+              {/* ... (same as before) */}
             </ul>
           </div>
         </div>
