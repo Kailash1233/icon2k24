@@ -1,29 +1,27 @@
 import React from "react";
-import Footer from "../Footer/footer";
-
-
 
 
 const members = [
   {
-    name: "Kailash G",
+    name: "MOHAMED SALMAN FARIZ M",
     role: "President",
-    phone: "123-456-7890",
+    phone: "+91 63803-93289",
     email: "john@example.com",
   },
   {
-    name: "Fardeen",
+    name: "CHOUMYA M",
     role: "Vice President",
-    phone: "987-654-3210",
+    phone: "+91 892504 59696",
     email: "jane@example.com",
   },
   {
-    name: "Prem",
+    name: "MOHAMED AMEERDEEN S",
     role: "Vice President",
     phone: "555-123-4567",
     email: "bob@example.com",
   },
 ];
+
 
 const Page = () => {
   return (
@@ -71,7 +69,7 @@ const Page = () => {
           ))}
         </div>
       </div>
-     <Footer />
+     
     </div>
   );
 };

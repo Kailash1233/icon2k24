@@ -13,6 +13,10 @@ const Footer = () => {
   };
   return (
     <div className="bg-black p-4 w-full">
+      <div className="border-t border-gray-900 shadow h-7 mx-50 mt-4"></div>
+
+
+
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
 
         {/* Logos on the left side */}
