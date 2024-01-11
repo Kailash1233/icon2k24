@@ -73,7 +73,46 @@ const Navbar = () => {
           </div>
           <div className="flex-col py-6 text-white">
             <ul>
-              {/* ... (same as before) */}
+            <Link href="/">
+              <li
+                onClick={() => setOpenMenu(false)}
+                className="cursor-pointer py-3"
+              >
+                Home
+              </li>
+            </Link>
+            <Link href="/pages/about">
+              <li
+                onClick={() => setOpenMenu(false)}
+                className="cursor-pointer py-3"
+              >
+                About
+              </li>
+            </Link>
+            <Link href="/pages/event">
+              <li
+                onClick={() => setOpenMenu(false)}
+                className="cursor-pointer py-3"
+              >
+                Events
+              </li>
+            </Link>
+            <Link href="/pages/contact">
+              <li
+                onClick={() => setOpenMenu(false)}
+                className="cursor-pointer py-3"
+              >
+                Contact us
+              </li>
+            </Link>
+            <Link href="/pages/contact">
+              <li
+                onClick={() => setOpenMenu(false)}
+                className="cursor-pointer py-3"
+              >
+                Register Now
+              </li>
+            </Link>
             </ul>
           </div>
         </div>
