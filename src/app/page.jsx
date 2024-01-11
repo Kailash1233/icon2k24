@@ -1,18 +1,23 @@
 "use client";
-import { useEffect } from "react";
-const Home = () => {
-  useEffect(() => {
-    // Disable scrolling on mount
-    document.body.style.overflow = "hidden";
+import React, { useEffect, useState } from "react";
+import Footer from "./pages/Footer/footer";
+import CountdownTimer from "./components/CountdownTimer";
 
-    // Re-enable scrolling when the component unmounts
+const Home = () => {
+  const targetDate = new Date('2024-1-12');
+  const [isScrollLocked, setScrollLocked] = useState(true);
+
+  useEffect(() => {
+    setScrollLocked(true);
+
     return () => {
-      document.body.style.overflow = "unset";
+      setScrollLocked(false);
     };
   }, []);
+
   return (
     <>
-      <div className="relative h-screen">
+      <div id="home" className={`relative h-screen ${isScrollLocked ? "overflow-hidden" : ""}`}>
         <video
           autoPlay
           loop
@@ -20,14 +25,15 @@ const Home = () => {
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src={require("./images/video.mp4")} autoPlay muted loop />
-          {/* Add additional source elements for other video formats */}
         </video>
         {/* Your content on top of the video */}
         <div className="relative z-10">
-          <div className="flex text-white justify-center items-center h-60">
-            <div className="">this the home page</div>
+          <div className="flex flex-col text-white justify-center items-center h-60 mt-32 px-6">
+            <div className="text-7xl">The Icon Begins in</div>
+            <div className="mt-24 px-9 "><CountdownTimer targetDate={targetDate}/></div>
           </div>
         </div>
+        <Footer />
       </div>
     </>
   );

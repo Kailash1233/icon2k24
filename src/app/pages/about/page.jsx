@@ -1,7 +1,7 @@
 import React from "react";
 
 const About = () => {
-  const shadowStyle = "0px 4px 8px rgba(0, 255, 255, 0.6)"; // Cyan shadow effect
+  const shadowStyle = "0px 4px 8px rgba(255, 255, 255, 0.8)";
 
   return (
     <div
@@ -54,6 +54,7 @@ const About = () => {
             src="https://images.collegedunia.com/public/college_data/images/campusimage/1584955750DSC_0100.JPG"
             alt="College Image"
             className="w-full h-48 object-cover mb-4 rounded-md"
+            style={{ boxShadow: shadowStyle }}
           />
           <p className="text-center text-sm text-gray-500">
             Photo by B.S. Abdur Rahman Crescent Institute of Science and

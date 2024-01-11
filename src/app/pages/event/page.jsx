@@ -1,12 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaCalendarCheck, FaLocationArrow } from "react-icons/fa";
+import { FaCalendarCheck } from "react-icons/fa";
 import { MdWatchLater } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 
 const Event = () => {
   const [expandedEvent, setExpandedEvent] = useState(null);
+
+  const shadowStyle = "0px 4px 8px rgba(255, 255, 255, 0.8)";
 
   const technicalEvents = [
     {
@@ -16,8 +18,8 @@ const Event = () => {
       description:
         "Engage with the brightest minds as participants showcase their research prowess on diverse topics, spanning from groundbreaking innovations to pressing global issues. Witness a symphony of ideas, innovation, and eloquence as they vie for recognition and the coveted title. Join us for an inspiring celebration of knowledge, where academic excellence meets the thrill of competition.",
       date: "2024-01-15",
-      time: "10:00 AM - 2:00 PM",
-      venue: "Tech Auditorium",
+      time: "11:30 AM",
+      venue: "IT CONFERENCE HALL",
       rules: (
         <ol>
           <li>• Participants must present a valid college ID.</li>
@@ -38,40 +40,110 @@ const Event = () => {
           </li>
         </ol>
       ),
-      feeDetails: "Registration Fee: $20",
+      feeDetails: "Registration Fee: ₹100",
       coordinators: [
-        { name: "John Doe", contact: "john@example.com" },
-        { name: "Jane Smith", contact: "jane@example.com" },
+        { name: "Jeevida R", contact: "9999999999" },
+        { name: "Shafla Fathima", contact: "9999999999" },
       ],
     },
     {
-      name: "Treasure Hunt",
+      name: "TECH QUEST",
       image:
         "https://www.hiya.ie/wp-content/uploads/2017/07/Treasure-Hunt-1024x522.jpg",
-      description: "Description for Technical Event 1",
+      description: (
+        <ul>
+          <li>TECHNICAL TREASURE HUNT</li>
+          <li>
+            Dive into the captivating realm of technology with 'Tech Quest,' a
+            thrilling technical treasure hunt designed for tech enthusiasts!
+            Navigate through a series of challenges, puzzles, and clues spanning
+            coding, debugging, encryption/decryption techniques, technical
+            quizzes, and more. Showcase your technical prowess, compete for the
+            ultimate treasure, and immerse yourself in a dynamic and
+            exhilarating competition that celebrates innovation, creativity, and
+            technical expertise.
+          </li>
+        </ul>
+      ),
       date: "2024-01-15",
-      time: "10:00 AM - 2:00 PM",
-      venue: "Tech Auditorium",
-      rules: "Some rules for Technical Event 1",
-      feeDetails: "Registration Fee: $20",
+      time: "12:00 PM - 1:15 PM",
+      venue: "IT LAB 1",
+      rules: (
+        <ol>
+          <li>
+            • Participants are required to produce college ID without fail.
+          </li>
+          <li>
+            • Teams should consist of 3 members, maintaining consistent members
+            throughout the event.
+          </li>
+          <li>
+            • Challenges will be presented in various formats, including coding
+            tasks, debugging exercises, encryption/decryption puzzles, and
+            technical quizzes.
+          </li>
+          <li>
+            • Participants must adhere to specified rules, guidelines, and time
+            frames for each challenge.
+          </li>
+          <li>
+            • Fair play is essential, and any form of cheating, plagiarism, or
+            unethical behavior will result in immediate disqualification.
+          </li>
+          <li>
+            • Winners will be determined based on overall performance, scores,
+            and completion of challenges, with prizes and recognition
+            distributed accordingly.
+          </li>
+          <li>
+            • The event organizers reserve the right to change the rules and
+            regulations of the event at any time.
+          </li>
+        </ol>
+      ),
+      feeDetails: "Registration Fee: ₹100",
       coordinators: [
-        { name: "John Doe", contact: "john@example.com" },
-        { name: "Jane Smith", contact: "jane@example.com" },
+        { name: "Kailash G", contact: "99999999999" },
+        { name: "Kamalesh K B", contact: "8888888888" },
       ],
     },
     {
-      name: "Algo",
+      name: "ALGORITHM ARENA",
       image:
         "https://media.licdn.com/dms/image/D4D12AQEhDfraZKQbwg/article-cover_image-shrink_600_2000/0/1696415621707?e=2147483647&v=beta&t=sbp5FHd0jjJ9XW2dD3Mz_Xc1dK1FP9Ii6CMf861mW-0",
-      description: "Description for Technical Event 1",
+      description:
+        "Join us for an exciting event where participants turn the given algorithm into actual code. This event isn't just about winning; it's about enjoying the journey of coding. They'll tackle different challenges and show off their coding abilities, from understanding the algorithm to finding better solutions in actual code",
       date: "2024-01-15",
-      time: "10:00 AM - 2:00 PM",
-      venue: "Tech Auditorium",
-      rules: "Some rules for Technical Event 1",
-      feeDetails: "Registration Fee: $20",
+      time: "12:00 PM - 1:15 PM",
+      venue: "IT LAB 2",
+      rules: (
+        <ol>
+          <li>
+            • Participants are required to produce college ID without fail.
+          </li>
+          <li>• It is an individual event.</li>
+          <li>
+            • Participants will be given an algorithm from which they have to
+            solve.
+          </li>
+          <li>
+            • Participants should know anyone of the programming languages
+            (C/C++/Java/Python).
+          </li>
+          <li>
+            • The decision made by judges is final and binding on all
+            participants.
+          </li>
+          <li>
+            • The event organizers reserve the right to change the rules and
+            regulations of the event at any time.
+          </li>
+        </ol>
+      ),
+      feeDetails: "Registration Fee: ₹100",
       coordinators: [
-        { name: "John Doe", contact: "john@example.com" },
-        { name: "Jane Smith", contact: "jane@example.com" },
+        { name: "Mohamed Moideen Halith", contact: "777777777777" },
+        { name: "Prem Kumar V", contact: "99999999999" },
       ],
     },
     {
@@ -81,8 +153,8 @@ const Event = () => {
       description:
         "Investigate in the captivating world of SQL Police Department as you engage with our Crime-Solving Scenarios—a real-time challenge where participants must crack cases using SQL.",
       date: "2024-01-15",
-      time: "10:00 AM - 2:00 PM",
-      venue: "Tech Auditorium",
+      time: "11:00 AM - 12:00 PM",
+      venue: "IT LAB 2",
       rules: (
         <ol>
           <li>
@@ -100,25 +172,24 @@ const Event = () => {
           </li>
         </ol>
       ),
-      feeDetails: "Registration Fee: $20",
+      feeDetails: "Registration Fee: ₹100",
       coordinators: [
-        { name: "John Doe", contact: "john@example.com" },
-        { name: "Jane Smith", contact: "jane@example.com" },
+        { name: "Syed Riyaz K", contact: "6666666666" },
+        { name: "Fariha Hiba", contact: "99999999999" },
       ],
     },
-    // Add more technical events with similar structure
   ];
 
   const nonTechnicalEvents = [
     {
-      name: "BOUNDRY BATTLE",
+      name: "JOLLY OH JUMKHANA",
       image:
         "https://lh3.googleusercontent.com/p/AF1QipMRmmtQwjIk_55_CuOyGcNeB15JnHg1WQ0qtMJQ=w1080-h608-p-k-no-v0",
       description:
         "Explore the high-energy world of box cricket, where teams vie for victory in a confined arena, creating an intense and close-knit atmosphere. Our event blends traditional cricket excitement with a unique twist, played in a compact space that demands quick thinking, agility, and strategic gameplay. Join us for a thrilling competition, where the excitement of cricket meets dynamic twists, promising an engaging and strategic showdown.",
       date: "2024-01-16",
-      time: "2:00 PM - 5:00 PM",
-      venue: "Non-Tech Hall",
+      time: "11:00 AM - 1:00 PM",
+      venue: "Crescent Auditorium",
       rules: (
         <ol>
           <li>
@@ -138,10 +209,10 @@ const Event = () => {
           </li>
         </ol>
       ),
-      feeDetails: "Registration Fee: $15",
+      feeDetails: "Registration Fee: ₹800",
       coordinators: [
-        { name: "Bob Johnson", contact: "bob@example.com" },
-        { name: "Alice Brown", contact: "alice@example.com" },
+        { name: "Vigneshwaran K", contact: "77777777777" },
+        { name: "Yugesh S", contact: "66666666666" },
       ],
     },
     {
@@ -151,8 +222,8 @@ const Event = () => {
       description:
         "Get ready to witness a dazzling display of hidden talents, both bold and brilliant, independent and intertwined! This isn't just a competition; it's a celebration of human creativity in all its diverse forms. From fire-breathing dragons to dancing fairies, channel the epic spirit of ancient lore through your talent. Sing ballads of forgotten heroes, paint tales on canvas, tap-dance on Olympus's peaks, or juggle lightning bolts like Zeus himself!  Prepare to be captivated by: solo and group performances.",
       date: "2024-01-16",
-      time: "2:00 PM - 5:00 PM",
-      venue: "Non-Tech Hall",
+      time: "2:30 PM",
+      venue: "Auditorium",
       rules: (
         <ol>
           <li>
@@ -171,10 +242,11 @@ const Event = () => {
           </li>
         </ol>
       ),
-      feeDetails: "Registration Fee: $15",
+      feeDetails: "Registration Fee: ₹100",
       coordinators: [
-        { name: "Bob Johnson", contact: "bob@example.com" },
-        { name: "Alice Brown", contact: "alice@example.com" },
+        { name: "Intasar", contact: "999999999" },
+        { name: "Jabir", contact: "999999999" },
+        { name: "Avinash", contact: "999999999" },
       ],
     },
     {
@@ -184,8 +256,8 @@ const Event = () => {
       description:
         "Adrenaline Rush is an exciting and challenging three-round event that will test your speed and agility. In each round, contestants will compete in a series of fun and thrilling games related to tamil, english and hindi movies and songs, where the winner of each round will advance to the next stage while the others will be eliminated. The first round- Lyric-oh-holic, where contestants must find the missing words or lines in the song lyrics. The second round- Connextions, where contestants should connect the picture displayed in the screen to guess the word. In the final round- Gesture guess, where the contestants  act out movies, phrases or words, creating a fun and lively guessing challenge for their teams.",
       date: "2024-01-16",
-      time: "2:00 PM - 5:00 PM",
-      venue: "Non-Tech Hall",
+      time: "11:00 AM - 1:00 PM",
+      venue: "IT LAB 3",
       rules: (
         <ol>
           <li>ROUND 1: LYRIC-OH-HOLIC</li>
@@ -213,10 +285,10 @@ const Event = () => {
           </li>
         </ol>
       ),
-      feeDetails: "Registration Fee: $15",
+      feeDetails: "Registration Fee: ₹100",
       coordinators: [
-        { name: "Bob Johnson", contact: "bob@example.com" },
-        { name: "Alice Brown", contact: "alice@example.com" },
+        { name: "Suhail I", contact: "77777777777" },
+        { name: "Abdul Rahman M S", contact: "66666666666" },
       ],
     },
     {
@@ -226,8 +298,8 @@ const Event = () => {
       description:
         "BIDDING BASH/IPL AUCTION is an event where The Teams bid for the IPL players and create a squad. The teams will be given the names of the IPL teams and virtual money using which they can buy players in the auction.",
       date: "2024-01-16",
-      time: "2:00 PM - 5:00 PM",
-      venue: "Non-Tech Hall",
+      time: "11:15 AM - 2:15 PM",
+      venue: "Seminar Hall 1 (or) Crescent Auditorium",
       rules: (
         <ol>
           <li>
@@ -264,10 +336,10 @@ const Event = () => {
           </li>
         </ol>
       ),
-      feeDetails: "Registration Fee: $15",
+      feeDetails: "Registration Fee: ₹100",
       coordinators: [
-        { name: "Bob Johnson", contact: "bob@example.com" },
-        { name: "Alice Brown", contact: "alice@example.com" },
+        { name: "Mohamed Afsar", contact: "999999999" },
+        { name: "Mohamed Suhail B", contact: "999999999" },
       ],
     },
   ];
@@ -279,8 +351,14 @@ const Event = () => {
   };
 
   return (
-    <div className="min-h-screen flex justify-center items-center bg-gray-100">
-      <div className="max-w-4xl w-full bg-white p-8 rounded-lg shadow-lg">
+    <div
+      id="events"
+      className="min-h-screen flex justify-center items-center bg-black"
+    >
+      <div
+        className="max-w-4xl w-full bg-black text-white p-8 rounded-lg shadow-lg"
+        style={{ boxShadow: shadowStyle }}
+      >
         <h1 className="text-3xl font-bold mb-6 text-center">
           Technical Events
         </h1>
@@ -290,12 +368,12 @@ const Event = () => {
               <div
                 className={`border p-4 rounded-md cursor-pointer ${
                   expandedEvent && expandedEvent.name === event.name
-                    ? "bg-blue-100"
+                    ? "bg-cyan-100 text-black"
                     : ""
                 }`}
+                style={{ boxShadow: shadowStyle }}
                 onClick={() => handleEventClick(event)}
               >
-                {/* Replace with actual image path */}
                 <img
                   src={event.image}
                   alt={`Event ${index + 1}`}
@@ -311,25 +389,25 @@ const Event = () => {
                     {expandedEvent.name}
                   </h1>
                   <div className="flex items-center mb-4">
-                    <span className="mr-2">Date:</span>
-                    <span className="text-blue-400">{expandedEvent.date}</span>
-                    <span className="ml-4">
+                    <span className="mr-2">
                       <FaCalendarCheck />
                     </span>
+                    <span className="text-blue-400">{expandedEvent.date}</span>
+                    <span className="ml-4"></span>
                   </div>
                   <div className="flex items-center mb-4">
-                    <span className="mr-2">Time:</span>
-                    <span className="text-blue-400">{expandedEvent.time}</span>
-                    <span className="ml-4">
+                    <span className="mr-2">
                       <MdWatchLater />
                     </span>
+                    <span className="text-blue-400">{expandedEvent.time}</span>
+                    <span className="ml-4"></span>
                   </div>
                   <div className="flex items-center mb-4">
-                    <span className="mr-2">Venue:</span>
-                    <span className="text-blue-400">{expandedEvent.venue}</span>
-                    <span className="ml-4">
+                    <span className="mr-2">
                       <FaLocationDot />
                     </span>
+                    <span className="text-blue-400">{expandedEvent.venue}</span>
+                    <span className="ml-4"></span>
                   </div>
 
                   {/* Event Description */}
@@ -384,9 +462,10 @@ const Event = () => {
               <div
                 className={`border p-4 rounded-md cursor-pointer ${
                   expandedEvent && expandedEvent.name === event.name
-                    ? "bg-green-100"
+                    ? "bg-teal-200 text-black"
                     : ""
                 }`}
+                style={{ boxShadow: shadowStyle }}
                 onClick={() => handleEventClick(event)}
               >
                 {/* Replace with actual image path */}
