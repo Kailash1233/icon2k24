@@ -16,6 +16,8 @@ export default function RootLayout() {
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
+
+
         <LazyLoadedComponent dynamicImport={() => import("./page")} />
         <LazyLoadedComponent
           dynamicImport={() => import("./pages/about/page")}
@@ -26,6 +28,7 @@ export default function RootLayout() {
         <LazyLoadedComponent
           dynamicImport={() => import("./pages/contact/page")}
         />
+
         <Footer />
       </body>
     </html>
