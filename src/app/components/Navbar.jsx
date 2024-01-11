@@ -4,7 +4,7 @@ import Image from "next/image";
 import lazyone from "../images/lazyone.gif";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
-import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -16,7 +16,7 @@ const Navbar = () => {
   const scrollToComponent = (componentId) => {
     scroll.scrollTo(componentId, {
       duration: 500,
-      smooth: 'easeInOutQuart',
+      smooth: "easeInOutQuart",
     });
   };
 
@@ -24,7 +24,13 @@ const Navbar = () => {
     <nav className="w-full h-24 shadow-xl bg-black relative md:sticky md:top-0 md:z-50">
       <div className="flex justify-between items-center h-full w-full px-5 2xl:px-16 text-white">
         <div>
-          <ScrollLink to="home" spy={true} smooth={true} offset={-70} duration={500}>
+          <ScrollLink
+            to="home"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >
             <Image
               src={lazyone}
               alt="logo"
@@ -37,23 +43,59 @@ const Navbar = () => {
         </div>
         <div className="hidden md:flex">
           <ul className="hidden md:flex gap-10">
-            <ScrollLink to="home" spy={true} smooth={true} offset={-70} duration={500}>
-              <li className="hover:underline uppercase px-3 cursor-pointer" onClick={() => setOpenMenu(false)}>
+            <ScrollLink
+              to="home"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              <li
+                className="hover:underline uppercase px-3 cursor-pointer"
+                onClick={() => setOpenMenu(false)}
+              >
                 Home
               </li>
             </ScrollLink>
-            <ScrollLink to="about" spy={true} smooth={true} offset={-70} duration={500}>
-              <li className="hover:underline uppercase px-3 cursor-pointer" onClick={() => setOpenMenu(false)}>
+            <ScrollLink
+              to="about"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              <li
+                className="hover:underline uppercase px-3 cursor-pointer"
+                onClick={() => setOpenMenu(false)}
+              >
                 About
               </li>
             </ScrollLink>
-            <ScrollLink to="events" spy={true} smooth={true} offset={-70} duration={500}>
-              <li className="hover:underline uppercase px-3 cursor-pointer" onClick={() => setOpenMenu(false)}>
+            <ScrollLink
+              to="events"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              <li
+                className="hover:underline uppercase px-3 cursor-pointer"
+                onClick={() => setOpenMenu(false)}
+              >
                 Events
               </li>
             </ScrollLink>
-            <ScrollLink to="contact" spy={true} smooth={true} offset={-70} duration={500}>
-              <li className="hover:underline uppercase px-3 cursor-pointer" onClick={() => setOpenMenu(false)}>
+            <ScrollLink
+              to="contact"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              <li
+                className="hover:underline uppercase px-3 cursor-pointer"
+                onClick={() => setOpenMenu(false)}
+              >
                 Contact Us
               </li>
             </ScrollLink>
@@ -72,44 +114,68 @@ const Navbar = () => {
           </div>
           <div className="flex-col py-6 text-white">
             <ul>
-              <ScrollLink to="home" spy={true} smooth={true} offset={-70} duration={500}>
+              <ScrollLink
+                to="home"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              >
                 <li
                   onClick={() => {
                     setOpenMenu(false);
-                    scrollToComponent('home');
+                    scrollToComponent("home");
                   }}
                   className="cursor-pointer py-3"
                 >
                   Home
                 </li>
               </ScrollLink>
-              <ScrollLink to="about" spy={true} smooth={true} offset={-70} duration={500}>
+              <ScrollLink
+                to="about"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              >
                 <li
                   onClick={() => {
                     setOpenMenu(false);
-                    scrollToComponent('about');
+                    scrollToComponent("about");
                   }}
                   className="cursor-pointer py-3"
                 >
                   About
                 </li>
               </ScrollLink>
-              <ScrollLink to="events" spy={true} smooth={true} offset={-70} duration={500}>
+              <ScrollLink
+                to="events"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              >
                 <li
                   onClick={() => {
                     setOpenMenu(false);
-                    scrollToComponent('events');
+                    scrollToComponent("events");
                   }}
                   className="cursor-pointer py-3"
                 >
                   Events
                 </li>
               </ScrollLink>
-              <ScrollLink to="contact" spy={true} smooth={true} offset={-70} duration={500}>
+              <ScrollLink
+                to="contact"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              >
                 <li
                   onClick={() => {
                     setOpenMenu(false);
-                    scrollToComponent('contact');
+                    scrollToComponent("contact");
                   }}
                   className="cursor-pointer py-3"
                 >
