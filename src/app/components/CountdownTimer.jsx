@@ -1,6 +1,7 @@
-"use client"
-import React, { useState, useEffect } from 'react';
-import ReactCardFlip from 'react-card-flip';
+import React, { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
+
+const ReactCardFlip = dynamic(() => import("react-card-flip"), { ssr: false });
 
 const CountdownTimer = ({ targetDate }) => {
   const calculateTimeLeft = () => {
@@ -33,10 +34,10 @@ const CountdownTimer = ({ targetDate }) => {
       const newTimeLeft = calculateTimeLeft();
 
       // Check for changes in countdown values
-      Object.keys(newTimeLeft).forEach(unit => {
+      Object.keys(newTimeLeft).forEach((unit) => {
         if (newTimeLeft[unit] !== prevTimeLeft[unit]) {
           // Flip the element only if the value changes
-          setFlippedStates(prevStates => ({
+          setFlippedStates((prevStates) => ({
             ...prevStates,
             [unit]: !prevStates[unit],
           }));
@@ -55,23 +56,25 @@ const CountdownTimer = ({ targetDate }) => {
 
   const renderFlippedElement = (unit, label) => (
     <div className="text-5xl font-bold">
-      <ReactCardFlip isFlipped={flippedStates[unit]} flipDirection="vertical">
-        <div key="front">
-          {timeLeft[unit]} <span className="text-gray-500">{label}</span>
-        </div>
-        <div key="back">
-          {timeLeft[unit]} <span className="text-gray-500">{label}</span>
-        </div>
-      </ReactCardFlip>
+      <div className={typeof window !== "undefined" ? "no-js" : ""}>
+        <ReactCardFlip isFlipped={flippedStates[unit]} flipDirection="vertical">
+          <div key="front">
+            {timeLeft[unit]} <span className="text-gray-500">{label}</span>
+          </div>
+          <div key="back">
+            {timeLeft[unit]} <span className="text-gray-500">{label}</span>
+          </div>
+        </ReactCardFlip>
+      </div>
     </div>
   );
 
   return (
     <div className="flex justify-center items-center space-x-4">
-      {renderFlippedElement('days', 'days')}
-      {renderFlippedElement('hours', 'hours')}
-      {renderFlippedElement('minutes', 'minutes')}
-      {renderFlippedElement('seconds', 'seconds')}
+      {renderFlippedElement("days", "days")}
+      {renderFlippedElement("hours", "hours")}
+      {renderFlippedElement("minutes", "minutes")}
+      {renderFlippedElement("seconds", "seconds")}
     </div>
   );
 };
