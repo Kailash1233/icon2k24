@@ -71,10 +71,10 @@ const CountdownTimer = ({ targetDate }) => {
 
   return (
     <div className="flex justify-center items-center space-x-4">
-      {renderFlippedElement("days", "days")}
-      {renderFlippedElement("hours", "hours")}
-      {renderFlippedElement("minutes", "minutes")}
-      {renderFlippedElement("seconds", "seconds")}
+      {renderFlippedElement("days", "DAYS")}
+      {renderFlippedElement("hours", "HOURS")}
+      {renderFlippedElement("minutes", "MINUTES")}
+      {renderFlippedElement("seconds", "SECONDS")}
     </div>
   );
 };

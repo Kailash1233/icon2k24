@@ -4,11 +4,13 @@ import React, { useState } from "react";
 import { FaCalendarCheck } from "react-icons/fa";
 import { MdWatchLater } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
+import { MdExpandMore } from "react-icons/md";
 
 const Event = () => {
   const [expandedEvent, setExpandedEvent] = useState(null);
 
   const shadowStyle = "0px 4px 8px rgba(255, 255, 255, 0.8)";
+  const darkGreyColor = "#262626";
 
   const technicalEvents = [
     {
@@ -184,7 +186,7 @@ const Event = () => {
     {
       name: "JOLLY OH JUMKHANA",
       image:
-        "https://lh3.googleusercontent.com/p/AF1QipMRmmtQwjIk_55_CuOyGcNeB15JnHg1WQ0qtMJQ=w1080-h608-p-k-no-v0",
+        "https://lh3.googleusercontent.com/h8TblxByRjiJE1hEYT_W1VWulCaWSRUUrg8UTOMcA2R1UIxz4QFX00nM599PME5qRVADVyc_mDfxDS5WhXCt-Mnk",
       description:
         "Explore the high-energy world of box cricket, where teams vie for victory in a confined arena, creating an intense and close-knit atmosphere. Our event blends traditional cricket excitement with a unique twist, played in a compact space that demands quick thinking, agility, and strategic gameplay. Join us for a thrilling competition, where the excitement of cricket meets dynamic twists, promising an engaging and strategic showdown.",
       date: "2024-01-16",
@@ -357,7 +359,7 @@ const Event = () => {
     >
       <div
         className="max-w-4xl w-full bg-black text-white p-8 rounded-lg shadow-lg"
-        style={{ boxShadow: shadowStyle }}
+        style={{ boxShadow: shadowStyle, backgroundColor: darkGreyColor }}
       >
         <h1 className="text-3xl font-bold mb-6 text-center">
           Technical Events
@@ -380,6 +382,7 @@ const Event = () => {
                   className="w-full h-40 object-cover mb-4 rounded-md"
                 />
                 <h2 className="text-lg font-semibold mb-2">{event.name}</h2>
+                <MdExpandMore />
               </div>
 
               {/* Expanded Event Details */}
@@ -475,34 +478,38 @@ const Event = () => {
                   className="w-full h-40 object-cover mb-4 rounded-md"
                 />
                 <h2 className="text-lg font-semibold mb-2">{event.name}</h2>
+                <MdExpandMore />
               </div>
 
               {/* Expanded Event Details */}
               {expandedEvent && expandedEvent.name === event.name && (
-                <div className="mt-4">
+                <div
+                  className="mt-4"
+                  style={{ backgroundColor: darkGreyColor }}
+                >
                   <h1 className="text-3xl font-bold mb-4">
                     {expandedEvent.name}
                   </h1>
                   <div className="flex items-center mb-4">
-                    <span className="mr-2">Date:</span>
-                    <span className="text-blue-400">{expandedEvent.date}</span>
-                    <span className="ml-4">
+                    <span className="mr-2">
                       <FaCalendarCheck />
                     </span>
+                    <span className="text-blue-400">{expandedEvent.date}</span>
+                    <span className="ml-4"></span>
                   </div>
                   <div className="flex items-center mb-4">
-                    <span className="mr-2">Time:</span>
-                    <span className="text-blue-400">{expandedEvent.time}</span>
-                    <span className="ml-4">
+                    <span className="mr-2">
                       <MdWatchLater />
                     </span>
+                    <span className="text-blue-400">{expandedEvent.time}</span>
+                    <span className="ml-4"></span>
                   </div>
                   <div className="flex items-center mb-4">
-                    <span className="mr-2">Venue:</span>
-                    <span className="text-blue-400">{expandedEvent.venue}</span>
-                    <span className="ml-4">
+                    <span className="mr-2">
                       <FaLocationDot />
                     </span>
+                    <span className="text-blue-400">{expandedEvent.venue}</span>
+                    <span className="ml-4"></span>
                   </div>
 
                   {/* Event Description */}
