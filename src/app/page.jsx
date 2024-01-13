@@ -4,7 +4,7 @@ import Footer from "./pages/Footer/footer";
 import CountdownTimer from "./components/CountdownTimer";
 
 const Home = () => {
-  const targetDate = new Date('2024-1-12');
+  const targetDate = new Date('2024-1-21');
   const [isScrollLocked, setScrollLocked] = useState(true);
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const Home = () => {
         <div className="relative z-10">
           <div className="flex flex-col text-white justify-center items-center h-60 mt-32 px-6">
             <div className="text-7xl">The Icon Begins in</div>
-            <div className="mt-24 px-9 "><CountdownTimer targetDate={targetDate}/></div>
+            <div className="mt-24 px-9  "><CountdownTimer targetDate={targetDate}/></div>
           </div>
         </div>
         <Footer />

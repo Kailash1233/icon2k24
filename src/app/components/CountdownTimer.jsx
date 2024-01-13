@@ -55,7 +55,7 @@ const CountdownTimer = ({ targetDate }) => {
   }, [prevTimeLeft]);
 
   const renderFlippedElement = (unit, label) => (
-    <div className="text-5xl font-bold">
+    <div className="text-2xl">
       <div className={typeof window !== "undefined" ? "no-js" : ""}>
         <ReactCardFlip isFlipped={flippedStates[unit]} flipDirection="vertical">
           <div key="front">
