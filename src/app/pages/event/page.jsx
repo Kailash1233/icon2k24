@@ -34,6 +34,8 @@ const technicalEvents = [
         </li>
       </ol>
     ),
+    shortDescription:
+      "Experience a dynamic showcase of cutting-edge research and global insights, where brilliant minds compete for recognition in a celebration of academic excellence and innovation. Join us for a thrilling symphony of ideas and eloquence.",
     feeDetails: "Registration Fee: ₹100",
     coordinators: [
       { name: "Jeevida R", contact: "9999999999" },
@@ -416,10 +418,14 @@ const Event = () => {
             {technicalEvents.map((event, index) => (
               <div
                 key={index}
-                className="w-full sm:w-[300px] h-[400px] bg-white flex flex-col"
+                className="w-full sm:w-[300px] h-auto bg-white flex flex-col"
               >
                 <div className="p-4 h-[200px]">
                   <img src={event.image} alt={event.name} width={400} />
+                </div>
+                <div className="text-center p-3 my-4">
+                  <h1 className="text-2xl">{event.name}</h1>
+                  {event.shortDescription}
                 </div>
 
                 <div className="flex justify-center items-end h-full">
@@ -453,7 +459,7 @@ const Event = () => {
             {nonTechnicalEvents.map((event, index) => (
               <div
                 key={index}
-                className="w-full sm:w-[300px] h-[400px] bg-white flex flex-col"
+                className="w-full sm:w-[300px] h-auto bg-white flex flex-col"
               >
                 <div className="p-4 h-[200px]">
                   <img src={event.image} alt={event.name} width={400} />
@@ -492,10 +498,14 @@ const Event = () => {
             {workshops.map((event, index) => (
               <div
                 key={index}
-                className="w-full sm:w-[300px] h-[400px] bg-white flex flex-col"
+                className="w-full sm:w-[300px] h-auto bg-white flex flex-col"
               >
                 <div className="p-4 h-[200px]">
                   <img src={event.image} alt={event.name} width={400} />
+                </div>
+                <div className="text-center p-3 my-4">
+                  <h1 className="text-2xl">{event.name}</h1>
+                  {/* {event.description} */}
                 </div>
 
                 <div className="flex justify-center items-end h-full">
