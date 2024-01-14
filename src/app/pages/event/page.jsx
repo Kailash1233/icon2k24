@@ -458,6 +458,10 @@ const Event = () => {
                 <div className="p-4 h-[200px]">
                   <img src={event.image} alt={event.name} width={400} />
                 </div>
+                <div className="text-center p-3 my-4">
+                  <h1 className="text-2xl">{event.name}</h1>
+                  {event.description}
+                </div>
 
                 <div className="flex justify-center items-end h-full">
                   <button
