@@ -396,12 +396,16 @@ const Event = () => {
   return (
     <><div id="events" className="min-h-screen flex justify-center items-center bg-black">
       <div className=" max-w-7xl w-full h-auto bg-black p-8 rounded-lg shadow-lg mb-6" style={{ boxShadow: shadowStyle }}>
-      <h1 className='text-white text-center mb-5 text-3xl'>TECHNICAL EVENTS</h1>
+      <h1 className='text-white text-center mb-5 text-3xl '>TECHNICAL EVENTS</h1>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-4 ">
           {technicalEvents.map((event, index) => (
-            <div key={index} className="w-full sm:w-[300px] h-[400px] bg-white flex flex-col">
+            <div key={index} className="w-full sm:w-[300px] h-auto bg-white flex flex-col">
               <div className="p-4 h-[200px]">
                 <img src={event.image} alt={event.name} width={400} />
+              </div>
+              <div className="text-center p-3 my-4   ">
+              <h1 className='text-2xl'>{event.name}</h1>  
+                  {event.description}
               </div>
 
               <div className="flex justify-center items-end h-full">
@@ -419,9 +423,13 @@ const Event = () => {
         <h1 className='text-white text-center mb-5 text-3xl'>NON-TECHNICAL EVENTS</h1>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-4 ">
             {nonTechnicalEvents.map((event, index) => (
-              <div key={index} className="w-full sm:w-[300px] h-[400px] bg-white flex flex-col">
+              <div key={index} className="w-full sm:w-[300px] h-auto bg-white flex flex-col">
                 <div className="p-4 h-[200px]">
                   <img src={event.image} alt={event.name} width={400}/>
+                </div>
+                <div className="text-center p-3 my-4">
+                  <h1 className='text-2xl'>{event.name}</h1>
+                  {event.description}
                 </div>
 
                 <div className="flex justify-center items-end h-full">
