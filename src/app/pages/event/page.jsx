@@ -1,5 +1,5 @@
-"use client"
-import { useState } from 'react';
+"use client";
+import { useState } from "react";
 import { FaLocationDot } from "react-icons/fa6";
 
 const shadowStyle = "0px 4px 8px rgba(255, 255, 255, 0.8)";
@@ -21,8 +21,8 @@ const technicalEvents = [
         <li>• The paper should adhere to the IEEE document format.</li>
         <li>• Participants must submit papers on any IT-related topic.</li>
         <li>
-          • All participants are required to bring a hardcopy of their paper
-          on the event day.
+          • All participants are required to bring a hardcopy of their paper on
+          the event day.
         </li>
         <li>
           • Each presentation is allocated 10 minutes, followed by a question
@@ -53,9 +53,9 @@ const technicalEvents = [
           Navigate through a series of challenges, puzzles, and clues spanning
           coding, debugging, encryption/decryption techniques, technical
           quizzes, and more. Showcase your technical prowess, compete for the
-          ultimate treasure, and immerse yourself in a dynamic and
-          exhilarating competition that celebrates innovation, creativity, and
-          technical expertise.
+          ultimate treasure, and immerse yourself in a dynamic and exhilarating
+          competition that celebrates innovation, creativity, and technical
+          expertise.
         </li>
       </ul>
     ),
@@ -64,9 +64,7 @@ const technicalEvents = [
     venue: "IT LAB 1",
     rules: (
       <ol>
-        <li>
-          • Participants are required to produce college ID without fail.
-        </li>
+        <li>• Participants are required to produce college ID without fail.</li>
         <li>
           • Teams should consist of 3 members, maintaining consistent members
           throughout the event.
@@ -85,9 +83,9 @@ const technicalEvents = [
           unethical behavior will result in immediate disqualification.
         </li>
         <li>
-          • Winners will be determined based on overall performance, scores,
-          and completion of challenges, with prizes and recognition
-          distributed accordingly.
+          • Winners will be determined based on overall performance, scores, and
+          completion of challenges, with prizes and recognition distributed
+          accordingly.
         </li>
         <li>
           • The event organizers reserve the right to change the rules and
@@ -112,9 +110,7 @@ const technicalEvents = [
     venue: "IT LAB 2",
     rules: (
       <ol>
-        <li>
-          • Participants are required to produce college ID without fail.
-        </li>
+        <li>• Participants are required to produce college ID without fail.</li>
         <li>• It is an individual event.</li>
         <li>
           • Participants will be given an algorithm from which they have to
@@ -151,9 +147,7 @@ const technicalEvents = [
     venue: "IT LAB 2",
     rules: (
       <ol>
-        <li>
-          • Participants are required to produce college ID without fail.
-        </li>
+        <li>• Participants are required to produce college ID without fail.</li>
         <li>• Maximum 2 participants per paper is allowed.</li>
         <li>• Knowledge of SQL is pre-requisite.</li>
         <li>
@@ -185,17 +179,13 @@ const nonTechnicalEvents = [
     venue: "Crescent Auditorium",
     rules: (
       <ol>
-        <li>
-          • Participants are required to produce college ID without fail.
-        </li>
+        <li>• Participants are required to produce college ID without fail.</li>
         <li>• A team should consists of 6 players, including a captain.</li>
         <li>
           • The Umpire's decision is final and binding on all participants.
         </li>
         <li>• 6 Overs per innings.</li>
-        <li>
-          • The other rules and regulation will be informed in the field.
-        </li>
+        <li>• The other rules and regulation will be informed in the field.</li>
         <li>
           • The event organizers reserve the right to change the rules and
           regulations of the event at any time.
@@ -219,9 +209,7 @@ const nonTechnicalEvents = [
     venue: "Auditorium",
     rules: (
       <ol>
-        <li>
-          • Participants are required to produce college ID without fail.
-        </li>
+        <li>• Participants are required to produce college ID without fail.</li>
         <li>• Solo performance: maximum of 2 minutes per person.</li>
         <li>• Group performance: maximum of 4 minutes per group.</li>
         <li>
@@ -256,9 +244,7 @@ const nonTechnicalEvents = [
         <li>ROUND 1: LYRIC-OH-HOLIC</li>
         <li>ROUND 2: CONNEXTIONS</li>
         <li>ROUND 3: GESTURE GUESS</li>
-        <li>
-          • Participants are required to produce college ID without fail.
-        </li>
+        <li>• Participants are required to produce college ID without fail.</li>
         <li>• Maximum 2 persons per team is allowed.</li>
         <li>
           • The event consist of three rounds, with the winner of each round
@@ -295,9 +281,7 @@ const nonTechnicalEvents = [
     venue: "Seminar Hall 1 (or) Crescent Auditorium",
     rules: (
       <ol>
-        <li>
-          • Participants are required to produce college ID without fail.
-        </li>
+        <li>• Participants are required to produce college ID without fail.</li>
         <li>• Maximum 3 Participants per team is allowed.</li>
         <li>
           • Failure in fulfilling the following criteria will lead to
@@ -311,13 +295,11 @@ const nonTechnicalEvents = [
           • Each team should compulsory Bid for 11 Players with minimum 4
           Bowlers.
         </li>
-        <li>
-          • Each team should have a Captain, wicketkeeper as compulsory.
-        </li>
+        <li>• Each team should have a Captain, wicketkeeper as compulsory.</li>
         <li>
           • Each team will be allocated points based on the collective cricket
-          stats of their players, emphasizing the attributes of
-          batting,bowling, all-round performance and captaincy.
+          stats of their players, emphasizing the attributes of batting,bowling,
+          all-round performance and captaincy.
         </li>
         <li>
           • The winners will be determined based on the points awarded to each
@@ -337,6 +319,21 @@ const nonTechnicalEvents = [
   },
 ];
 
+const workshops = [
+  {
+    name: "Workshop Name",
+    image:
+      "https://fivedottwelve.com/wp-content/uploads/2021/06/27_workshop_2.png",
+    venue: "Workshop Venue",
+    rules: "Workshop Rules",
+    feeDetails: "Workshop Fee Details",
+    coordinators: [
+      { name: "Coordinator 1", contact: "1234567890" },
+      { name: "Coordinator 2", contact: "9876543210" },
+    ],
+  },
+];
+
 const PopupCard = ({ event, onClose }) => {
   const handleCloseOnOverlayClick = (e) => {
     // Check if the click event is outside the popup card
@@ -352,9 +349,16 @@ const PopupCard = ({ event, onClose }) => {
     >
       <div className="w-[400px] h-[400px] bg-white overflow-y-auto p-8 popup-card-content">
         <h2 className="text-xl font-bold mb-4">{event.name}</h2>
-        <img src={event.image} alt={event.name} className="mb-4 h-[200px]" width={400} />
+        <img
+          src={event.image}
+          alt={event.name}
+          className="mb-4 h-[200px]"
+          width={400}
+        />
         {/* <p>{event.description}</p> */}
-        <div className="flex gap-3 items-center">Venue: <FaLocationDot /> {event.venue}</div>
+        <div className="flex gap-3 items-center">
+          <FaLocationDot /> {event.venue}
+        </div>
         <div className="mb-4">
           <h3 className="font-bold text-lg mt-2">Rules:</h3>
           {event.rules}
@@ -369,7 +373,10 @@ const PopupCard = ({ event, onClose }) => {
           ))}
         </ul>
         <div className="flex justify-center items-end">
-          <button className="mt-3 bg-orange-500 rounded-lg px-4 py-2" onClick={onClose}>
+          <button
+            className="mt-3 bg-orange-500 rounded-lg px-4 py-2"
+            onClick={onClose}
+          >
             Close
           </button>
         </div>
@@ -377,7 +384,6 @@ const PopupCard = ({ event, onClose }) => {
     </div>
   );
 };
-
 
 const Event = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -394,38 +400,33 @@ const Event = () => {
   };
 
   return (
-    <><div id="events" className="min-h-screen flex justify-center items-center bg-black">
-      <div className=" max-w-7xl w-full h-auto bg-black p-8 rounded-lg shadow-lg mb-6" style={{ boxShadow: shadowStyle }}>
-      <h1 className='text-white text-center mb-5 text-3xl'>TECHNICAL EVENTS</h1>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-4 ">
-          {technicalEvents.map((event, index) => (
-            <div key={index} className="w-full sm:w-[300px] h-[400px] bg-white flex flex-col">
-              <div className="p-4 h-[200px]">
-                <img src={event.image} alt={event.name} width={400} />
-              </div>
-
-              <div className="flex justify-center items-end h-full">
-                <button className="mb-3  bg-orange-500 rounded-lg px-4 py-2" onClick={() => handleKnowMoreClick(event)}>
-                  Know More
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      {isPopupVisible && <PopupCard event={selectedEvent} onClose={handleClosePopup} />}
-    </div><div id="events" className="min-h-screen flex justify-center items-center bg-black">
-        <div className=" max-w-7xl w-full h-auto bg-black p-8 rounded-lg shadow-lg mb-6" style={{ boxShadow: shadowStyle }}>
-        <h1 className='text-white text-center mb-5 text-3xl'>NON-TECHNICAL EVENTS</h1>
+    <>
+      <div
+        id="events"
+        className="min-h-screen flex justify-center items-center bg-black"
+      >
+        <div
+          className=" max-w-7xl w-full h-auto bg-black p-8 rounded-lg shadow-lg mb-6"
+          style={{ boxShadow: shadowStyle }}
+        >
+          <h1 className="text-white text-center mb-5 text-3xl">
+            TECHNICAL EVENTS
+          </h1>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-4 ">
-            {nonTechnicalEvents.map((event, index) => (
-              <div key={index} className="w-full sm:w-[300px] h-[400px] bg-white flex flex-col">
+            {technicalEvents.map((event, index) => (
+              <div
+                key={index}
+                className="w-full sm:w-[300px] h-[400px] bg-white flex flex-col"
+              >
                 <div className="p-4 h-[200px]">
-                  <img src={event.image} alt={event.name} width={400}/>
+                  <img src={event.image} alt={event.name} width={400} />
                 </div>
 
                 <div className="flex justify-center items-end h-full">
-                  <button className="mb-3  bg-orange-500 rounded-lg px-4 py-2" onClick={() => handleKnowMoreClick(event)}>
+                  <button
+                    className="mb-3  bg-orange-500 rounded-lg px-4 py-2"
+                    onClick={() => handleKnowMoreClick(event)}
+                  >
                     Know More
                   </button>
                 </div>
@@ -433,12 +434,84 @@ const Event = () => {
             ))}
           </div>
         </div>
-        {isPopupVisible && <PopupCard event={selectedEvent} onClose={handleClosePopup} />}
-      </div></>
+        {isPopupVisible && (
+          <PopupCard event={selectedEvent} onClose={handleClosePopup} />
+        )}
+      </div>
+      <div
+        id="events"
+        className="min-h-screen flex justify-center items-center bg-black"
+      >
+        <div
+          className=" max-w-7xl w-full h-auto bg-black p-8 rounded-lg shadow-lg mb-6"
+          style={{ boxShadow: shadowStyle }}
+        >
+          <h1 className="text-white text-center mb-5 text-3xl">
+            NON-TECHNICAL EVENTS
+          </h1>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-4 ">
+            {nonTechnicalEvents.map((event, index) => (
+              <div
+                key={index}
+                className="w-full sm:w-[300px] h-[400px] bg-white flex flex-col"
+              >
+                <div className="p-4 h-[200px]">
+                  <img src={event.image} alt={event.name} width={400} />
+                </div>
+
+                <div className="flex justify-center items-end h-full">
+                  <button
+                    className="mb-3  bg-orange-500 rounded-lg px-4 py-2"
+                    onClick={() => handleKnowMoreClick(event)}
+                  >
+                    Know More
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        {isPopupVisible && (
+          <PopupCard event={selectedEvent} onClose={handleClosePopup} />
+        )}
+      </div>
+      <div
+        id="workshops"
+        className="min-h-screen flex justify-center items-center bg-black"
+      >
+        <div
+          className="max-w-7xl w-full h-auto bg-black p-8 rounded-lg shadow-lg mb-6 flex flex-col items-center"
+          style={{ boxShadow: shadowStyle }}
+        >
+          <h1 className="text-white text-center mb-5 text-3xl">WORKSHOPS</h1>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-4 w-full">
+            {workshops.map((event, index) => (
+              <div
+                key={index}
+                className="w-full sm:w-[300px] h-[400px] bg-white flex flex-col"
+              >
+                <div className="p-4 h-[200px]">
+                  <img src={event.image} alt={event.name} width={400} />
+                </div>
+
+                <div className="flex justify-center items-end h-full">
+                  <button
+                    className="mb-3 bg-orange-500 rounded-lg px-4 py-2"
+                    onClick={() => handleKnowMoreClick(event)}
+                  >
+                    Know More
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+          {isPopupVisible && (
+            <PopupCard event={selectedEvent} onClose={handleClosePopup} />
+          )}
+        </div>
+      </div>
+    </>
   );
-  
 };
-
-
 
 export default Event;
