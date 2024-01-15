@@ -162,7 +162,7 @@ const About = () => {
         </div>
       </div>
 
-      <div
+      {/* <div
         className="max-w-4xl w-full bg-black p-8 rounded-lg shadow-lg mb-6"
         style={{
           boxShadow: `0px 4px 8px rgba(255, 255, 255, ${reducedOpacity})`,
@@ -182,7 +182,7 @@ const About = () => {
             className="w-32 h-32 object-contain mb-4"
           />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
