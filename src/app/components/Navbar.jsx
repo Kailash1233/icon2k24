@@ -51,7 +51,7 @@ const Navbar = () => {
               duration={500}
             >
               <li
-                className="hover:underline uppercase px-3 cursor-pointer"
+                className="hover:scale-110 duration-300  hover:text-orange-500  uppercase px-3 cursor-pointer"
                 onClick={() => setOpenMenu(false)}
               >
                 Home
@@ -65,7 +65,7 @@ const Navbar = () => {
               duration={500}
             >
               <li
-                className="hover:underline uppercase px-3 cursor-pointer"
+                className="hover:scale-110 duration-300 hover:text-orange-500 uppercase px-3 cursor-pointer"
                 onClick={() => setOpenMenu(false)}
               >
                 About
@@ -79,7 +79,7 @@ const Navbar = () => {
               duration={500}
             >
               <li
-                className="hover:underline uppercase px-3 cursor-pointer"
+                className="hover:scale-110 duration-300 hover:text-orange-500 uppercase px-3 cursor-pointer"
                 onClick={() => setOpenMenu(false)}
               >
                 Events
@@ -93,7 +93,7 @@ const Navbar = () => {
               duration={500}
             >
               <li
-                className="hover:underline uppercase px-3 cursor-pointer"
+                className="hover:scale-110 duration-300 hover:text-orange-500  uppercase px-3 cursor-pointer"
                 onClick={() => setOpenMenu(false)}
               >
                 Contact Us
