@@ -399,7 +399,7 @@ const Event = () => {
       <h1 className='text-white text-center mb-5 text-3xl '>TECHNICAL EVENTS</h1>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-4 ">
           {technicalEvents.map((event, index) => (
-            <div key={index} className="w-full sm:w-[300px] h-auto bg-white flex flex-col">
+            <div key={index} className="w-full sm:w-auto h-auto bg-white flex flex-col">
               <div className="p-4 h-[200px]">
                 <img src={event.image} alt={event.name} width={400} />
               </div>
@@ -423,7 +423,7 @@ const Event = () => {
         <h1 className='text-white text-center mb-5 text-3xl'>NON-TECHNICAL EVENTS</h1>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-4 ">
             {nonTechnicalEvents.map((event, index) => (
-              <div key={index} className="w-full sm:w-[300px] h-auto bg-white flex flex-col">
+              <div key={index} className="w-full sm:w-auto h-auto bg-white flex flex-col">
                 <div className="p-4 h-[200px]">
                   <img src={event.image} alt={event.name} width={400}/>
                 </div>
