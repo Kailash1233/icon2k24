@@ -17,7 +17,6 @@ export default function RootLayout() {
       <body className={inter.className}>
         <Navbar />
 
-
         <LazyLoadedComponent dynamicImport={() => import("./page")} />
         <LazyLoadedComponent
           dynamicImport={() => import("./pages/about/page")}

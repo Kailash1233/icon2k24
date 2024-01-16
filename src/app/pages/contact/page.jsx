@@ -1,5 +1,6 @@
 import React from "react";
 
+const reducedOpacity = 0.9;
 
 const members = [
   {
@@ -22,10 +23,12 @@ const members = [
   },
 ];
 
-
 const Page = () => {
   return (
-    <div id="contact" className="bg-black text-white min-h-screen flex flex-col items-center justify-center">
+    <div
+      id="contact"
+      className="bg-black text-white min-h-screen flex flex-col items-center justify-center"
+    >
       <div className="min-h-screen flex flex-col items-center justify-center">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {members.map((member, index) => (
@@ -69,7 +72,27 @@ const Page = () => {
           ))}
         </div>
       </div>
-     
+      <div
+        className="max-w-4xl w-full bg-black p-8 rounded-lg shadow-lg mb-6"
+        style={{
+          boxShadow: `0px 4px 8px rgba(255, 255, 255, ${reducedOpacity})`,
+        }}
+      >
+        <h1 className="text-2xl font-bold mb-6 text-center">Sponsors</h1>
+        <div className="flex justify-around">
+          <img
+            src="https://media.istockphoto.com/id/881120664/photo/become-a-sponsor-written-on-business-card.jpg?s=612x612&w=0&k=20&c=2i55Tce2of6U37jJYrcb9t_3YHbzQux-q8zG-V2klt0="
+            alt="Sponsor 1"
+            className="w-32 h-32 object-contain mb-4"
+          />
+
+          <img
+            src="https://media.istockphoto.com/id/881120664/photo/become-a-sponsor-written-on-business-card.jpg?s=612x612&w=0&k=20&c=2i55Tce2of6U37jJYrcb9t_3YHbzQux-q8zG-V2klt0="
+            alt="Sponsor 2"
+            className="w-32 h-32 object-contain mb-4"
+          />
+        </div>
+      </div>
     </div>
   );
 };

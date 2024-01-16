@@ -4,7 +4,7 @@ import Footer from "./pages/Footer/footer";
 import CountdownTimer from "./components/CountdownTimer";
 
 const Home = () => {
-  const targetDate = new Date('2024-1-12');
+  const targetDate = new Date("2024-1-30");
   const [isScrollLocked, setScrollLocked] = useState(true);
 
   useEffect(() => {
@@ -17,7 +17,12 @@ const Home = () => {
 
   return (
     <>
-      <div id="home" className={`relative h-screen ${isScrollLocked ? "overflow-hidden" : ""}`}>
+      <div
+        id="home"
+        className={`relative h-screen ${
+          isScrollLocked ? "overflow-hidden" : ""
+        }`}
+      >
         <video
           autoPlay
           loop
@@ -29,8 +34,16 @@ const Home = () => {
         {/* Your content on top of the video */}
         <div className="relative z-10">
           <div className="flex flex-col text-white justify-center items-center h-60 mt-32 px-6">
-            <div className="text-7xl">The Icon Begins in</div>
-            <div className="mt-24 px-9 "><CountdownTimer targetDate={targetDate}/></div>
+            <div
+              className="text-7xl"
+              style={{ color: "orange", fontSize: "4rem", fontWeight: "bold" }}
+            >
+              ICON BEGINS IN
+            </div>
+
+            <div className="mt-24 px-9 ">
+              <CountdownTimer targetDate={targetDate} />
+            </div>
           </div>
         </div>
         <Footer />
