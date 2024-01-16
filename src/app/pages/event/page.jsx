@@ -3,6 +3,8 @@ import { useState } from "react";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoPerson } from "react-icons/io5";
 import { RiTeamFill } from "react-icons/ri";
+import { createPortal } from 'react-dom';
+import Registrationmodal from "@/app/components/Registrationmodal";
 
 const shadowStyle = "0px 4px 8px rgba(255, 255, 255, 0.8)";
 
@@ -375,24 +377,25 @@ const workshops = [
 ];
 
 const PopupCard = ({ event, onClose }) => {
-  const handleCloseOnOverlayClick = (e) => {
-    // Check if the click event is outside the popup card
-    if (!e.target.closest(".popup-card-content")) {
-      onClose();
-    }
-  };
+  const [showModal, setShowModal] = useState(false);
+  // const handleCloseOnOverlayClick = (e) => {
+  //   // Check if the click event is outside the popup card
+  //   if (!e.target.closest(".popup-card-content")) {
+  //     onClose();
+  //   }
+  // };
 
   return (
     <div
       className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-50 backdrop-blur-sm rounded-lg"
-      onClick={handleCloseOnOverlayClick}
+      // onClick={handleCloseOnOverlayClick}
     >
       <div className="w-[400px] h-[400px] bg-white overflow-y-auto p-8 popup-card-content relative">
         <button
           className="absolute top-6 right-4 text-xl font-bold cursor-pointer bg-orange-500 rounded-lg px-2 py-1"
           onClick={onClose}
         >
-          ×
+          &times;
         </button>
         <h2 className="text-xl font-bold mb-4">{event.name}</h2>
         <img
@@ -429,6 +432,16 @@ const PopupCard = ({ event, onClose }) => {
             Close
           </button>
         </div>
+        {/* Registration button */}
+        <div className="mb-4">
+          <button className="bg-[white] text-[black] px-10 py-2.5" onClick={() => setShowModal(true)}>
+            Register
+          </button>
+          {showModal && createPortal(
+            <Registrationmodal eventname={event.name} onClose={() => setShowModal(false)} />,
+            document.body
+          )}
+        </div>
       </div>
     </div>
   );
@@ -437,6 +450,7 @@ const PopupCard = ({ event, onClose }) => {
 const Event = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [isPopupVisible, setPopupVisible] = useState(false);
+
 
   const handleKnowMoreClick = (event) => {
     setSelectedEvent(event);
