@@ -4,7 +4,7 @@ import Footer from "./pages/Footer/footer";
 import CountdownTimer from "./components/CountdownTimer";
 
 const Home = () => {
-  const targetDate = new Date("2024-1-30");
+  const targetDate = new Date("2024-2-8");
   const [isScrollLocked, setScrollLocked] = useState(true);
 
   useEffect(() => {
