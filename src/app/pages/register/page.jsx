@@ -5,7 +5,8 @@ import dbdupi from "@/app/images/dbdupi.jpg";
 import Image from "next/image";
 import Select from "react-select";
 
-export default function RegistrationForm({ eventname }) {
+export default function RegistrationForm({eventname}) {
+  
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
   const [phonenumber, setPhonenumber] = useState("");
@@ -1088,11 +1089,11 @@ export default function RegistrationForm({ eventname }) {
     <>
       <form
         onSubmit={handleSubmit}
-        className="py-4 mt-4 flex flex-col gap-5 bg-[white] overflow-auto"
+        className="py-4 mt-4 flex flex-col gap-5 bg-[white] overflow-auto relative"
       >
-        <div>
-          {/* <label htmlFor="fullname">Full Name</label> */}
+        <div>{/* <label htmlFor="fullname">Full Name</label> */}
           <input
+          className="mt-5"
             onChange={(e) => setFullname(e.target.value)}
             value={fullname}
             type="text"
