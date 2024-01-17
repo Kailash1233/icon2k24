@@ -377,12 +377,27 @@ const workshops = [
 ];
 
 const PopupCard = ({ event, onClose }) => {
+  const handleKnowMoreClick = () => {
+    setPopupVisible(true);
+  };
+
+  const [isPopupVisible, setPopupVisible] = useState(false);
   const [showModal, setShowModal] = useState(false);
+
   const handleCloseOnOverlayClick = (e) => {
-    // Check if the click event is outside the popup card
-    if (!e.target.closest(".popup-card-content")) {
+    if (!e.target.closest(".popup-card-content") && !showModal) {
       onClose();
     }
+  };
+
+  const handleRegisterClick = () => {
+    setPopupVisible(true);
+    setShowModal(true);
+  };
+
+  const handleRegistrationModalClose = () => {
+    setShowModal(false);
+    setPopupVisible(false);
   };
 
   return (
@@ -425,33 +440,41 @@ const PopupCard = ({ event, onClose }) => {
           ))}
         </ul>
         <div className="flex justify-center items-end gap-5">
-            <button className="mt-3 bg-orange-500 rounded-lg px-4 py-2" 
-            onClick={() => setShowModal(true)}
-            >
-              Register
-            </button>
-            <button
-              className="mt-3 bg-orange-500 rounded-lg px-4 py-2"
-              onClick={onClose}
-            >
+          <button
+            className="mt-3 bg-orange-500 rounded-lg px-4 py-2"
+            onClick={handleRegisterClick}
+          >
+            Register
+          </button>
+          <button
+            className="mt-3 bg-orange-500 rounded-lg px-4 py-2"
+            onClick={onClose}
+          >
             Close
           </button>
         </div>
-        {/* Registration button */}
-        <div className="mb-4">
-          {showModal && createPortal(
-            <Registrationmodal className="popup-card-content" eventname={event.name} onClose={() => setShowModal(false)} />,
-            document.body
-          )}
-        </div>
+        {isPopupVisible && showModal && (
+          // Registration modal
+          <div className="mb-4">
+            {createPortal(
+              <Registrationmodal
+                eventname={event.name}
+                onClose={handleRegistrationModalClose}
+              />,
+              document.body
+            )}
+          </div>
+        )}
       </div>
     </div>
   );
 };
 
+
 const Event = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [isPopupVisible, setPopupVisible] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
 
   const handleKnowMoreClick = (event) => {
@@ -510,6 +533,10 @@ const Event = () => {
                     Know More
                   </button>
                 </div>
+                {showModal && createPortal(
+            <Registrationmodal eventname={event.name} onClose={() => setShowModal(false)} />,
+            document.body
+          )}
               </div>
             ))}
           </div>
@@ -549,7 +576,13 @@ const Event = () => {
                   {/* {event.shortDescription} */}
                 </div>
 
-                <div className="flex justify-center items-end h-full">
+                <div className="flex justify-center items-end h-full gap-4">
+                  <button className="mb-3 bg-orange-500 rounded-lg px-4 py-2" 
+                  onClick={() => setShowModal(true)}
+                  >
+                    Register
+                  </button>
+
                   <button
                     className="mb-3  bg-orange-500 rounded-lg px-4 py-2"
                     onClick={() => handleKnowMoreClick(event)}
@@ -557,6 +590,10 @@ const Event = () => {
                     Know More
                   </button>
                 </div>
+                {showModal && createPortal(
+            <Registrationmodal eventname={event.name} onClose={() => setShowModal(false)} />,
+            document.body
+          )}
               </div>
             ))}
           </div>
