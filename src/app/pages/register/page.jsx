@@ -624,7 +624,7 @@ export default function RegistrationForm({eventname}) {
       setOthercollege(null);
       setDepartment("");
       setYear(null);
-      setPaymentfile("");
+      setPaymentfile(null);
     }
   };
 
