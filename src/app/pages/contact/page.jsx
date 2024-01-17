@@ -21,6 +21,12 @@ const members = [
     phone: "+91 91593-55501",
     email: "ideenameer404@gmail.com",
   },
+  {
+    name: "MOHAMED IMRAN KHAN M",
+    role: "Treasurer",
+    phone: "+91 73387 74116",
+    email: "ideenameer404@gmail.com",
+  },
 ];
 
 const Page = () => {

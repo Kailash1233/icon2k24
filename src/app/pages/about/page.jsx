@@ -7,7 +7,7 @@ const About = () => {
   return (
     <div
       id="about"
-      className="min-h-screen flex flex-col justify-center items-center bg-black text-white"
+      className="min-h-screen flex flex-col justify-center items-center bg-black text-white "
       style={{ color: "white" }}
     >
       <div
