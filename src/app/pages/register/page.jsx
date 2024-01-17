@@ -5,7 +5,7 @@ import dbdupi from "@/app/images/dbdupi.jpg";
 import Image from "next/image";
 import Select from "react-select";
 
-export default function RegistrationForm({eventname}) {
+export default function RegistrationForm({eventname, onClose}) {
   
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
@@ -955,6 +955,7 @@ export default function RegistrationForm({eventname}) {
 
   const [error, setError] = useState([]);
   const [success, setSuccess] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const convertTobase64 = async (e) => {
     let file = e.target.files[0];
@@ -1085,8 +1086,25 @@ export default function RegistrationForm({eventname}) {
     }
   };
 
+  const handleCloseOnOverlayClick = (e) => {
+    if (!e.target.closest(".popup-card-content") && !showModal) {
+      onClose();
+    }
+  };
+
   return (
     <>
+    <div
+      className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-50 backdrop-blur-sm rounded-lg z-50"
+      onClick={handleCloseOnOverlayClick}
+    >
+      <div className="w-[400px] h-[400px] bg-white overflow-y-auto p-8 popup-card-content relative">
+        <button
+          className="absolute top-6 right-4 text-xl font-bold cursor-pointer bg-orange-500 rounded-lg px-2 py-1"
+          onClick={onClose}
+        >
+          &times;
+        </button>
       <form
         onSubmit={handleSubmit}
         className="py-4 mt-4 flex flex-col gap-5 bg-[white] overflow-auto relative"
@@ -1213,6 +1231,8 @@ export default function RegistrationForm({eventname}) {
               {e}
             </div>
           ))}
+      </div>
+      </div>
       </div>
     </>
   );
