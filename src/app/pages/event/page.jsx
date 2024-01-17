@@ -355,7 +355,6 @@ const nonTechnicalEvents = [
     ],
   },
 ];
-
 const workshops = [
   {
     name: "DATA SCIENCE WORKSHOP",
@@ -458,6 +457,7 @@ const PopupCard = ({ event, onClose }) => {
           <div className="mb-4">
             {createPortal(
               <Registrationmodal
+                fee={event.feeDetails}
                 eventname={event.name}
                 onClose={handleRegistrationModalClose}
               />,
@@ -592,9 +592,6 @@ const Event = () => {
             ))}
           </div>
         </div>
-        {isPopupVisible && (
-          <PopupCard event={selectedEvent} onClose={handleClosePopup} />
-        )}
       </div>
       <div
         id="workshops"
@@ -648,6 +645,7 @@ const Event = () => {
       {showModal &&
         createPortal(
           <Registrationmodal
+            fee={selectedEvent.feeDetails}
             eventname={selectedEvent.name}
             onClose={() => setShowModal(false)}
           />,
