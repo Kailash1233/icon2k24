@@ -391,6 +391,7 @@ const PopupCard = ({ event, onClose }) => {
   };
 
   const handleRegisterClick = () => {
+    // console.log(e)
     setPopupVisible(true);
     setShowModal(true);
   };
@@ -482,6 +483,11 @@ const Event = () => {
     setPopupVisible(true);
   };
 
+  const handleRegisterClick = (event) => {
+    setSelectedEvent(event);
+    setShowModal(true)
+  };
+
   const handleClosePopup = () => {
     setSelectedEvent(null);
     setPopupVisible(false);
@@ -521,11 +527,11 @@ const Event = () => {
 
                 <div className="flex justify-center items-end h-full gap-4">
                   <button className="mb-3 bg-orange-500 rounded-lg px-4 py-2" 
-                  onClick={() => setShowModal(true)}
+                  onClick={() => handleRegisterClick(event)}
                   >
                     Register
                   </button>
-
+                  
                   <button
                     className="mb-3  bg-orange-500 rounded-lg px-4 py-2"
                     onClick={() => handleKnowMoreClick(event)}
@@ -533,17 +539,11 @@ const Event = () => {
                     Know More
                   </button>
                 </div>
-                {showModal && createPortal(
-            <Registrationmodal eventname={event.name} onClose={() => setShowModal(false)} />,
-            document.body
-          )}
+                
               </div>
             ))}
           </div>
         </div>
-        {isPopupVisible && (
-          <PopupCard event={selectedEvent} onClose={handleClosePopup} />
-        )}
       </div>
       <div
         id="events"
@@ -578,7 +578,7 @@ const Event = () => {
 
                 <div className="flex justify-center items-end h-full gap-4">
                   <button className="mb-3 bg-orange-500 rounded-lg px-4 py-2" 
-                  onClick={() => setShowModal(true)}
+                  onClick={() => handleRegisterClick(event)}
                   >
                     Register
                   </button>
@@ -590,12 +590,10 @@ const Event = () => {
                     Know More
                   </button>
                 </div>
-                {showModal && createPortal(
-            <Registrationmodal eventname={event.name} onClose={() => setShowModal(false)} />,
-            document.body
-          )}
+                
               </div>
             ))}
+            
           </div>
         </div>
         {isPopupVisible && (
@@ -643,11 +641,15 @@ const Event = () => {
               </div>
             ))}
           </div>
-          {isPopupVisible && (
-            <PopupCard event={selectedEvent} onClose={handleClosePopup} />
-          )}
         </div>
       </div>
+      {showModal && createPortal(
+        <Registrationmodal eventname={selectedEvent.name} onClose={() => setShowModal(false)} />,
+        document.body
+      )}      
+      {isPopupVisible && (
+          <PopupCard event={selectedEvent} onClose={handleClosePopup} />
+        )}
     </>
   );
 };
