@@ -41,38 +41,3 @@ ul.navbar-elements {
     display: flex;
     gap: 40px;
 } */
-@keyframes glow-animation {
-    from {
-      opacity: 0.5;
-      transform: scale(1);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1.1);
-    }
-  }
-  
-  .glow-item:hover {
-    position: relative;
-    z-index: 1;
-  }
-  
-  .glow-item:hover:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, #ffcc00, #ff6600);
-    border-radius: 10px;
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  
-  .glow-item:hover:before {
-    opacity: 1;
-    animation: glow-animation 0.5s infinite alternate;
-  }
-  
