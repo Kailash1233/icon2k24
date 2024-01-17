@@ -3,7 +3,7 @@ import { useState } from "react";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoPerson } from "react-icons/io5";
 import { RiTeamFill } from "react-icons/ri";
-import { createPortal } from 'react-dom';
+import { createPortal } from "react-dom";
 import Registrationmodal from "@/app/components/Registrationmodal";
 
 const shadowStyle = "0px 4px 8px rgba(255, 255, 255, 0.8)";
@@ -43,8 +43,8 @@ const technicalEvents = [
       "Experience a dynamic showcase of cutting-edge research and global insights, where brilliant minds compete for recognition in a celebration of academic excellence and innovation. Join us for a thrilling symphony of ideas and eloquence.",
     feeDetails: "Registration Fee: Per Team ₹200",
     coordinators: [
-      { name: "Jeevida R", contact: "9999999999" },
-      { name: "Shafla Fathima", contact: "9999999999" },
+      { name: "Abdul Rahman M S", contact: "9884416875" },
+      { name: "Shafla Fathima", contact: "7092763661" },
     ],
   },
   {
@@ -105,8 +105,8 @@ const technicalEvents = [
       "Embark on 'Tech Quest,' a tech treasure hunt with challenges in coding, puzzles, and quizzes. Compete for the ultimate prize in a dynamic celebration of innovation and technical expertise!   ",
     feeDetails: "Registration Fee: Per Team ₹250",
     coordinators: [
-      { name: "Kailash G", contact: "99999999999" },
-      { name: "Kamalesh K B", contact: "8888888888" },
+      { name: "Kailash G", contact: "7200580860" },
+      { name: "Kamalesh K B", contact: "8608125396" },
     ],
   },
   {
@@ -145,8 +145,8 @@ const technicalEvents = [
       "Experience the thrill as participants transform algorithms into code, embracing the joy of coding. Engage in challenges that showcase their coding prowess and problem-solving skills.",
     feeDetails: "Registration Fee: ₹100",
     coordinators: [
-      { name: "Mohamed Moideen Halith", contact: "777777777777" },
-      { name: "Prem Kumar V", contact: "99999999999" },
+      { name: "Mohamed Moideen Halith", contact: "8248725391" },
+      { name: "Prem Kumar V", contact: "9884497635" },
     ],
   },
   {
@@ -158,11 +158,11 @@ const technicalEvents = [
     date: "2024-01-15",
     time: "11:00 AM - 12:00 PM",
     venue: "IT LAB 2",
-    person: <RiTeamFill />,
+    person: <IoPerson />,
     rules: (
       <ol>
         <li>• Participants are required to produce college ID without fail.</li>
-        <li>• Maximum 2 participants per paper is allowed.</li>
+        <li>• It is an Individual Event</li>
         <li>• Knowledge of SQL is pre-requisite.</li>
         <li>
           • The decision made by judges is final and binding on all
@@ -178,14 +178,14 @@ const technicalEvents = [
       "Explore the SQL Police Department's Crime-Solving Scenarios, a real-time challenge requiring participants to crack cases using SQL. Immerse yourself in this captivating investigation!",
     feeDetails: "Registration Fee: ₹100",
     coordinators: [
-      { name: "Syed Riyaz K", contact: "6666666666" },
-      { name: "Fariha Hiba", contact: "99999999999" },
+      { name: "Syed Riyaz K", contact: "7010651296" },
+      { name: "Fariha Hiba", contact: "9962608021" },
     ],
   },
 ];
 const nonTechnicalEvents = [
   {
-    name: "FUN FIZZ",
+    name: "VOXRECK",
     image:
       "https://lh3.googleusercontent.com/tBvtgfH8_D6xsRRp3sdZbk0_VFktkTFWIhGF0WoN6jis81yfunq-IMg20Q-UjL2g8fc2awEEd4LfMPxKURMgiXDY=w700-h280-e365-rj-sc0x00ffffff",
     description:
@@ -223,8 +223,8 @@ const nonTechnicalEvents = [
       "Engage in our on-stage event featuring two exciting rounds! In Round 1, showcase your creativity with Adzap as you perform a creative advertisement for a given product. Round 2, Shipwreck, challenges participants to justify their survival as assigned characters. The winner emerges after these dynamic rounds!    ",
     feeDetails: "Registration Fee: ₹100",
     coordinators: [
-      { name: "Vigneshwaran K", contact: "77777777777" },
-      { name: "Yugesh S", contact: "66666666666" },
+      { name: "Ameerdeen S", contact: "9159385501" },
+      { name: "Jeevida R", contact: "7305712495" },
     ],
   },
   {
@@ -257,9 +257,8 @@ const nonTechnicalEvents = [
       "Experience a celebration of diverse talents in a dazzling showcase! From mythical tales to dance and more, participants bring forth bold and brilliant performances. Join us for a captivating display of creativity, featuring solo and group acts that promise to enchant and inspire!",
     feeDetails: "Registration Fee: SOLO: ₹100 TEAM: ₹300",
     coordinators: [
-      { name: "Intasar", contact: "999999999" },
-      { name: "Jabir", contact: "999999999" },
-      { name: "Avinash", contact: "999999999" },
+      { name: "Salman", contact: "6380393289" },
+      { name: "Jabir", contact: "9500332770" },
     ],
   },
   {
@@ -301,8 +300,8 @@ const nonTechnicalEvents = [
       "Dive into Adrenaline Rush, a dynamic three-round event testing speed and agility in Tamil, English, and Hindi movies and songs. From Lyric-oh-holic to Connextions and Gesture Guess, participants face exciting challenges, with winners advancing and creating suspenseful eliminations in each round!",
     feeDetails: "Registration Fee: Per Team ₹200",
     coordinators: [
-      { name: "Suhail I", contact: "77777777777" },
-      { name: "Abdul Rahman M S", contact: "66666666666" },
+      { name: "Suhail I", contact: "9789096170" },
+      { name: "Choummya M", contact: "8925059696" },
     ],
   },
   {
@@ -351,8 +350,8 @@ const nonTechnicalEvents = [
       "IPL AUCTION is an event where The Teams bid for the IPL players and create a squad. The teams will be given the names of the IPL teams and virtual money using which they can buy players in the auction.",
     feeDetails: "Registration Fee: Per Team ₹250",
     coordinators: [
-      { name: "Mohamed Afsar", contact: "999999999" },
-      { name: "Mohamed Suhail B", contact: "999999999" },
+      { name: "Mohamed Afsar", contact: "9443059885" },
+      { name: "Mohamed Suhail B", contact: "9962292623" },
     ],
   },
 ];
@@ -471,12 +470,10 @@ const PopupCard = ({ event, onClose }) => {
   );
 };
 
-
 const Event = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [isPopupVisible, setPopupVisible] = useState(false);
   const [showModal, setShowModal] = useState(false);
-
 
   const handleKnowMoreClick = (event) => {
     setSelectedEvent(event);
@@ -485,7 +482,7 @@ const Event = () => {
 
   const handleRegisterClick = (event) => {
     setSelectedEvent(event);
-    setShowModal(true)
+    setShowModal(true);
   };
 
   const handleClosePopup = () => {
@@ -526,12 +523,13 @@ const Event = () => {
                 </div>
 
                 <div className="flex justify-center items-end h-full gap-4">
-                  <button className="mb-3 bg-orange-500 rounded-lg px-4 py-2" 
-                  onClick={() => handleRegisterClick(event)}
+                  <button
+                    className="mb-3 bg-orange-500 rounded-lg px-4 py-2"
+                    onClick={() => handleRegisterClick(event)}
                   >
                     Register
                   </button>
-                  
+
                   <button
                     className="mb-3  bg-orange-500 rounded-lg px-4 py-2"
                     onClick={() => handleKnowMoreClick(event)}
@@ -539,7 +537,6 @@ const Event = () => {
                     Know More
                   </button>
                 </div>
-                
               </div>
             ))}
           </div>
@@ -577,8 +574,9 @@ const Event = () => {
                 </div>
 
                 <div className="flex justify-center items-end h-full gap-4">
-                  <button className="mb-3 bg-orange-500 rounded-lg px-4 py-2" 
-                  onClick={() => handleRegisterClick(event)}
+                  <button
+                    className="mb-3 bg-orange-500 rounded-lg px-4 py-2"
+                    onClick={() => handleRegisterClick(event)}
                   >
                     Register
                   </button>
@@ -590,10 +588,8 @@ const Event = () => {
                     Know More
                   </button>
                 </div>
-                
               </div>
             ))}
-            
           </div>
         </div>
         {isPopupVisible && (
@@ -630,7 +626,13 @@ const Event = () => {
                   <p className="text-pretty">{event.shortDescription}</p>
                 </div>
 
-                <div className="flex justify-center items-end h-full">
+                <div className="flex justify-center items-end h-full gap-4">
+                  <button
+                    className="mb-3 bg-orange-500 rounded-lg px-4 py-2"
+                    onClick={() => handleRegisterClick(event)}
+                  >
+                    Register
+                  </button>
                   <button
                     className="mb-3 bg-orange-500 rounded-lg px-4 py-2"
                     onClick={() => handleKnowMoreClick(event)}
@@ -643,13 +645,17 @@ const Event = () => {
           </div>
         </div>
       </div>
-      {showModal && createPortal(
-        <Registrationmodal eventname={selectedEvent.name} onClose={() => setShowModal(false)} />,
-        document.body
-      )}      
-      {isPopupVisible && (
-          <PopupCard event={selectedEvent} onClose={handleClosePopup} />
+      {showModal &&
+        createPortal(
+          <Registrationmodal
+            eventname={selectedEvent.name}
+            onClose={() => setShowModal(false)}
+          />,
+          document.body
         )}
+      {isPopupVisible && (
+        <PopupCard event={selectedEvent} onClose={handleClosePopup} />
+      )}
     </>
   );
 };

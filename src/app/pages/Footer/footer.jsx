@@ -1,11 +1,11 @@
 "use client";
 import Link from "next/link";
-import React from 'react';
-import Image from 'next/image';
-import logoImage from '../../images/logo.png';
-import sitImage from '../../images/sitlogo.jpeg';
+import React from "react";
+import Image from "next/image";
+import logoImage from "../../images/logo.png";
+import sitImage from "../../images/sitlogo.jpeg";
 import { useState } from "react";
-import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 
 const Footer = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -16,7 +16,7 @@ const Footer = () => {
   const scrollToComponent = (componentId) => {
     scroll.scrollTo(componentId, {
       duration: 500,
-      smooth: 'easeInOutQuart',
+      smooth: "easeInOutQuart",
     });
   };
 
@@ -47,28 +47,61 @@ const Footer = () => {
 
         <div className="text-white text-sm font-bold flex items-center flex-wrap">
           <ul className="list-none p-0 m-0 flex">
-            <ScrollLink to="home" spy={true} smooth={true} offset={-70} duration={500}>
-              <li className="mr-2 md:mr-4 cursor-pointer" onClick={() => setOpenMenu(false)}>
+            <ScrollLink
+              to="home"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              <li
+                className="mr-2 md:mr-4 cursor-pointer"
+                onClick={() => setOpenMenu(false)}
+              >
                 Home
               </li>
             </ScrollLink>
             <span className="text-gray-500 mx-2 mr-4">|</span>
 
-            <ScrollLink to="about" spy={true} smooth={true} offset={-70} duration={500}>
-              <li className="mr-2 md:mr-4 cursor-pointer" onClick={() => setOpenMenu(false)}>
+            <ScrollLink
+              to="about"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              <li
+                className="mr-2 md:mr-4 cursor-pointer"
+                onClick={() => setOpenMenu(false)}
+              >
                 About
               </li>
             </ScrollLink>
             <span className="text-gray-500 mx-2 mr-4">|</span>
 
-            <ScrollLink to="events" spy={true} smooth={true} offset={-70} duration={500}>
-              <li className="mr-2 md:mr-4 cursor-pointer" onClick={() => setOpenMenu(false)}>
+            <ScrollLink
+              to="events"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              <li
+                className="mr-2 md:mr-4 cursor-pointer"
+                onClick={() => setOpenMenu(false)}
+              >
                 Events
               </li>
             </ScrollLink>
             <span className="text-gray-500 mr-2 md:mr-4">|</span>
 
-            <ScrollLink to="contact" spy={true} smooth={true} offset={-70} duration={500}>
+            <ScrollLink
+              to="contact"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
               <li className="cursor-pointer" onClick={() => setOpenMenu(false)}>
                 Contact Us
               </li>
