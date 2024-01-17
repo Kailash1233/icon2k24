@@ -378,17 +378,17 @@ const workshops = [
 
 const PopupCard = ({ event, onClose }) => {
   const [showModal, setShowModal] = useState(false);
-  // const handleCloseOnOverlayClick = (e) => {
-  //   // Check if the click event is outside the popup card
-  //   if (!e.target.closest(".popup-card-content")) {
-  //     onClose();
-  //   }
-  // };
+  const handleCloseOnOverlayClick = (e) => {
+    // Check if the click event is outside the popup card
+    if (!e.target.closest(".popup-card-content")) {
+      onClose();
+    }
+  };
 
   return (
     <div
-      className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-50 backdrop-blur-sm rounded-lg"
-      // onClick={handleCloseOnOverlayClick}
+      className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-50 backdrop-blur-sm rounded-lg z-50"
+      onClick={handleCloseOnOverlayClick}
     >
       <div className="w-[400px] h-[400px] bg-white overflow-y-auto p-8 popup-card-content relative">
         <button
@@ -424,21 +424,23 @@ const PopupCard = ({ event, onClose }) => {
             </li>
           ))}
         </ul>
-        <div className="flex justify-center items-end">
-          <button
-            className="mt-3 bg-orange-500 rounded-lg px-4 py-2"
-            onClick={onClose}
-          >
+        <div className="flex justify-center items-end gap-5">
+            <button className="mt-3 bg-orange-500 rounded-lg px-4 py-2" 
+            onClick={() => setShowModal(true)}
+            >
+              Register
+            </button>
+            <button
+              className="mt-3 bg-orange-500 rounded-lg px-4 py-2"
+              onClick={onClose}
+            >
             Close
           </button>
         </div>
         {/* Registration button */}
         <div className="mb-4">
-          <button className="bg-[white] text-[black] px-10 py-2.5" onClick={() => setShowModal(true)}>
-            Register
-          </button>
           {showModal && createPortal(
-            <Registrationmodal eventname={event.name} onClose={() => setShowModal(false)} />,
+            <Registrationmodal className="popup-card-content" eventname={event.name} onClose={() => setShowModal(false)} />,
             document.body
           )}
         </div>
@@ -494,7 +496,13 @@ const Event = () => {
                   <p className="text-pretty">{event.shortDescription}</p>
                 </div>
 
-                <div className="flex justify-center items-end h-full">
+                <div className="flex justify-center items-end h-full gap-4">
+                  <button className="mb-3 bg-orange-500 rounded-lg px-4 py-2" 
+                  onClick={() => setShowModal(true)}
+                  >
+                    Register
+                  </button>
+
                   <button
                     className="mb-3  bg-orange-500 rounded-lg px-4 py-2"
                     onClick={() => handleKnowMoreClick(event)}
