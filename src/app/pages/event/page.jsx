@@ -520,17 +520,16 @@ const Event = () => {
                 </div>
 
                 <div className="flex justify-center items-end h-full gap-4">
-                  <button className="mb-3 bg-orange-500 rounded-lg px-4 py-2" 
-                  onClick={() => setShowModal(true)}
-                  >
-                    Register
-                  </button>
-
-                  <button
+                <button
                     className="mb-3  bg-orange-500 rounded-lg px-4 py-2"
                     onClick={() => handleKnowMoreClick(event)}
                   >
                     Know More
+                  </button>
+                  <button className="mb-3 bg-orange-500 rounded-lg px-4 py-2" 
+                  onClick={() => setShowModal(true)}
+                  >
+                    Register
                   </button>
                 </div>
                 {showModal && createPortal(
@@ -577,18 +576,17 @@ const Event = () => {
                 </div>
 
                 <div className="flex justify-center items-end h-full gap-4">
-                  <button className="mb-3 bg-orange-500 rounded-lg px-4 py-2" 
-                  onClick={() => setShowModal(true)}
-                  >
-                    Register
-                  </button>
-
-                  <button
+                <button
                     className="mb-3  bg-orange-500 rounded-lg px-4 py-2"
                     onClick={() => handleKnowMoreClick(event)}
                   >
                     Know More
                   </button>
+                  <button className="mb-3 bg-orange-500 rounded-lg px-4 py-2" 
+                  onClick={() => setShowModal(true)}
+                  >
+                    Register
+                  </button>                 
                 </div>
                 {showModal && createPortal(
             <Registrationmodal eventname={event.name} onClose={() => setShowModal(false)} />,
@@ -617,7 +615,7 @@ const Event = () => {
             {workshops.map((event, index) => (
               <div
                 key={index}
-                className="w-full sm:w-[300px] h-auto bg-white flex flex-col"
+                className="w-full sm:w-[300px] h-auto bg-white flex flex-col justify-center items-center"
               >
                 <div className="p-4 h-[200px]">
                   <img
@@ -632,12 +630,18 @@ const Event = () => {
                   <p className="text-pretty">{event.shortDescription}</p>
                 </div>
 
-                <div className="flex justify-center items-end h-full">
-                  <button
-                    className="mb-3 bg-orange-500 rounded-lg px-4 py-2"
+                <div className="flex justify-center items-end h-full gap-4">
+                   <button
+                    className="mb-3  bg-orange-500 rounded-lg px-4 py-2"
                     onClick={() => handleKnowMoreClick(event)}
                   >
                     Know More
+                  </button>
+                  <button 
+                  className="mb-3 bg-orange-500 rounded-lg px-4 py-2" 
+                  onClick={() => setShowModal(true)}
+                  >
+                    Register
                   </button>
                 </div>
               </div>

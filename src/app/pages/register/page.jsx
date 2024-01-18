@@ -5,7 +5,7 @@ import dbdupi from "@/app/images/dbdupi.jpg";
 import Image from "next/image";
 import Select from "react-select";
 
-export default function RegistrationForm({eventname}) {
+export default function RegistrationForm({eventname , onClose}) {
   
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
@@ -1035,13 +1035,13 @@ export default function RegistrationForm({eventname}) {
       setError(["Please enter your Department"]);
       return;
     }
-    if (department) {
-      var regex4 = /^\S{3,50}$/;
-      if (!regex4.test(department)) {
-        setError(["Please enter a valid department name"]);
-        return;
-      }
-    }
+    // if (department) {
+    //   var regex4 = /^\S{3,50}$/;
+    //   if (!regex4.test(department)) {
+    //     setError(["Please enter a valid department name"]);
+    //     return;
+    //   }
+    // }
     if (!year) {
       setError(["Please select your year of study"]);
       return;
@@ -1089,11 +1089,17 @@ export default function RegistrationForm({eventname}) {
     <>
       <form
         onSubmit={handleSubmit}
-        className="py-4 mt-4 flex flex-col gap-5 bg-[white] overflow-auto relative"
+        className="py-4  mt-4  flex flex-col gap-5 bg-[white] overflow-auto relative"
       >
-        <div>{/* <label htmlFor="fullname">Full Name</label> */}
+        <div className="relative">{/* <label htmlFor="fullname">Full Name</label> */}
+        <button
+          className="absolute top-0 right-1 text-xl font-bold cursor-pointer bg-orange-500 rounded-lg px-2 py-1"
+          onClick={onClose}
+        >
+          &times;
+        </button>
           <input
-          className="mt-5"
+          className="mt-10 w-full"
             onChange={(e) => setFullname(e.target.value)}
             value={fullname}
             type="text"
@@ -1105,6 +1111,7 @@ export default function RegistrationForm({eventname}) {
         <div>
           {/* <label htmlFor="email">Email</label> */}
           <input
+            className="w-full"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
             type="text"
@@ -1181,7 +1188,7 @@ export default function RegistrationForm({eventname}) {
           </span>
         </div>
 
-        <div>
+        <div className="flex justify-center"> 
           <Image src={dbdupi} width={316} alt="QR code.jpg" />
         </div>
 

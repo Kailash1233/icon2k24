@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import Image from "next/image";
 import lazyone from "../images/lazyone.gif";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
@@ -21,7 +20,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full h-24 shadow-xl bg-black sticky top-0 z-50">
+    <nav className="w-full h-24 shadow-xl bg-black sticky top-0 z-50" 
+    >
       <div className="flex justify-between items-center h-full w-full px-5 2xl:px-16 text-white">
         <div>
           <ScrollLink
@@ -107,7 +107,7 @@ const Navbar = () => {
       </div>
       {openMenu && (
         <div className="fixed left-0 top-0 w-full h-full bg-black p-10 z-50">
-          <div className="flex justify-end">
+          <div className="flex justify-end ">
             <div onClick={handleClick} className="cursor-pointer text-white">
               <AiOutlineClose size={25} />
             </div>
