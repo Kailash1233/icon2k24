@@ -6,6 +6,39 @@ import Image from "next/image";
 import Select from "react-select";
 
 
+const Register = ({ success, error, onClose }) => {
+
+  // const [isPopupVisible, setPopupVisible] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
+
+  const handleCloseOnOverlayClick = (e) => {
+    if (!e.target.closest(".register-content")) {
+      onClose();
+    }
+  };
+
+  return (
+    <div
+      className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-50 backdrop-blur-sm rounded-lg z-50"
+      onClick={handleCloseOnOverlayClick}
+    >
+      <div className="relative w-[400px] h-[400px] bg-white bg-opacity-500 h-6 overflow-y-auto p-8 register-content">
+        <button
+          className="absolute top-6 right-4 text-xl font-bold cursor-pointer bg-orange-500 rounded-lg px-2 py-1"
+          onClick={onClose}
+        >
+          &times;
+        </button>
+        <h2 className={`${
+            success ? "text-green-800" : "text-red-600"
+              } px-5 py-2`}
+            >{error}</h2>
+        
+      </div>
+    </div>
+  );
+};
+
 const QRCode = ({ onClose }) => {
 
   // const [isPopupVisible, setPopupVisible] = useState(false);
@@ -1000,6 +1033,7 @@ export default function RegistrationForm({fee, eventname, onClose}) {
   const [success, setSuccess] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [showqr, setShowqr] = useState(false);
+  const [showerror, setShowerror] = useState(false)
 
   const convertTobase64 = async (e) => {
     let file = e.target.files[0];
@@ -1025,39 +1059,46 @@ export default function RegistrationForm({fee, eventname, onClose}) {
     console.log("year: ", year);
     console.log("event: ", eventname);
     if (!fullname) {
+      setShowerror(true);
       setError(["Please enter your Full Name"]);
       return;
     }
     if (fullname) {
       var regex1 = /^[A-Za-z\s]{3,50}$/;
       if (!regex1.test(fullname)) {
+        setShowerror(true);
         setError(["Please enter a valid Full Name"]);
         return;
       }
     }
     if (!email) {
+      setShowerror(true);
       setError(["Please provide an Email address"]);
       return;
     }
     if (email) {
       var regex2 = /^[\w.%+-]+@[\w.-]+\.[A-Za-z]{2,}$/i;
       if (!regex2.test(email)) {
+        setShowerror(true);
         setError(["Invalid Email Address"]);
         return;
       }
     }
     if (!phonenumber) {
+      setShowerror(true);
       setError(["Please enter your Phone number"]);
       return;
     }
     if (phonenumber) {
       var regex = /^([0-9]{10})$/;
       if (!regex.test(phonenumber)) {
+        setShowerror(true);
         setError(["Please enter a valid phone number"]);
         return;
       }
     }
     if (!collegename) {
+      setShowerror(true);
       setError([
         "Please select your college \n\n (if your college name is not found, select 'Other' and type your college name).",
       ]);
@@ -1065,11 +1106,12 @@ export default function RegistrationForm({fee, eventname, onClose}) {
     }
     if (collegename == "Other") {
       if (!othercollege) {
+        setShowerror(true);
         setError(["Enter the name of your college"]);
         return;
       }
       if (othercollege) {
-        var regex3 = /^\S{3,50}$/;
+        var regex3 = /^\S{3,100}$/;
         if (!regex3.test(othercollege)) {
           setError(["Please enter a valid college name"]);
           return;
@@ -1077,22 +1119,26 @@ export default function RegistrationForm({fee, eventname, onClose}) {
       }
     }
     if (!department) {
+      setShowerror(true);
       setError(["Please enter your Department"]);
       return;
     }
     if (department) {
-      var regex4 = /^\S{3,50}$/;
+      var regex4 = /^\S{2,100}$/;
       if (!regex4.test(department)) {
+        setShowerror(true);
         setError(["Please enter a valid department name"]);
         return;
       }
     }
     if (!year) {
+      setShowerror(true);
       setError(["Please select your year of study"]);
       return;
     }
     console.log("paymentfile : " + paymentfile);
     if (!paymentfile) {
+      setShowerror(true);
       setError(["Please upload screenshot of payment"]);
       return;
     }
@@ -1115,6 +1161,7 @@ export default function RegistrationForm({fee, eventname, onClose}) {
     });
 
     const { msg, success } = await res.json();
+    setShowerror(true);
     setError(msg);
     setSuccess(success);
 
@@ -1137,8 +1184,12 @@ export default function RegistrationForm({fee, eventname, onClose}) {
   };
 
   const handleCloseQR = () => {
-    // setSelectedEvent(null);
     setShowqr(false);
+  };
+
+  const handleCloseErrorBox = () => {
+    setShowerror(false);
+    setError([]);
   };
 
   const copyTextToClipboard = async (text) => {
@@ -1315,26 +1366,11 @@ export default function RegistrationForm({fee, eventname, onClose}) {
         <button className="bg-green-700 p-3 text-white font-bold" type="submit">
           Register
         </button>
-      </form>
-
-      <div className="bg-slate-100 flex flex-col">
-        {error &&
-          error.map((e) => (
-            <div
-              key={e}
-              className={`${
-                success ? "text-green-800" : "text-red-600"
-              } px-5 py-2`}
-            >
-              {e}
-            </div>
-          ))}
-      </div>
+      </form>       
       </div>
     </div>
-    {showqr && (
-        <QRCode onClose={handleCloseQR}/>
-      )}
+    {error && showerror && (<Register success={success} error={error} onClose={handleCloseErrorBox} />)}
+    {showqr && (<QRCode onClose={handleCloseQR}/>)}
     </>
   );
 }

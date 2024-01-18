@@ -8,14 +8,13 @@ export async function GET(req) {
   try {
     await connectDB();
 
-    var data = await Contact.findOne();
+    // var data = await Contact.findOne();
 
-    console.log("Connected successfully", data);
+    // console.log("Connected successfully", data);
 
     return NextResponse.json({
       msg: ["Connected successfully"],
-      success: true,
-      data: data
+      success: true
     });
   } catch (error) {
       console.log(error);
