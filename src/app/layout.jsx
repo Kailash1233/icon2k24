@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./pages/Footer/footer";
+import connectDB from "./lib/mongodb";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,8 +30,9 @@ export default function RootLayout() {
         />
 
         <Footer />
+        {connectDB()}
       </body>
-    </html>
+    </html>    
   );
 }
 
