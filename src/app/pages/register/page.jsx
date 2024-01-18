@@ -5,7 +5,50 @@ import dbdupi from "@/app/images/dbdupi.jpg";
 import Image from "next/image";
 import Select from "react-select";
 
-export default function RegistrationForm({eventname, onClose}) {
+
+const QRCode = ({ onClose }) => {
+
+  // const [isPopupVisible, setPopupVisible] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
+
+  const handleCloseOnOverlayClick = (e) => {
+    if (!e.target.closest(".qrcode-content")) {
+      onClose();
+    }
+  };
+
+  // const handleRegisterClick = () => {
+  //   // console.log(e)
+  //   setPopupVisible(true);
+  //   setShowModal(true);
+  // };
+
+  // const handleRegistrationModalClose = () => {
+  //   setShowModal(false);
+  //   setPopupVisible(false);
+  // };
+
+  return (
+    <div
+      className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-50 backdrop-blur-sm rounded-lg z-50"
+      onClick={handleCloseOnOverlayClick}
+    >
+      <div className="w-[400px] h-[400px] bg-white overflow-y-auto p-8 qrcode-content relative">
+        <button
+          className="absolute top-6 right-4 text-xl font-bold cursor-pointer bg-orange-500 rounded-lg px-2 py-1"
+          onClick={onClose}
+        >
+          &times;
+        </button>
+          <div>
+            <Image src={dbdupi} width={316} alt="QR code.jpg" />
+          </div>
+        </div>
+    </div>
+  );
+};
+
+export default function RegistrationForm({fee, eventname, onClose}) {
   
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
@@ -956,6 +999,7 @@ export default function RegistrationForm({eventname, onClose}) {
   const [error, setError] = useState([]);
   const [success, setSuccess] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [showqr, setShowqr] = useState(false);
 
   const convertTobase64 = async (e) => {
     let file = e.target.files[0];
@@ -1092,6 +1136,23 @@ export default function RegistrationForm({eventname, onClose}) {
     }
   };
 
+  const handleCloseQR = () => {
+    // setSelectedEvent(null);
+    setShowqr(false);
+  };
+
+  const copyTextToClipboard = async (text) => {
+    console.log(text)
+    console.log(process.env.UPI_ID);
+    console.log(process.env.PHONE_NUMBER);
+    
+    if ('clipboard' in navigator) {
+      return await navigator.clipboard.writeText(text);
+    } else {
+      return document.execCommand('copy', true, text);
+    }
+  }
+
   return (
     <>
     <div
@@ -1200,8 +1261,45 @@ export default function RegistrationForm({eventname, onClose}) {
         </div>
 
         <div>
-          <Image src={dbdupi} width={316} alt="QR code.jpg" />
+          {/* <label htmlFor="fee">Fee details</label> */}
+          <span>
+            <label htmlFor="fee">{fee}</label>
+          </span>
         </div>
+
+        <div>
+          {/* <label htmlFor="paymentOptions">Payment Options</label> */}
+          <span>
+            <label htmlFor="event">Payment Options:</label>
+          </span>
+        </div>
+
+        <button
+          title="Click to copy phone number"
+          type="button"
+          className="mb-3 bg-orange-500 rounded-lg px-4 py-2"
+          onClick={() => copyTextToClipboard(process.env.PHONE_NUMBER)}
+        >
+          Pay using phone number
+        </button>
+        <label className="flex justify-center">or</label>
+        <button
+          title="Click to copy UPI ID"
+          type="button"
+          className="mb-3 bg-orange-500 rounded-lg px-4 py-2"
+          onClick={() => copyTextToClipboard(process.env.UPI_ID)}
+        >
+          Pay using UPI ID
+        </button>
+        <label className="flex justify-center">or</label>
+        <button
+          title="Click to show QR"
+          type="button"
+          className="mb-3 bg-orange-500 rounded-lg px-4 py-2"
+          onClick={() => setShowqr(true)}
+        >
+          Show QR
+        </button>
 
         <div>
           <label htmlFor="event">Upload screenshot of payment</label>
@@ -1233,7 +1331,10 @@ export default function RegistrationForm({eventname, onClose}) {
           ))}
       </div>
       </div>
-      </div>
+    </div>
+    {showqr && (
+        <QRCode onClose={handleCloseQR}/>
+      )}
     </>
   );
 }
