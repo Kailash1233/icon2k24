@@ -9,8 +9,9 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      'lucky': ['Luckiest Guy', 'cursive'],
+    }
   },
   plugins: [],
 }
-
