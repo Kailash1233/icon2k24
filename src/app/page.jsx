@@ -35,7 +35,7 @@ const Home = () => {
         <div className="relative z-10">
           <div className="flex flex-col text-white justify-center items-center h-60 mt-32 px-6">
             <div
-              className="text-7xl"
+              className="text-7xl font-mono"
               style={{ color: "orange", fontSize: "4rem", fontWeight: "bold" }}
             >
               ICON BEGINS IN

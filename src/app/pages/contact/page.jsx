@@ -1,23 +1,21 @@
 import React from "react";
 
-const reducedOpacity = 0.9;
-
 const members = [
   {
     name: "MOHAMED SALMAN FARIZ M",
-    role: "President",
+    role: "Secretary",
     phone: "+91 63803-93289",
     email: "salmanfarris2002@gmail.com",
   },
   {
     name: "CHOUMYA M",
-    role: "Vice President",
+    role: "Joint Secretary",
     phone: "+91 89250-59696",
     email: "choumya0703@gmail.com",
   },
   {
     name: "MOHAMED AMEERDEEN S",
-    role: "Vice President",
+    role: "Joint Secretary",
     phone: "+91 91593-55501",
     email: "ideenameer404@gmail.com",
   },
@@ -25,7 +23,7 @@ const members = [
     name: "MOHAMED IMRAN KHAN M",
     role: "Treasurer",
     phone: "+91 73387 74116",
-    email: "ideenameer404@gmail.com",
+    email: "imrankhan02m@gmail.com",
   },
 ];
 
@@ -33,10 +31,14 @@ const Page = () => {
   return (
     <div
       id="contact"
-      className="bg-black text-white min-h-screen flex flex-col items-center justify-center"
+      className="bg-black text-white  flex flex-col items-center justify-center"
     >
-      <div className="min-h-screen flex flex-col items-center justify-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <h1 className="text-2xl font-bold mb-12 text-center text-orange-500 ">
+        STUDENT CO-ORDINATORS
+      </h1>
+
+      <div className=" flex flex-col items-center justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 lg:grid-rows-2 gap-8">
           {members.map((member, index) => (
             <div key={index} className="bg-black p-4 rounded-lg text-center">
               <h2 className="text-2xl font-semibold mb-2">{member.name}</h2>
@@ -78,25 +80,39 @@ const Page = () => {
           ))}
         </div>
       </div>
-      <div
-        className="max-w-4xl w-full bg-black p-8 rounded-lg shadow-lg mb-6"
-        style={{
-          boxShadow: `0px 4px 8px rgba(255, 255, 255, ${reducedOpacity})`,
-        }}
-      >
-        <h1 className="text-2xl font-bold mb-6 text-center">Sponsors</h1>
-        <div className="flex justify-around">
-          <img
-            src="https://media.istockphoto.com/id/881120664/photo/become-a-sponsor-written-on-business-card.jpg?s=612x612&w=0&k=20&c=2i55Tce2of6U37jJYrcb9t_3YHbzQux-q8zG-V2klt0="
-            alt="Sponsor 1"
-            className="w-32 h-32 object-contain mb-4"
-          />
-
-          <img
-            src="https://media.istockphoto.com/id/881120664/photo/become-a-sponsor-written-on-business-card.jpg?s=612x612&w=0&k=20&c=2i55Tce2of6U37jJYrcb9t_3YHbzQux-q8zG-V2klt0="
-            alt="Sponsor 2"
-            className="w-32 h-32 object-contain mb-4"
-          />
+      <div className="max-w-4xl w-full bg-black p-8 rounded-lg shadow-lg mb-6">
+        <h1 className="text-2xl font-bold mb-6 text-center text-orange-500">
+          SPONSORS
+        </h1>
+        <div className="flex flex-wrap justify-center">
+          <div className="md:w-1/2 lg:w-1/4 mb-4">
+            <img
+              src="/sponsors/letsfame.png"
+              alt="Lets Fame"
+              className="object-contain w-40 h-40"
+            />
+          </div>
+          <div className="md:w-1/2 lg:w-1/4 mb-4">
+            <img
+              src="/sponsors/greentrends.png"
+              alt="Green Trends"
+              className="object-contain w-40 h-40"
+            />
+          </div>
+          <div className="md:w-1/2 lg:w-1/4 mb-4">
+            <img
+              src="/sponsors/nizam.png"
+              alt="Nizam Pakku"
+              className="object-contain w-40 h-40"
+            />
+          </div>
+          <div className="md:w-1/2 lg:w-1/4 mb-4">
+            <img
+              src="/sponsors/poorvika.png"
+              alt="Poorvika"
+              className="object-contain w-40 h-40"
+            />
+          </div>
         </div>
       </div>
     </div>

@@ -7,7 +7,7 @@ export async function POST(req) {
   const { fullname, email, phonenumber, collegename, department, year, eventname, paymentfile } = await req.json();
 
   try {
-    await connectDB();
+    // await connectDB();
 
     if(email && phonenumber && eventname){
       var alreadyRegistered = await Contact.findOne({email, phonenumber, eventname});    
