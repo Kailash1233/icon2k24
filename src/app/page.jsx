@@ -40,7 +40,13 @@ const Home = () => {
             >
               ICON'2K24 BEGINS IN
             </div>
-
+            {/* <div className="z-10 w-60 h-60">
+              <img
+                src="/design/welcome.png"
+                alt="Join Us!"
+                className="w-50 h-50"
+              />
+            </div> */}
             <div className="mt-24 px-9 ">
               <CountdownTimer targetDate={targetDate} />
             </div>

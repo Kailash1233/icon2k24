@@ -33,10 +33,18 @@ const Page = () => {
       id="contact"
       className="bg-black text-white  flex flex-col items-center justify-center"
     >
-      <h1 className="text-2xl font-bold mb-12 text-center text-orange-500 ">
-        STUDENT CO-ORDINATORS
-      </h1>
-
+      <div className="flex flex-wrap justify-center">
+        <img
+          src="/design/man1.png"
+          alt="Contact"
+          className="object-contain w-70 h-70"
+        />
+      </div>
+      <div className="text-center">
+        <h1 className="text-2xl font-bold mb-6 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-transparent bg-clip-text">
+          STUDENT CO-ORDINATORS
+        </h1>
+      </div>
       <div className=" flex flex-col items-center justify-center">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {members.map((member, index) => (
@@ -80,39 +88,41 @@ const Page = () => {
           ))}
         </div>
       </div>
-      <div className="max-w-4xl w-full bg-black p-8 rounded-lg shadow-lg mb-6">
-        <h1 className="text-2xl font-bold mb-6 text-center text-orange-500">
-          SPONSORS
-        </h1>
+      <div className="max-w-4xl w-full bg-black p-4 rounded-lg shadow-lg">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold mb-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-transparent bg-clip-text">
+            SPONSOR
+          </h1>
+        </div>
         <div className="flex flex-wrap justify-center">
-          <div className="md:w-1/2 lg:w-1/4 mb-4">
+          {/* <div className="md:w-1/2 lg:w-1/4 mb-2">
             <img
               src="/sponsors/letsfame.png"
               alt="Lets Fame"
               className="object-contain w-40 h-40"
             />
-          </div>
-          <div className="md:w-1/2 lg:w-1/4 mb-4">
+          </div> */}
+          {/* <div className="md:w-1/2 lg:w-1/4 mb-2">
             <img
               src="/sponsors/greentrends.png"
               alt="Green Trends"
               className="object-contain w-40 h-40"
             />
-          </div>
-          <div className="md:w-1/2 lg:w-1/4 mb-4">
+          </div> */}
+          <div className="mb-2">
             <img
               src="/sponsors/nizam.png"
               alt="Nizam Pakku"
               className="object-contain w-40 h-40"
             />
           </div>
-          <div className="md:w-1/2 lg:w-1/4 mb-4">
+          {/* <div className="md:w-1/2 lg:w-1/4 mb-2">
             <img
               src="/sponsors/poorvika.png"
               alt="Poorvika"
               className="object-contain w-40 h-40"
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
