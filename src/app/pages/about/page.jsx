@@ -16,7 +16,7 @@ const About = () => {
           boxShadow: `0px 4px 8px rgba(255, 255, 255, ${reducedOpacity})`,
         }}
       >
-        <h1 className="text-3xl font-bold mb-6 text-center">About Crescent</h1>
+        <h1 className="text-3xl font-bold mb-6 text-center text-orange-500">About Crescent</h1>
         <p className="text-lg mb-4">
           Established in 1984, B.S. Abdur Rahman Crescent Institute of Science
           and Technology, situated in Chennai near Tambaram, is a distinguished
@@ -40,7 +40,7 @@ const About = () => {
         }}
       >
         <div className="md:w-1/2 mb-4 md:mb-0">
-          <h1 className="text-3xl font-bold mb-4 md:mb-6 text-center">
+          <h1 className="text-3xl font-bold mb-4 md:mb-6 text-center text-orange-500">
             About Us
           </h1>
           <p className="text-lg mb-4">

@@ -261,7 +261,7 @@ const nonTechnicalEvents = [
     shortDescription:
       "Experience a celebration of diverse talents in a dazzling showcase! From mythical tales to dance and more, participants bring forth bold and brilliant performances. Join us for a captivating display of creativity, featuring solo and group acts that promise to enchant and inspire!",
     feeDetails: "Registration Fee: SOLO: ₹100 TEAM: ₹300",
-    feeAmount: {solo:100,group:300},
+    feeAmount: { solo: 100, group: 300 },
     coordinators: [
       { name: "Salman", contact: "6380393289" },
       { name: "Jabir", contact: "9500332770" },
@@ -489,7 +489,7 @@ const Event = () => {
     setPopupVisible(true);
   };
 
-  const handleRegisterClick = (event) => {    
+  const handleRegisterClick = (event) => {
     setSelectedEvent(event);
     setShowModal(true);
   };
@@ -509,7 +509,7 @@ const Event = () => {
           className=" max-w-7xl w-full h-auto bg-black p-8 rounded-lg shadow-lg mb-6"
           style={{ boxShadow: shadowStyle }}
         >
-          <h1 className="text-white text-center mb-5 text-3xl font-bold">
+          <h1 className="text-center mb-5 text-3xl font-bold text-orange-500">
             TECHNICAL EVENTS
           </h1>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-4 ">
@@ -533,17 +533,16 @@ const Event = () => {
 
                 <div className="flex justify-center items-end h-full gap-4">
                   <button
-                    className="mb-3 bg-orange-500 rounded-lg px-4 py-2"
-                    onClick={() => handleRegisterClick(event)}
-                  >
-                    Register
-                  </button>
-
-                  <button
                     className="mb-3  bg-orange-500 rounded-lg px-4 py-2"
                     onClick={() => handleKnowMoreClick(event)}
                   >
                     Know More
+                  </button>
+                  <button
+                    className="mb-3 bg-orange-500 rounded-lg px-4 py-2"
+                    onClick={() => handleRegisterClick(event)}
+                  >
+                    Register
                   </button>
                 </div>
               </div>
@@ -559,7 +558,7 @@ const Event = () => {
           className=" max-w-7xl w-full h-auto bg-black p-8 rounded-lg shadow-lg mb-6"
           style={{ boxShadow: shadowStyle }}
         >
-          <h1 className="text-white text-center mb-5 text-3xl font-bold">
+          <h1 className="text-orange-500 text-center mb-5 text-3xl font-bold">
             NON-TECHNICAL EVENTS
           </h1>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-4 ">
@@ -584,17 +583,16 @@ const Event = () => {
 
                 <div className="flex justify-center items-end h-full gap-4">
                   <button
-                    className="mb-3 bg-orange-500 rounded-lg px-4 py-2"
-                    onClick={() => handleRegisterClick(event)}
-                  >
-                    Register
-                  </button>
-
-                  <button
                     className="mb-3  bg-orange-500 rounded-lg px-4 py-2"
                     onClick={() => handleKnowMoreClick(event)}
                   >
                     Know More
+                  </button>
+                  <button
+                    className="mb-3 bg-orange-500 rounded-lg px-4 py-2"
+                    onClick={() => handleRegisterClick(event)}
+                  >
+                    Register
                   </button>
                 </div>
               </div>
@@ -610,7 +608,7 @@ const Event = () => {
           className="max-w-96 w-full h-auto bg-black p-8 rounded-lg shadow-lg mb-6 flex flex-col items-center"
           style={{ boxShadow: shadowStyle }}
         >
-          <h1 className="text-white text-center mb-5 text-3xl font-bold">
+          <h1 className="text-orange-500 text-center mb-5 text-3xl font-bold">
             WORKSHOP
           </h1>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-4 w-full">
@@ -635,15 +633,15 @@ const Event = () => {
                 <div className="flex justify-center items-end h-full gap-4">
                   <button
                     className="mb-3 bg-orange-500 rounded-lg px-4 py-2"
-                    onClick={() => handleRegisterClick(event)}
-                  >
-                    Register
-                  </button>
-                  <button
-                    className="mb-3 bg-orange-500 rounded-lg px-4 py-2"
                     onClick={() => handleKnowMoreClick(event)}
                   >
                     Know More
+                  </button>
+                  <button
+                    className="mb-3 bg-orange-500 rounded-lg px-4 py-2"
+                    onClick={() => handleRegisterClick(event)}
+                  >
+                    Register
                   </button>
                 </div>
               </div>
@@ -660,7 +658,7 @@ const Event = () => {
             onClose={() => setShowModal(false)}
           />,
           document.body
-      )}
+        )}
       {isPopupVisible && (
         <PopupCard event={selectedEvent} onClose={handleClosePopup} />
       )}
