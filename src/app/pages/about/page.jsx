@@ -16,13 +16,15 @@ const About = () => {
           boxShadow: `0px 4px 8px rgba(255, 255, 255, ${reducedOpacity})`,
         }}
       >
-        <h1 className="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-transparent bg-clip-text">
-          ABOUT ICON
-        </h1>
+        <div className="text-center">
+          <h1 className="text-3xl font-bold mb-6 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-transparent bg-clip-text">
+            ABOUT ICON
+          </h1>
+        </div>
         <p className="text-lg mb-4 text-justify">
-          ICON, an annual National-level symposium, is meticulously organized by
-          the professional society "Society of Information Technologists (SIT),"
-          as a platform to elevate the technical skills of students. This
+          ICON, a National-level symposium, is meticulously organized by the
+          professional society "Society of Information Technologists (SIT)," as
+          a platform to elevate the technical skills of students. This
           symposium, hosted by the department, serves as a dynamic arena for
           knowledge exchange and skill enhancement, fostering a vibrant
           community of Information Technology enthusiasts.
@@ -41,9 +43,11 @@ const About = () => {
         }}
       >
         <div className="md:w-1/2 mb-4 md:mb-0">
-          <h1 className="text-3xl font-bold mb-4 md:mb-6 text-center bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-transparent bg-clip-text">
-            ABOUT CRESCENT
-          </h1>
+          <div className="text-center">
+            <h1 className="text-3xl font-bold mb-4 md:mb-6 text-center bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-transparent bg-clip-text">
+              ABOUT CRESCENT
+            </h1>
+          </div>
           <p className="text-lg mb-4 text-center">
             Established in 1984, B.S. Abdur Rahman Crescent Institute of Science
             and Technology, situated in Chennai near Tambaram, is a
@@ -59,16 +63,15 @@ const About = () => {
             making our institution a lifelong home.
           </p>
         </div>
-        <div className="md:w-1/2">
+        <div className="md:w-1/2 ml-2">
           <img
-            src="https://images.collegedunia.com/public/college_data/images/campusimage/1584955750DSC_0100.JPG"
+            src="/SIT/SIT1.jpeg"
             alt="College Image"
             className="w-full h-48 object-cover mb-4 rounded-md"
             style={{ boxShadow: shadowStyle }}
           />
-          <p className="text-center text-sm text-gray-500">
-            Photo by B.S. Abdur Rahman Crescent Institute of Science and
-            Technology
+          <p className="text-center text-xl text-white font-bold">
+            People of SIT
           </p>
         </div>
       </div>

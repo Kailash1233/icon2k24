@@ -2,28 +2,32 @@ import React from "react";
 
 const members = [
   {
-    name: "MOHAMED SALMAN FARIZ M",
-    role: "Secretary",
+    name: "SALMAN FARIZ M",
+    role: "General Secretary",
     phone: "+91 63803-93289",
     email: "salmanfarris2002@gmail.com",
+    image: "",
   },
   {
     name: "CHOUMYA M",
     role: "Joint Secretary",
     phone: "+91 89250-59696",
     email: "choumya0703@gmail.com",
+    image: "",
   },
   {
     name: "MOHAMED AMEERDEEN S",
     role: "Joint Secretary",
     phone: "+91 91593-55501",
     email: "ideenameer404@gmail.com",
+    image: "",
   },
   {
     name: "MOHAMED IMRAN KHAN M",
     role: "Treasurer",
     phone: "+91 73387 74116",
     email: "imrankhan02m@gmail.com",
+    image: "",
   },
 ];
 
@@ -37,12 +41,12 @@ const Page = () => {
         <img
           src="/design/man1.png"
           alt="Contact"
-          className="object-contain w-70 h-70"
+          className="object-contain w-30 h-20"
         />
       </div>
       <div className="text-center">
         <h1 className="text-2xl font-bold mb-6 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-transparent bg-clip-text">
-          STUDENT CO-ORDINATORS
+          OFFICE BEARERS
         </h1>
       </div>
       <div className=" flex flex-col items-center justify-center">
@@ -123,6 +127,45 @@ const Page = () => {
               className="object-contain w-40 h-40"
             />
           </div> */}
+        </div>
+        <div className="text-center">
+          <h1 className="text-2xl font-bold mb-6 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-transparent bg-clip-text">
+            Development Team
+          </h1>
+        </div>
+        <div className="flex flex-wrap justify-center">
+          <div className="mb-2 ml-2 mr-2">
+            <img
+              src="/devs/Kailash.jpg"
+              alt="Kailash G"
+              className="object-contain w-20 h-20 rounded-full mb-2"
+            />
+            <p className="text-xs text-center">Kailash</p>
+          </div>
+          <div className="mb-2 ml-2 mr-2">
+            <img
+              src="/devs/Prem.jpg"
+              alt="Prem"
+              className="object-contain w-20 h-20 rounded-full mb-2"
+            />
+            <p className="text-xs text-center">Prem Kumar</p>
+          </div>
+          <div className="mb-2 ml-2 mr-2">
+            <img
+              src="/devs/Fardeen.jpg"
+              alt="Ibrahim Fardeen"
+              className="object-contain w-20 h-20 rounded-full mb-2"
+            />
+            <p className="text-xs text-center">Fardeen</p>
+          </div>
+          <div className="mb-2 ml-2 mr-2">
+            <img
+              src="/devs/Nashith.jpeg"
+              alt="Abdur Rahman Nashith"
+              className="object-contain w-20 h-20 rounded-full mb-2"
+            />
+            <p className="text-xs text-center">Nashith</p>
+          </div>
         </div>
       </div>
     </div>
