@@ -42,6 +42,7 @@ const technicalEvents = [
     shortDescription:
       "Experience a dynamic showcase of cutting-edge research and global insights, where brilliant minds compete for recognition in a celebration of academic excellence and innovation. Join us for a thrilling symphony of ideas and eloquence.",
     feeDetails: "Registration Fee: Per Team ₹200",
+    feeAmount: 200,
     coordinators: [
       { name: "Abdul Rahman M S", contact: "9884416875" },
       { name: "Shafla Fathima", contact: "7092763661" },
@@ -104,6 +105,7 @@ const technicalEvents = [
     shortDescription:
       "Embark on 'Tech Quest,' a tech treasure hunt with challenges in coding, puzzles, and quizzes. Compete for the ultimate prize in a dynamic celebration of innovation and technical expertise!   ",
     feeDetails: "Registration Fee: Per Team ₹250",
+    feeAmount: 250,
     coordinators: [
       { name: "Kailash G", contact: "7200580860" },
       { name: "Kamalesh K B", contact: "8608125396" },
@@ -144,6 +146,7 @@ const technicalEvents = [
     shortDescription:
       "Experience the thrill as participants transform algorithms into code, embracing the joy of coding. Engage in challenges that showcase their coding prowess and problem-solving skills.",
     feeDetails: "Registration Fee: ₹100",
+    feeAmount: 100,
     coordinators: [
       { name: "Mohamed Moideen Halith", contact: "8248725391" },
       { name: "Prem Kumar V", contact: "9884497635" },
@@ -177,6 +180,7 @@ const technicalEvents = [
     shortDescription:
       "Explore the SQL Police Department's Crime-Solving Scenarios, a real-time challenge requiring participants to crack cases using SQL. Immerse yourself in this captivating investigation!",
     feeDetails: "Registration Fee: ₹100",
+    feeAmount: 100,
     coordinators: [
       { name: "Syed Riyaz K", contact: "7010651296" },
       { name: "Fariha Hiba", contact: "9962608021" },
@@ -222,6 +226,7 @@ const nonTechnicalEvents = [
     shortDescription:
       "Engage in our on-stage event featuring two exciting rounds! In Round 1, showcase your creativity with Adzap as you perform a creative advertisement for a given product. Round 2, Shipwreck, challenges participants to justify their survival as assigned characters. The winner emerges after these dynamic rounds!    ",
     feeDetails: "Registration Fee: ₹100",
+    feeAmount: 100,
     coordinators: [
       { name: "Ameerdeen S", contact: "9159385501" },
       { name: "Jeevida R", contact: "7305712495" },
@@ -256,6 +261,7 @@ const nonTechnicalEvents = [
     shortDescription:
       "Experience a celebration of diverse talents in a dazzling showcase! From mythical tales to dance and more, participants bring forth bold and brilliant performances. Join us for a captivating display of creativity, featuring solo and group acts that promise to enchant and inspire!",
     feeDetails: "Registration Fee: SOLO: ₹100 TEAM: ₹300",
+    feeAmount: {solo:100,group:300},
     coordinators: [
       { name: "Salman", contact: "6380393289" },
       { name: "Jabir", contact: "9500332770" },
@@ -299,6 +305,7 @@ const nonTechnicalEvents = [
     shortDescription:
       "Dive into Adrenaline Rush, a dynamic three-round event testing speed and agility in Tamil, English, and Hindi movies and songs. From Lyric-oh-holic to Connextions and Gesture Guess, participants face exciting challenges, with winners advancing and creating suspenseful eliminations in each round!",
     feeDetails: "Registration Fee: Per Team ₹200",
+    feeAmount: 200,
     coordinators: [
       { name: "Suhail I", contact: "9789096170" },
       { name: "Choummya M", contact: "8925059696" },
@@ -349,6 +356,7 @@ const nonTechnicalEvents = [
     shortDescription:
       "IPL AUCTION is an event where The Teams bid for the IPL players and create a squad. The teams will be given the names of the IPL teams and virtual money using which they can buy players in the auction.",
     feeDetails: "Registration Fee: Per Team ₹250",
+    feeAmount: 250,
     coordinators: [
       { name: "Mohamed Afsar", contact: "9443059885" },
       { name: "Mohamed Suhail B", contact: "9962292623" },
@@ -366,6 +374,7 @@ const workshops = [
     shortDescription:
       "Explore data science essentials in our 2-hour workshop. Delve into analysis, machine learning basics, and practical applications guided by experts. Perfect for beginners and enthusiasts looking to elevate their skills.",
     feeDetails: "Registration Fee: ₹100",
+    feeAmount: 100,
     speaker: "Speaker: Subramaniam Arumugam",
     coordinators: [
       { name: "Salman Fariz", contact: "1234567890" },
@@ -480,7 +489,7 @@ const Event = () => {
     setPopupVisible(true);
   };
 
-  const handleRegisterClick = (event) => {
+  const handleRegisterClick = (event) => {    
     setSelectedEvent(event);
     setShowModal(true);
   };
@@ -645,12 +654,13 @@ const Event = () => {
       {showModal &&
         createPortal(
           <Registrationmodal
+            feeAmount={selectedEvent.feeAmount}
             fee={selectedEvent.feeDetails}
             eventname={selectedEvent.name}
             onClose={() => setShowModal(false)}
           />,
           document.body
-        )}
+      )}
       {isPopupVisible && (
         <PopupCard event={selectedEvent} onClose={handleClosePopup} />
       )}

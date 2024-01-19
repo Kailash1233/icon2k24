@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 import mongoose from "mongoose";
 
 export async function POST(req) {
-  const { fullname, email, phonenumber, collegename, department, year, eventname, paymentfile } = await req.json();
+  const { fullname, teammembers, email, phonenumber, collegename, department, year, eventname, paymentfile } = await req.json();
 
   try {
     // await connectDB();
@@ -24,7 +24,7 @@ export async function POST(req) {
       }
     }
 
-    await Contact.create({ fullname, email, phonenumber, collegename, department, year, eventname, paymentfile });
+    await Contact.create({ fullname, teammembers, email, phonenumber, collegename, department, year, eventname, paymentfile });
 
     return NextResponse.json({
       msg: ["Registered successfully"],
