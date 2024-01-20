@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Footer from "./pages/Footer/footer";
 import CountdownTimer from "./components/CountdownTimer";
 
 const Home = () => {
@@ -29,7 +28,7 @@ const Home = () => {
           muted
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src={require("./images/video.mp4")} autoPlay muted loop />
+          <source src={require("./images/Final.mp4")} autoPlay muted loop />
         </video>
         {/* Your content on top of the video */}
         <div className="relative z-10">
@@ -43,7 +42,6 @@ const Home = () => {
             </div> */}
             <div
               className="text-7xl font-normal text-orange-600"
-
               style={{ fontSize: "4rem", fontWeight: "bold" }}
             >
               ICON'2K24 BEGINS IN
@@ -54,7 +52,6 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <Footer />
       </div>
     </>
   );

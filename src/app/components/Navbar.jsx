@@ -20,8 +20,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full h-24 shadow-xl bg-black sticky top-0 z-50" 
-    >
+    <nav className="w-full h-24 shadow-xl bg-neutral-950 sticky top-0 z-50">
       <div className="flex justify-between items-center h-full w-full px-5 2xl:px-16 text-white">
         <div>
           <ScrollLink

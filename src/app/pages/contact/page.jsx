@@ -48,12 +48,13 @@ const Page = () => {
             <div key={index} className="bg-black p-4 rounded-lg text-center">
               <img
                 src={member.image}
-                alt=""
-                className="rounded-full w-30 h-20 ml-28 mb-2"
+                alt="SIT"
+                className="rounded-full w-30 h-20 ml-16 mb-2"
               />
               <h2 className="text-2xl font-semibold mb-2">{member.name}</h2>
               <p className="text-sm text-gray-300 mb-1">{member.role}</p>
-              <div className="flex justify-center items-center">
+
+              <div className="flex justify-center items-center mb-1">
                 {/* Phone Icon */}
                 <svg
                   className="h-5 w-5 text-white mr-1"
@@ -70,7 +71,8 @@ const Page = () => {
                   <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
                 </svg>
                 <p className="text-xs text-gray-300 mr-2">{member.phone}</p>
-
+              </div>
+              <div className="flex justify-center items-center mb-2">
                 {/* Mail Icon */}
                 <svg
                   className="h-5 w-5 text-white ml-1 mr-2"
@@ -131,7 +133,7 @@ const Page = () => {
             Dev Team
           </h1>
         </div>
-        <div className="flex flex-wrap justify-center">
+        <div className="flex flex-wrap justify-center cursor-pointer">
           <div className="mb-2 ml-2 mr-2">
             <img
               src="/devs/Kailash.jpg"
