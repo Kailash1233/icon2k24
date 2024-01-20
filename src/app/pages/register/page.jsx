@@ -1,16 +1,8 @@
 "use client";
-
 import { useState } from "react";
-import dbdupi from "@/app/images/dbdupi.jpg";
-import Image from "next/image";
 import Select from "react-select";
 
-
 const Register = ({ success, error, onClose }) => {
-
-  // const [isPopupVisible, setPopupVisible] = useState(false);
-  // const [showModal, setShowModal] = useState(false);
-
   const handleCloseOnOverlayClick = (e) => {
     if (!e.target.closest(".register-content")) {
       onClose();
@@ -22,44 +14,29 @@ const Register = ({ success, error, onClose }) => {
       className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-50 backdrop-blur-sm rounded-lg z-50"
       onClick={handleCloseOnOverlayClick}
     >
-      <div className="relative w-[400px] h-[400px] bg-white bg-opacity-500 h-6 overflow-y-auto p-8 register-content">
+      <div className="relative w-[400px] h-[400px] bg-white bg-opacity-500overflow-y-auto p-8 register-content">
         <button
           className="absolute top-6 right-4 text-xl font-bold cursor-pointer bg-orange-500 rounded-lg px-2 py-1"
           onClick={onClose}
         >
           &times;
         </button>
-        <h2 className={`${
-            success ? "text-green-800" : "text-red-600"
-              } px-5 py-2`}
-            >{error}</h2>
-        
+        <h2
+          className={`${success ? "text-green-800" : "text-red-600"} px-5 py-2`}
+        >
+          {error}
+        </h2>
       </div>
     </div>
   );
 };
 
-const QRCode = ({ onClose }) => {
-
-  // const [isPopupVisible, setPopupVisible] = useState(false);
-  // const [showModal, setShowModal] = useState(false);
-
+const QRCode = ({ feeAmount, onClose }) => {
   const handleCloseOnOverlayClick = (e) => {
     if (!e.target.closest(".qrcode-content")) {
       onClose();
     }
   };
-
-  // const handleRegisterClick = () => {
-  //   // console.log(e)
-  //   setPopupVisible(true);
-  //   setShowModal(true);
-  // };
-
-  // const handleRegistrationModalClose = () => {
-  //   setShowModal(false);
-  //   setPopupVisible(false);
-  // };
 
   return (
     <div
@@ -73,16 +50,64 @@ const QRCode = ({ onClose }) => {
         >
           &times;
         </button>
-          <div>
-            <Image src={dbdupi} width={316} alt="QR code.jpg" />
-          </div>
+        <div>
+          <img
+            src={`/qrcode/${feeAmount}.jpg`}
+            width={316}
+            height={248}
+            alt="QR code.jpg"
+          />
         </div>
+      </div>
     </div>
   );
 };
 
-export default function RegistrationForm({fee, eventname, onClose}) {
-  
+export default function RegistrationForm({
+  feeAmount,
+  fee,
+  eventname,
+  onClose,
+}) {
+  const Ignitethestage = () => {
+    const handleCloseOnOverlayClick = (e) => {
+      if (!e.target.closest(".ignite-the-stage-content")) {
+        setShowignitethestage(false);
+      }
+    };
+
+    return (
+      <div
+        className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-50 backdrop-blur-sm rounded-lg z-50"
+        onClick={handleCloseOnOverlayClick}
+      >
+        <div className="w-[400px] h-[400px] bg-white overflow-y-auto p-8 ignite-the-stage-content relative">
+          {/* <button
+            className="absolute top-6 right-4 text-xl font-bold cursor-pointer bg-orange-500 rounded-lg px-2 py-1"
+            onClick={setShowignitethestage(false)}
+          >
+            &times;
+          </button> */}
+          <h2 className="text-xl font-bold mb-4">"IGNITE THE STAGE"</h2>
+          <div className="flex justify-center items-end gap-5">
+            <button
+              className="mt-3 bg-orange-500 rounded-lg px-4 py-2"
+              onClick={handleSoloClick()}
+            >
+              Solo
+            </button>
+            <button
+              className="mt-3 bg-orange-500 rounded-lg px-4 py-2"
+              onClick={handleGroupClick()}
+            >
+              Group
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
   const [phonenumber, setPhonenumber] = useState("");
@@ -1028,12 +1053,17 @@ export default function RegistrationForm({fee, eventname, onClose}) {
     { value: "fourth", label: "Fourth" },
     { value: "fifth", label: "Fifth" },
   ];
-
   const [error, setError] = useState([]);
   const [success, setSuccess] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [showqr, setShowqr] = useState(false);
-  const [showerror, setShowerror] = useState(false)
+  const [showerror, setShowerror] = useState(false);
+  const [teammember1, setTeammember1] = useState("");
+  const [teammember2, setTeammember2] = useState("");
+  const [showignitethestage, setShowignitethestage] = useState(false);
+  const [ignitethestage, setIgnitethestage] = useState("");
+  const max2 = ["PAPER-DE-FIESTA", "ADRENALINE RUSH"];
+  const max3 = ["TECH QUEST", "IPL AUCTION"];
 
   const convertTobase64 = async (e) => {
     let file = e.target.files[0];
@@ -1052,12 +1082,15 @@ export default function RegistrationForm({fee, eventname, onClose}) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Full name: ", fullname);
+    console.log("Team members ", teammember1 + teammember2);
     console.log("Email: ", email);
     console.log("phonenumber: ", phonenumber);
     console.log("collegename: ", collegename);
     console.log("department: ", department);
     console.log("year: ", year);
     console.log("event: ", eventname);
+    console.log("paymentfile : ", paymentfile);
+
     if (!fullname) {
       setShowerror(true);
       setError(["Please enter your Full Name"]);
@@ -1067,8 +1100,39 @@ export default function RegistrationForm({fee, eventname, onClose}) {
       var regex1 = /^[A-Za-z\s]{3,50}$/;
       if (!regex1.test(fullname)) {
         setShowerror(true);
+        setFullname("");
         setError(["Please enter a valid Full Name"]);
         return;
+      }
+    }
+    if (eventname == "TECH QUEST") {
+      if (
+        !teammember1 ||
+        teammember1 == "" ||
+        !teammember2 ||
+        teammember2 == ""
+      ) {
+        setShowerror(true);
+        setError(["This event requires three members per team"]);
+        return;
+      }
+      if (teammember1) {
+        var regex1 = /^[A-Za-z\s]{3,50}$/;
+        if (!regex1.test(teammember1)) {
+          setShowerror(true);
+          setTeammember1("");
+          setError(["Please enter a valid Name for Team member 2"]);
+          return;
+        }
+      }
+      if (teammember2) {
+        var regex1 = /^[A-Za-z\s]{3,50}$/;
+        if (!regex1.test(teammember2)) {
+          setShowerror(true);
+          setTeammember2("");
+          setError(["Please enter a valid Name for Team member 3"]);
+          return;
+        }
       }
     }
     if (!email) {
@@ -1080,6 +1144,7 @@ export default function RegistrationForm({fee, eventname, onClose}) {
       var regex2 = /^[\w.%+-]+@[\w.-]+\.[A-Za-z]{2,}$/i;
       if (!regex2.test(email)) {
         setShowerror(true);
+        setEmail("");
         setError(["Invalid Email Address"]);
         return;
       }
@@ -1093,6 +1158,7 @@ export default function RegistrationForm({fee, eventname, onClose}) {
       var regex = /^([0-9]{10})$/;
       if (!regex.test(phonenumber)) {
         setShowerror(true);
+        setPhonenumber("");
         setError(["Please enter a valid phone number"]);
         return;
       }
@@ -1127,6 +1193,7 @@ export default function RegistrationForm({fee, eventname, onClose}) {
       var regex4 = /^\S{2,100}$/;
       if (!regex4.test(department)) {
         setShowerror(true);
+        setDepartment("");
         setError(["Please enter a valid department name"]);
         return;
       }
@@ -1136,7 +1203,6 @@ export default function RegistrationForm({fee, eventname, onClose}) {
       setError(["Please select your year of study"]);
       return;
     }
-    console.log("paymentfile : " + paymentfile);
     if (!paymentfile) {
       setShowerror(true);
       setError(["Please upload screenshot of payment"]);
@@ -1150,6 +1216,7 @@ export default function RegistrationForm({fee, eventname, onClose}) {
       },
       body: JSON.stringify({
         fullname,
+        teammembers: [teammember1, teammember2],
         email,
         phonenumber,
         collegename: collegename == "Other" ? othercollege : collegename,
@@ -1174,6 +1241,8 @@ export default function RegistrationForm({fee, eventname, onClose}) {
       setDepartment("");
       setYear(null);
       setPaymentfile(null);
+      setTeammember1("");
+      setTeammember2("");
     }
   };
 
@@ -1192,185 +1261,281 @@ export default function RegistrationForm({fee, eventname, onClose}) {
     setError([]);
   };
 
+  const handleSoloClick = () => {
+    setIgnitethestage("solo");
+    setShowignitethestage(false);
+  };
+
+  const handleGroupClick = () => {
+    setIgnitethestage("group");
+    setShowignitethestage(false);
+  };
+
   const copyTextToClipboard = async (text) => {
-    console.log(text)
-    console.log(process.env.UPI_ID);
-    console.log(process.env.PHONE_NUMBER);
-    
-    if ('clipboard' in navigator) {
+    alert(text + " copied");
+    if ("clipboard" in navigator) {
       return await navigator.clipboard.writeText(text);
     } else {
-      return document.execCommand('copy', true, text);
+      return document.execCommand("copy", true, text);
     }
-  }
+  };
+
+  // if(eventname == "IGNITE THE STAGE"){
+  //   return setShowignitethestage(true);
+  // }
 
   return (
     <>
-    <div
-      className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-50 backdrop-blur-sm rounded-lg z-50"
-      onClick={handleCloseOnOverlayClick}
-    >
-      <div className="w-[400px] h-[400px] bg-white overflow-y-auto p-8 popup-card-content relative">
-        <button
-          className="absolute top-6 right-4 text-xl font-bold cursor-pointer bg-orange-500 rounded-lg px-2 py-1"
-          onClick={onClose}
-        >
-          &times;
-        </button>
-      <form
-        onSubmit={handleSubmit}
-        className="py-4 mt-4 flex flex-col gap-5 bg-[white] overflow-auto relative"
+      <div
+        className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-50 backdrop-blur-sm rounded-lg z-50"
+        onClick={handleCloseOnOverlayClick}
       >
-        <div>{/* <label htmlFor="fullname">Full Name</label> */}
-          <input
-          className="mt-5"
-            onChange={(e) => setFullname(e.target.value)}
-            value={fullname}
-            type="text"
-            id="fullname"
-            placeholder="Full name"
-          />
+        <div className="w-[400px] h-[400px] bg-white overflow-y-auto p-8 popup-card-content relative">
+          <h1 className="font-semibold">GET REGISTERED!</h1>
+          <button
+            className="absolute top-3 right-4 text-xl font-bold cursor-pointer bg-orange-500 rounded-lg px-2 py-1"
+            onClick={onClose}
+          >
+            &times;
+          </button>
+          <form
+            onSubmit={handleSubmit}
+            className="py-4 mt-1 flex flex-col gap-5 bg-[white] overflow-auto relative"
+          >
+            <div>
+              {/* <label htmlFor="fullname" or "teamname/> */}
+              <input
+                className="mt-4"
+                onChange={(e) => setFullname(e.target.value)}
+                value={fullname}
+                type="text"
+                id="fullname"
+                placeholder={
+                  max2.includes(eventname) || max3.includes(eventname)
+                    ? "Full name (Team member 1)"
+                    : "Full name"
+                }
+              />
+            </div>
+            {max2.includes(eventname) && (
+              <>
+                <div className="input-wrap">
+                  {" "}
+                  {/*  <label htmlFor="team member 1"/> */}
+                  <input
+                    type="text"
+                    className="input-field"
+                    value={teammember1}
+                    onChange={(e) => setTeammember1(e.target.value)}
+                    placeholder="Team member 2 (optional)"
+                  />
+                </div>
+              </>
+            )}
+            {max3.includes(eventname) && (
+              <>
+                <div className="input-wrap">
+                  {" "}
+                  {/*  <label htmlFor="team member 1"/> */}
+                  <input
+                    type="text"
+                    className="input-field"
+                    value={teammember1}
+                    onChange={(e) => setTeammember1(e.target.value)}
+                    placeholder={
+                      eventname == "TECH QUEST"
+                        ? "Team member 2 (required)"
+                        : "Team member 2 (optional)"
+                    }
+                  />
+                </div>
+                <div className="input-wrap">
+                  {/* <label htmlFor="team member 2"/>*/}
+                  <input
+                    type="text"
+                    className="input-field"
+                    value={teammember2}
+                    onChange={(e) => setTeammember2(e.target.value)}
+                    placeholder={
+                      eventname == "TECH QUEST"
+                        ? "Team member 3 (required)"
+                        : "Team member 3 (optional)"
+                    }
+                  />
+                </div>
+              </>
+            )}
+
+            <div>
+              {" "}
+              {/* <label htmlFor="email">Email</label> */}
+              <input
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                type="text"
+                id="email"
+                placeholder="Email"
+              />
+            </div>
+
+            <div>
+              {" "}
+              {/* <label htmlFor="phonenumber">Phone number</label> */}
+              <input
+                onChange={(e) => setPhonenumber(e.target.value)}
+                value={phonenumber}
+                type="text"
+                id="phonenumber"
+                placeholder="Phone number"
+              />
+            </div>
+
+            <div>
+              {" "}
+              {/* <label htmlFor="college">College</label> */}
+              <Select
+                className="college-select input-field"
+                options={collegeOptions}
+                value={collegename == null ? "" : collegename.label}
+                onChange={(e) => setCollegename(e.label)}
+                placeholder={
+                  collegename == null
+                    ? "Select your college "
+                    : collegename.label
+                }
+              />
+            </div>
+
+            {collegename != null && collegename == "Other" && (
+              <div className="input-wrap">
+                {/* <label htmlFor="otherCollege">otherCollege</label> */}
+                <input
+                  type="text"
+                  className="input-field"
+                  autoComplete="off"
+                  value={othercollege}
+                  onChange={(e) => setOthercollege(e.target.value)}
+                  placeholder={othercollege ? "" : "Enter your college name"}
+                />
+              </div>
+            )}
+
+            <div>
+              {/* <label htmlFor="depatment">Department</label> */}
+              <input
+                onChange={(e) => setDepartment(e.target.value)}
+                value={department}
+                type="text"
+                id="department"
+                placeholder="Department"
+              />
+            </div>
+
+            <div>
+              {/* <label htmlFor="year">Year</label> */}
+              <Select
+                className="college-select input-field"
+                options={yearOptions}
+                value={year == null ? "" : year.label}
+                onChange={(e) => setYear(e.label)}
+                placeholder={year ? "" : "Year of study"}
+              />
+            </div>
+
+            <div>
+              {/* <label htmlFor="event">Event</label> */}
+              <span>
+                <label htmlFor="event">Event -- </label>
+                <input
+                  value={eventname}
+                  type="text"
+                  id="event"
+                  readOnly
+                  required
+                />
+              </span>
+            </div>
+
+            <div>
+              {/* <label htmlFor="fee">Fee details</label> */}
+              <span>
+                <label htmlFor="fee">{fee}</label>
+              </span>
+            </div>
+
+            <div>
+              {/* <label htmlFor="paymentOptions">Payment Options</label> */}
+              <span>
+                <label htmlFor="event">Payment Options:</label>
+              </span>
+            </div>
+            <div className="flex flex-col justify-center">
+              <button
+                title="Click to copy phone number"
+                type="button"
+                className="mb-3 bg-orange-500 rounded-lg px-4 py-2"
+                onClick={() => copyTextToClipboard("8925059696")}
+              >
+                Pay using phone number
+              </button>
+              <p className="flex justify-center">Click to copy phone number</p>
+              <p className="flex justify-center">or</p>
+              <button
+                title="Click to copy UPI ID"
+                type="button"
+                className="mb-3 bg-orange-500 rounded-lg px-4 py-2"
+                onClick={() => copyTextToClipboard("choumya0703@oksbi")}
+              >
+                Pay using UPI ID
+              </button>
+              <p className="flex justify-center">Click to copy UPI ID</p>
+              <p className="flex justify-center">or</p>
+              <button
+                title="Click to show QR"
+                type="button"
+                className="mb-3 bg-orange-500 rounded-lg px-4 py-2"
+                onClick={() => setShowqr(true)}
+              >
+                Show QR
+              </button>
+              <br />
+              <button
+                type="button"
+                className="mb-3 bg-black rounded-lg px-4 py-2 text-white"
+              >
+                <label htmlFor="file">
+                  {paymentfile
+                    ? "✅ Screenshot uploaded"
+                    : "Upload screenshot of payment"}
+                </label>
+              </button>
+              <input
+                className="hidden"
+                onChange={(e) => convertTobase64(e)}
+                type="file"
+                id="file"
+                accept="image/*"
+              />
+            </div>
+
+            <button
+              className="bg-green-700 p-3 text-white font-bold"
+              type="submit"
+            >
+              Register
+            </button>
+          </form>
         </div>
-
-        <div>
-          {/* <label htmlFor="email">Email</label> */}
-          <input
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
-            type="text"
-            id="email"
-            placeholder="Email"
-          />
-        </div>
-
-        <div>
-          {/* <label htmlFor="phonenumber">Phone number</label> */}
-          <input
-            onChange={(e) => setPhonenumber(e.target.value)}
-            value={phonenumber}
-            type="text"
-            id="phonenumber"
-            placeholder="Phone number"
-          />
-        </div>
-
-        <div>
-          {/* <label htmlFor="college">College</label> */}
-          <Select
-            className="college-select input-field"
-            options={collegeOptions}
-            value={collegename == null ? "" : collegename.label}
-            onChange={(e) => setCollegename(e.label)}
-            placeholder={
-              collegename == null ? "Select your college " : collegename.label
-            }
-          />
-        </div>
-
-        {collegename != null && collegename == "Other" && (
-          <div className="input-wrap">
-            {/* <label htmlFor="otherCollege">otherCollege</label> */}
-            <input
-              type="text"
-              className="input-field"
-              autoComplete="off"
-              value={othercollege}
-              onChange={(e) => setOthercollege(e.target.value)}
-              placeholder={othercollege ? "" : "Enter your college name"}
-            />
-          </div>
-        )}
-
-        <div>
-          {/* <label htmlFor="depatment">Department</label> */}
-          <input
-            onChange={(e) => setDepartment(e.target.value)}
-            value={department}
-            type="text"
-            id="department"
-            placeholder="Department"
-          />
-        </div>
-
-        <div>
-          {/* <label htmlFor="year">Year</label> */}
-          <Select
-            className="college-select input-field"
-            options={yearOptions}
-            value={year == null ? "" : year.label}
-            onChange={(e) => setYear(e.label)}
-            placeholder={year ? "" : "Year of study"}
-          />
-        </div>
-
-        <div>
-          {/* <label htmlFor="event">Event</label> */}
-          <span>
-            <label htmlFor="event">Event -- </label>
-            <input value={eventname} type="text" id="event" readOnly required />
-          </span>
-        </div>
-
-        <div>
-          {/* <label htmlFor="fee">Fee details</label> */}
-          <span>
-            <label htmlFor="fee">{fee}</label>
-          </span>
-        </div>
-
-        <div>
-          {/* <label htmlFor="paymentOptions">Payment Options</label> */}
-          <span>
-            <label htmlFor="event">Payment Options:</label>
-          </span>
-        </div>
-
-        <button
-          title="Click to copy phone number"
-          type="button"
-          className="mb-3 bg-orange-500 rounded-lg px-4 py-2"
-          onClick={() => copyTextToClipboard(process.env.PHONE_NUMBER)}
-        >
-          Pay using phone number
-        </button>
-        <label className="flex justify-center">or</label>
-        <button
-          title="Click to copy UPI ID"
-          type="button"
-          className="mb-3 bg-orange-500 rounded-lg px-4 py-2"
-          onClick={() => copyTextToClipboard(process.env.UPI_ID)}
-        >
-          Pay using UPI ID
-        </button>
-        <label className="flex justify-center">or</label>
-        <button
-          title="Click to show QR"
-          type="button"
-          className="mb-3 bg-orange-500 rounded-lg px-4 py-2"
-          onClick={() => setShowqr(true)}
-        >
-          Show QR
-        </button>
-
-        <div>
-          <label htmlFor="event">Upload screenshot of payment</label>
-          <input
-            onChange={(e) => convertTobase64(e)}
-            // value={paymentfile}
-            type="file"
-            id="file"
-            accept="image/*"
-          />
-        </div>
-
-        <button className="bg-green-700 p-3 text-white font-bold" type="submit">
-          Register
-        </button>
-      </form>       
       </div>
-    </div>
-    {error && showerror && (<Register success={success} error={error} onClose={handleCloseErrorBox} />)}
-    {showqr && (<QRCode onClose={handleCloseQR}/>)}
+      {error && showerror && (
+        <Register
+          success={success}
+          error={error}
+          onClose={handleCloseErrorBox}
+        />
+      )}
+      {showqr && <QRCode feeAmount={feeAmount} onClose={handleCloseQR} />}
+      {showignitethestage && <Ignitethestage />}
     </>
   );
 }

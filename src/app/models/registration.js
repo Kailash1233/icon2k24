@@ -7,6 +7,11 @@ const contactSchema = new Schema({
     trim: true,
   },
 
+  teammembers: {
+    type: Array,
+    trim: true,
+  },
+
   email: {
     type: String,
     required: [true, "Please enter your email."],

@@ -4,5 +4,40 @@
 
 *{
     font-family: 'Permanent Marker';
-
 }
+
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color:white;
+    color: black;
+}
+li {
+    list-style-type: none;
+}
+ul li a {
+    list-style-type: none;
+    color:black;
+}
+.container {
+    margin: 20px;
+    padding: 10px;
+}
+.container::after{
+    content: '';
+    display: block;
+    margin-top: 15px;
+    height: 2px;
+    width: 100%;
+    background-color: aquamarine;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} */
+
+

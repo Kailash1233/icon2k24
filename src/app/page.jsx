@@ -35,10 +35,11 @@ const Home = () => {
         <div className="relative z-10">
           <div className="flex flex-col text-white justify-center items-center h-60 mt-32 px-6">
             <div
-              className="text-7xl font-mono"
-              style={{ color: "orange", fontSize: "4rem", fontWeight: "bold" }}
+              className="text-7xl font-normal text-orange-600"
+
+              style={{ fontSize: "4rem", fontWeight: "bold" }}
             >
-              ICON BEGINS IN
+              ICON'2K24 BEGINS IN
             </div>
 
             <div className="mt-24 px-9 ">
