@@ -2,12 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  font-family: "Permanent Marker", cursive;
+*{
+    font-family: 'Permanent Marker';
 }
 
-/* 
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -39,9 +38,6 @@ ul li a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-ul.navbar-elements {
-    display: flex;
-    gap: 40px;
 } */
+
+

@@ -43,7 +43,7 @@ const Page = () => {
         </h1>
       </div>
       <div className=" flex flex-col items-center justify-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 lg:grid-rows-2 gap-8">
           {members.map((member, index) => (
             <div key={index} className="bg-black p-4 rounded-lg text-center">
               <img

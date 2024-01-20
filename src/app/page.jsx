@@ -42,8 +42,9 @@ const Home = () => {
               />
             </div>
             <div
-              className="text-7xl font-lucky"
-              style={{ color: "orange", fontSize: "4rem", fontWeight: "bold" }}
+              className="text-7xl font-normal text-orange-600"
+
+              style={{ fontSize: "4rem", fontWeight: "bold" }}
             >
               ICON'2K24 BEGINS IN
             </div>
