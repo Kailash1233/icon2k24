@@ -3,8 +3,10 @@
 @tailwind utilities;
 
 *{
-    font-family: 'Permanent Marker';
+    font-family: 'Permanent Marker', cursive;
 }
+
+
 
 /* * {
     margin: 0;
