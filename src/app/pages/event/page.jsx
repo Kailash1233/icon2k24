@@ -528,18 +528,19 @@ const Event = () => {
 
                 <div className="flex justify-center items-end h-full gap-4">
                   <button
-                    className="mb-3  bg-orange-500 rounded-lg px-4 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-transparent text-slate-900"
+                    className="mb-3 border-[3px] border-black rounded-lg px-4 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block  text-slate-900 text-[18px]"
                     onClick={() => handleKnowMoreClick(event)}
                   >
                     Know More
                   </button>
                   <button
-                    className="mb-3 bg-orange-500 rounded-lg px-4 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-transparent text-slate-900"
+                    className="mb-3 border-[3px] border-black rounded-lg px-4 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block  text-slate-900 text-[18px]"
                     onClick={() => handleRegisterClick(event)}
                   >
                     Register
                   </button>
                 </div>
+                
               </div>
             ))}
           </div>
@@ -580,13 +581,13 @@ const Event = () => {
 
                 <div className="flex justify-center items-end h-full gap-4">
                   <button
-                    className="mb-3 bg-orange-500 rounded-lg px-4 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-transparent text-slate-900"
+                    className="mb-3 border-[3px] border-black rounded-lg px-4 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block  text-slate-900 text-[18px]"
                     onClick={() => handleKnowMoreClick(event)}
                   >
                     Know More
                   </button>
                   <button
-                    className="mb-3 bg-orange-500 rounded-lg px-4 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-transparent text-slate-900"
+                    className="mb-3 border-[3px] border-black rounded-lg px-4 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block  text-slate-900 text-[18px]"
                     onClick={() => handleRegisterClick(event)}
                   >
                     Register
@@ -606,7 +607,7 @@ const Event = () => {
           style={{ boxShadow: shadowStyle }}
         >
           <div className="text-center">
-            <h1 className="mb-5 text-3xl font-bold bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-transparent bg-clip-text">
+            <h1 className="mb-5 text-3xl font-bold bg-gradient-to-r from-orange-300 via-yellow-300 to-red-800 inline-block text-transparent bg-clip-text">
               MEGA EVENT
             </h1>
           </div>
@@ -631,13 +632,13 @@ const Event = () => {
 
                 <div className="flex justify-center items-end h-full gap-4">
                   <button
-                    className="mb-3 bg-orange-500 rounded-lg px-4 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-transparent text-slate-900"
+                    className="mb-3 border-[3px] border-black rounded-lg px-4 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block  text-slate-900 text-[18px]"
                     onClick={() => handleKnowMoreClick(event)}
                   >
                     Know More
                   </button>
                   <button
-                    className="mb-3 bg-orange-500 rounded-lg px-4 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-transparent text-slate-900"
+                    className="mb-3 border-[3px] border-black rounded-lg px-4 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block  text-slate-900 text-[18px]"
                     onClick={() => handleRegisterClick(event)}
                   >
                     Register

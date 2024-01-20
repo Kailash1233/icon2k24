@@ -1024,6 +1024,7 @@ export default function RegistrationForm({
   const [showignitethestage, setShowignitethestage] = useState(true);
   const [ignitethestage, setIgnitethestage] = useState(null);
   const [groupmembers, setGroupmembers] = useState(0);
+  const [effect, setEffect] = useState(false);
   const max2 = ["PAPER-DE-FIESTA", "ADRENALINE RUSH"];
   const max3 = ["TECH QUEST", "IPL AUCTION"];
 
@@ -1276,13 +1277,23 @@ export default function RegistrationForm({
         onClick={handleCloseOnOverlayClick}
       >
         <div className="w-[400px] h-[400px] bg-white overflow-y-auto p-8 popup-card-content relative">
-          <h1 className="font-semibold">GET REGISTERED!</h1>
+
+          <h1 className="font-semibold text-3xl">{
+          <input className="outline-none" value={eventname} readOnly/>}
+          </h1>
+
           <button
             className="absolute top-3 right-4 text-xl font-bold cursor-pointer bg-orange-500 rounded-lg px-2 py-1"
             onClick={onClose}
           >
             &times;
           </button>
+          <div>
+              {/* <label htmlFor="fee">Fee details</label> */}
+              <span>
+                <label htmlFor="fee">{fee}</label>
+              </span>
+            </div>
           <form
             onSubmit={handleSubmit}
             className="py-4 mt-1 flex flex-col gap-5 bg-[white] overflow-auto relative"
@@ -1462,27 +1473,6 @@ export default function RegistrationForm({
             </div>
 
             <div>
-              {/* <label htmlFor="event">Event</label> */}
-              <span>
-                <label htmlFor="event">Event -- </label>
-                <input
-                  value={eventname}
-                  type="text"
-                  id="event"
-                  readOnly
-                  required
-                />
-              </span>
-            </div>
-
-            <div>
-              {/* <label htmlFor="fee">Fee details</label> */}
-              <span>
-                <label htmlFor="fee">{fee}</label>
-              </span>
-            </div>
-
-            <div>
               {/* <label htmlFor="paymentOptions">Payment Options</label> */}
               <span>
                 <label htmlFor="event">Payment Options:</label>
@@ -1497,7 +1487,7 @@ export default function RegistrationForm({
               >
                 Pay using phone number
               </button>
-              <p className="flex justify-center">Click to copy phone number</p>
+              <p className="flex justify-center text-sm">Click to copy phone number</p>
               <p className="flex justify-center">or</p>
               <button
                 title="Click to copy UPI ID"
@@ -1507,7 +1497,7 @@ export default function RegistrationForm({
               >
                 Pay using UPI ID
               </button>
-              <p className="flex justify-center">Click to copy UPI ID</p>
+              <p className="flex justify-center text-sm ">Click to copy UPI ID</p>
               <p className="flex justify-center">or</p>
               <button
                 title="Click to show QR"
@@ -1538,11 +1528,11 @@ export default function RegistrationForm({
             </div>
 
             <button
-              className="bg-green-700 p-3 text-white font-bold"
+              className="bg-green-700 p-3 text-white font-bold hover:bg-blue-500 hover:shadow-black-500 active:bg-green-900"
               type="submit"
             >
               Register
-            </button>
+            </button>            
           </form>
         </div>
       </div>

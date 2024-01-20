@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     fontFamily: {
       'lucky': ['Luckiest Guy', 'cursive'],
-    }
+    },
   },
   plugins: [],
 }
