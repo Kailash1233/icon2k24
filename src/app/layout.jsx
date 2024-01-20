@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./pages/Footer/footer";
 import connectDB from "./lib/mongodb";
+import video from "./images/video.mp4"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,7 +16,7 @@ export const metadata = {
 export default function RootLayout() {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={inter.className} >
         <Navbar />
 
         <LazyLoadedComponent dynamicImport={() => import("./page")} />

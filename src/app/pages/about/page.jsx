@@ -71,7 +71,7 @@ const About = () => {
             style={{ boxShadow: shadowStyle }}
           />
           <p className="text-center text-xl text-white font-bold">
-            People of SIT
+            SIT
           </p>
         </div>
       </div>

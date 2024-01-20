@@ -29,18 +29,18 @@ const Home = () => {
           muted
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src={require("./images/smoky.mp4")} autoPlay muted loop />
+          <source src={require("./images/video.mp4")} autoPlay muted loop />
         </video>
         {/* Your content on top of the video */}
         <div className="relative z-10">
           <div className="flex flex-col text-white justify-center items-center h-60 mt-32 px-6">
-            <div className="w-100 h-100 flex">
+            {/* <div className="w-100 h-100 flex">
               <img
                 src="/design/bg.gif"
                 alt="Join Us!"
                 className="w-100 h-100"
               />
-            </div>
+            </div> */}
             <div
               className="text-7xl font-normal text-orange-600"
 

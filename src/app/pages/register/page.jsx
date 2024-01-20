@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import Button from "@/app/components/Button";
+import { useState, useEffect } from "react";
 import Select from "react-select";
 
 const Register = ({ success, error, onClose }) => {
@@ -11,18 +12,12 @@ const Register = ({ success, error, onClose }) => {
 
   return (
     <div
-      className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-50 backdrop-blur-sm rounded-lg z-50"
+      className="fixed top-[-13px] left-0 w-full h-full flex items-center justify-center bg-opacity-50 backdrop-blur-sm rounded-lg z-50"
       onClick={handleCloseOnOverlayClick}
     >
-      <div className="relative w-[400px] h-[400px] bg-white bg-opacity-500overflow-y-auto p-8 register-content">
-        <button
-          className="absolute top-6 right-4 text-xl font-bold cursor-pointer bg-orange-500 rounded-lg px-2 py-1"
-          onClick={onClose}
-        >
-          &times;
-        </button>
+      <div className="relative w-[400px] h-[100px] bg-white bg-opacity-500 overflow-y-auto p-8 register-content border-2 border-red-500">
         <h2
-          className={`${success ? "text-green-800" : "text-red-600"} px-5 py-2`}
+          className={`${success ? "text-green-800" : "text-red-600 text-lg flex justify-center items-center h-full backdrop:blur-sm"} px-5 py-2`}
         >
           {error}
         </h2>
@@ -43,7 +38,7 @@ const QRCode = ({ feeAmount, onClose }) => {
       className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-50 backdrop-blur-sm rounded-lg z-50"
       onClick={handleCloseOnOverlayClick}
     >
-      <div className="w-[400px] h-[400px] bg-white overflow-y-auto p-8 qrcode-content relative">
+      <div className="w-[450px] h-[400px] bg-white overflow-y-auto p-8 qrcode-content relative flex justify-center">
         <button
           className="absolute top-6 right-4 text-xl font-bold cursor-pointer bg-orange-500 rounded-lg px-2 py-1"
           onClick={onClose}
@@ -1024,10 +1019,8 @@ export default function RegistrationForm({
   const [showignitethestage, setShowignitethestage] = useState(true);
   const [ignitethestage, setIgnitethestage] = useState(null);
   const [groupmembers, setGroupmembers] = useState(0);
-  const [effect, setEffect] = useState(false);
   const max2 = ["PAPER-DE-FIESTA", "ADRENALINE RUSH"];
   const max3 = ["TECH QUEST", "IPL AUCTION"];
-
   const convertTobase64 = async (e) => {
     let file = e.target.files[0];
     let reader = new FileReader();
@@ -1043,7 +1036,7 @@ export default function RegistrationForm({
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     console.log("Full name: ", fullname);
     console.log("Team members ", teammember1 + teammember2);
     console.log("Email: ", email);
@@ -1053,7 +1046,7 @@ export default function RegistrationForm({
     console.log("year: ", year);
     console.log("event: ", eventname);
     console.log("paymentfile : ", paymentfile);
-
+     
     if(eventname == "IGNITE THE STAGE"){
       if(!ignitethestage){
         setShowerror(true);
@@ -1206,7 +1199,6 @@ export default function RegistrationForm({
         paymentfile,
       }),
     });
-
     const { msg, success } = await res.json();
     setShowerror(true);
     setError(msg);
@@ -1276,11 +1268,7 @@ export default function RegistrationForm({
         className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-50 backdrop-blur-sm rounded-lg z-50"
         onClick={handleCloseOnOverlayClick}
       >
-        <div className="w-[400px] h-[400px] bg-white overflow-y-auto p-8 popup-card-content relative">
-
-          <h1 className="font-semibold text-3xl">{
-          <input className="outline-none" value={eventname} readOnly/>}
-          </h1>
+        <div className="w-[450px] h-[450px] bg-white overflow-y-auto p-8 popup-card-content relative">
 
           <button
             className="absolute top-3 right-4 text-xl font-bold cursor-pointer bg-orange-500 rounded-lg px-2 py-1"
@@ -1288,14 +1276,18 @@ export default function RegistrationForm({
           >
             &times;
           </button>
-          <div>
+          <h1 className="font-semibold text-3xl mt-6">{
+          <input className="outline-none" value={eventname} readOnly/>}
+          </h1>
+          <div className="mt-2"> 
               {/* <label htmlFor="fee">Fee details</label> */}
               <span>
                 <label htmlFor="fee">{fee}</label>
               </span>
             </div>
+            <div className=" text-green-600 mt-2">Lunch will be provided for registered people.</div>
           <form
-            onSubmit={handleSubmit}
+            action={handleSubmit}
             className="py-4 mt-1 flex flex-col gap-5 bg-[white] overflow-auto relative"
           >
             {(eventname == "IGNITE THE STAGE" && showignitethestage) &&
@@ -1307,7 +1299,7 @@ export default function RegistrationForm({
             <div>
               {/* <label htmlFor="fullname" or "teamname/> */}
               <input
-                className="mt-4"
+                className="mt-4 border-2 border-gray-300 rounded-md p-2 w-full"
                 onChange={(e) => setFullname(e.target.value)}
                 value={fullname}
                 type="text"
@@ -1325,12 +1317,12 @@ export default function RegistrationForm({
             </div>
             {max2.includes(eventname) && (
               <>
-                <div className="input-wrap">
+                <div>
                   {" "}
                   {/*  <label htmlFor="team member 1"/> */}
                   <input
                     type="text"
-                    className="input-field"
+                    className="input-field border-2 border-gray-300 rounded-md p-2 w-full"
                     value={teammember1}
                     onChange={(e) => setTeammember1(e.target.value)}
                     placeholder="Team member 2 (optional)"
@@ -1345,7 +1337,7 @@ export default function RegistrationForm({
                   {/*  <label htmlFor="team member 1"/> */}
                   <input
                     type="text"
-                    className="input-field"
+                    className="input-field border-2 border-gray-300 rounded-md p-2 w-full"
                     value={teammember1}
                     onChange={(e) => setTeammember1(e.target.value)}
                     placeholder={
@@ -1359,7 +1351,7 @@ export default function RegistrationForm({
                   {/* <label htmlFor="team member 2"/>*/}
                   <input
                     type="text"
-                    className="input-field"
+                    className="input-field border-2 border-gray-300 rounded-md p-2 w-full"
                     value={teammember2}
                     onChange={(e) => setTeammember2(e.target.value)}
                     placeholder={
@@ -1376,7 +1368,7 @@ export default function RegistrationForm({
               <div>
                 {/* <label htmlFor="teammember"/> */}
                 <input
-                  className="mt-4"
+                  className="mt-4 border-2 border-gray-300 rounded-md p-2 w-full"
                   onChange={(e) => setTeammember1(e.target.value)}
                   value={teammember1}
                   type="text"
@@ -1387,6 +1379,7 @@ export default function RegistrationForm({
               </div>
               <div>
                 <textarea 
+                className="border-2 border-gray-300 rounded-md p-2 w-full"
                 id="teammembers"
                 name="teammembers"
                 placeholder="Team members"
@@ -1400,6 +1393,7 @@ export default function RegistrationForm({
               {" "}
               {/* <label htmlFor="email">Email</label> */}
               <input
+                className="border-2 border-gray-300 rounded-md w-full p-2"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
                 type="text"
@@ -1412,6 +1406,7 @@ export default function RegistrationForm({
               {" "}
               {/* <label htmlFor="phonenumber">Phone number</label> */}
               <input
+                className="border-2 border-gray-300 rounded-md p-2 w-full"
                 onChange={(e) => setPhonenumber(e.target.value)}
                 value={phonenumber}
                 type="text"
@@ -1441,7 +1436,7 @@ export default function RegistrationForm({
                 {/* <label htmlFor="otherCollege">otherCollege</label> */}
                 <input
                   type="text"
-                  className="input-field"
+                  className="input-field border-2 border-gray-300 rounded-md p-2 w-full "
                   autoComplete="off"
                   value={othercollege}
                   onChange={(e) => setOthercollege(e.target.value)}
@@ -1453,6 +1448,7 @@ export default function RegistrationForm({
             <div>
               {/* <label htmlFor="depatment">Department</label> */}
               <input
+                className="border-2 border-gray-300 rounded-md p-2 w-full "
                 onChange={(e) => setDepartment(e.target.value)}
                 value={department}
                 type="text"
@@ -1482,27 +1478,27 @@ export default function RegistrationForm({
               <button
                 title="Click to copy phone number"
                 type="button"
-                className="mb-3 bg-orange-500 rounded-lg px-4 py-2"
+                className="bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 rounded-lg px-4 py-2"
                 onClick={() => copyTextToClipboard("8925059696")}
               >
                 Pay using phone number
               </button>
-              <p className="flex justify-center text-sm">Click to copy phone number</p>
-              <p className="flex justify-center">or</p>
+              <p className="  flex justify-center text-[10px] text-gray-600">Click to copy phone number</p>
+              <p className="mb-1 flex justify-center text-[15px]">[or]</p>
               <button
                 title="Click to copy UPI ID"
                 type="button"
-                className="mb-3 bg-orange-500 rounded-lg px-4 py-2"
+                className="bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 rounded-lg px-4 py-2"
                 onClick={() => copyTextToClipboard("choumya0703@oksbi")}
               >
                 Pay using UPI ID
               </button>
-              <p className="flex justify-center text-sm ">Click to copy UPI ID</p>
-              <p className="flex justify-center">or</p>
+              <p className="flex justify-center text-[10px] text-gray-600 ">Click to copy UPI ID</p>
+              <p className=" mb-1 flex justify-center text-[15px]">[or]</p>
               <button
                 title="Click to show QR"
                 type="button"
-                className="mb-3 bg-orange-500 rounded-lg px-4 py-2"
+                className="mb-3 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 rounded-lg px-4 py-2"
                 onClick={() => setShowqr(true)}
               >
                 Show QR
@@ -1526,13 +1522,7 @@ export default function RegistrationForm({
                 accept="image/*"
               />
             </div>
-
-            <button
-              className="bg-green-700 p-3 text-white font-bold hover:bg-blue-500 hover:shadow-black-500 active:bg-green-900"
-              type="submit"
-            >
-              Register
-            </button>            
+           <Button />          
           </form>
         </div>
       </div>

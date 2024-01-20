@@ -196,7 +196,7 @@ const nonTechnicalEvents = [
     venue: "CRESCENT AUDITORIUM",
     person: <IoPerson />,
     rules: (
-      <ol>
+      <ul>
         <li>• Participants are required to produce college ID without fail.</li>
         <li>• It is an individual event.</li>
         <li>• Preparation time - 2 minutes</li>
@@ -218,7 +218,7 @@ const nonTechnicalEvents = [
           • The event organizers reserve the right to change the rules and
           regulations of the event at any time.
         </li>
-      </ol>
+      </ul>
     ),
     shortDescription:
       "Engage in our on-stage event featuring two exciting rounds! In Round 1, showcase your creativity with Adzap as you perform a creative advertisement for a given product. Round 2, Shipwreck, challenges participants to justify their survival as assigned characters. The winner emerges after these dynamic rounds!    ",
@@ -441,13 +441,13 @@ const PopupCard = ({ event, onClose }) => {
         </ul>
         <div className="flex justify-center items-end gap-5">
           <button
-            className="mt-3 bg-orange-500 rounded-lg px-4 py-2"
+            className="mt-3 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 rounded-lg px-4 py-2"
             onClick={handleRegisterClick}
           >
             Register
           </button>
           <button
-            className="mt-3 bg-orange-500 rounded-lg px-4 py-2"
+            className="mt-3 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 rounded-lg px-4 py-2"
             onClick={onClose}
           >
             Close
@@ -632,13 +632,13 @@ const Event = () => {
 
                 <div className="flex justify-center items-end h-full gap-4">
                   <button
-                    className="mb-3 border-[3px] border-black rounded-lg px-4 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block  text-slate-900 text-[18px]"
+                    className="mb-3 rounded-lg px-4 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block  text-slate-900 text-[18px]"
                     onClick={() => handleKnowMoreClick(event)}
                   >
                     Know More
                   </button>
                   <button
-                    className="mb-3 border-[3px] border-black rounded-lg px-4 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block  text-slate-900 text-[18px]"
+                    className="mb-3 rounded-lg px-4 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block  text-slate-900 text-[18px]"
                     onClick={() => handleRegisterClick(event)}
                   >
                     Register
