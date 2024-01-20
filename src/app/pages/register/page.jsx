@@ -1299,7 +1299,7 @@ export default function RegistrationForm({
             <div>
               {/* <label htmlFor="fullname" or "teamname/> */}
               <input
-                className="mt-4 border-2 border-gray-500 rounded-sm p-2 w-full"
+                className="mt-4 border-2 border-gray-300 rounded-md p-2 w-full"
                 onChange={(e) => setFullname(e.target.value)}
                 value={fullname}
                 type="text"
@@ -1317,12 +1317,12 @@ export default function RegistrationForm({
             </div>
             {max2.includes(eventname) && (
               <>
-                <div className="input-wrap border-2 border-gray-500 rounded-sm p-2 w-full">
+                <div>
                   {" "}
                   {/*  <label htmlFor="team member 1"/> */}
                   <input
                     type="text"
-                    className="input-field border-2 border-gray-500"
+                    className="input-field border-2 border-gray-300 rounded-md p-2 w-full"
                     value={teammember1}
                     onChange={(e) => setTeammember1(e.target.value)}
                     placeholder="Team member 2 (optional)"
@@ -1337,7 +1337,7 @@ export default function RegistrationForm({
                   {/*  <label htmlFor="team member 1"/> */}
                   <input
                     type="text"
-                    className="input-field border-2 border-gray-500 rounded-sm p-2 w-full"
+                    className="input-field border-2 border-gray-300 rounded-md p-2 w-full"
                     value={teammember1}
                     onChange={(e) => setTeammember1(e.target.value)}
                     placeholder={
@@ -1351,7 +1351,7 @@ export default function RegistrationForm({
                   {/* <label htmlFor="team member 2"/>*/}
                   <input
                     type="text"
-                    className="input-field border-2 border-gray-500 rounded-sm p-2 w-full"
+                    className="input-field border-2 border-gray-300 rounded-md p-2 w-full"
                     value={teammember2}
                     onChange={(e) => setTeammember2(e.target.value)}
                     placeholder={
@@ -1368,7 +1368,7 @@ export default function RegistrationForm({
               <div>
                 {/* <label htmlFor="teammember"/> */}
                 <input
-                  className="mt-4 border-2 border-gray-500 rounded-sm p-2 w-full"
+                  className="mt-4 border-2 border-gray-300 rounded-md p-2 w-full"
                   onChange={(e) => setTeammember1(e.target.value)}
                   value={teammember1}
                   type="text"
@@ -1379,7 +1379,7 @@ export default function RegistrationForm({
               </div>
               <div>
                 <textarea 
-                className="border-2 border-gray-500 rounded-sm p-2 w-full"
+                className="border-2 border-gray-300 rounded-md p-2 w-full"
                 id="teammembers"
                 name="teammembers"
                 placeholder="Team members"
@@ -1393,7 +1393,7 @@ export default function RegistrationForm({
               {" "}
               {/* <label htmlFor="email">Email</label> */}
               <input
-                className="border-2 border-gray-500 rounded-sm w-full"
+                className="border-2 border-gray-300 rounded-md w-full p-2"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
                 type="text"
@@ -1406,7 +1406,7 @@ export default function RegistrationForm({
               {" "}
               {/* <label htmlFor="phonenumber">Phone number</label> */}
               <input
-                className="border-2 border-gray-500 rounded-sm p-2 w-full"
+                className="border-2 border-gray-300 rounded-md p-2 w-full"
                 onChange={(e) => setPhonenumber(e.target.value)}
                 value={phonenumber}
                 type="text"
@@ -1419,7 +1419,7 @@ export default function RegistrationForm({
               {" "}
               {/* <label htmlFor="college">College</label> */}
               <Select
-                className="college-select input-field "
+                className="college-select input-field"
                 options={collegeOptions}
                 value={collegename == null ? "" : collegename.label}
                 onChange={(e) => setCollegename(e.label)}
@@ -1436,7 +1436,7 @@ export default function RegistrationForm({
                 {/* <label htmlFor="otherCollege">otherCollege</label> */}
                 <input
                   type="text"
-                  className="input-field border-2 border-gray-500 rounded-sm p-2 w-full"
+                  className="input-field border-2 border-gray-300 rounded-md p-2 w-full "
                   autoComplete="off"
                   value={othercollege}
                   onChange={(e) => setOthercollege(e.target.value)}
@@ -1448,7 +1448,7 @@ export default function RegistrationForm({
             <div>
               {/* <label htmlFor="depatment">Department</label> */}
               <input
-                className="border-2 border-gray-500 rounded-sm p-2 w-full "
+                className="border-2 border-gray-300 rounded-md p-2 w-full "
                 onChange={(e) => setDepartment(e.target.value)}
                 value={department}
                 type="text"
