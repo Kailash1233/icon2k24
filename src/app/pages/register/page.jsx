@@ -69,45 +69,6 @@ export default function RegistrationForm({
   eventname,
   onClose,
 }) {
-  const Ignitethestage = () => {
-    const handleCloseOnOverlayClick = (e) => {
-      if (!e.target.closest(".ignite-the-stage-content")) {
-        setShowignitethestage(false);
-      }
-    };
-
-    return (
-      <div
-        className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-50 backdrop-blur-sm rounded-lg z-50"
-        onClick={handleCloseOnOverlayClick}
-      >
-        <div className="w-[400px] h-[400px] bg-white overflow-y-auto p-8 ignite-the-stage-content relative">
-          {/* <button
-            className="absolute top-6 right-4 text-xl font-bold cursor-pointer bg-orange-500 rounded-lg px-2 py-1"
-            onClick={setShowignitethestage(false)}
-          >
-            &times;
-          </button> */}
-          <h2 className="text-xl font-bold mb-4">"IGNITE THE STAGE"</h2>
-          <div className="flex justify-center items-end gap-5">
-            <button
-              className="mt-3 bg-orange-500 rounded-lg px-4 py-2"
-              onClick={handleSoloClick()}
-            >
-              Solo
-            </button>
-            <button
-              className="mt-3 bg-orange-500 rounded-lg px-4 py-2"
-              onClick={handleGroupClick()}
-            >
-              Group
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  };
-
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
   const [phonenumber, setPhonenumber] = useState("");
@@ -1060,8 +1021,9 @@ export default function RegistrationForm({
   const [showerror, setShowerror] = useState(false);
   const [teammember1, setTeammember1] = useState("");
   const [teammember2, setTeammember2] = useState("");
-  const [showignitethestage, setShowignitethestage] = useState(false);
-  const [ignitethestage, setIgnitethestage] = useState("");
+  const [showignitethestage, setShowignitethestage] = useState(true);
+  const [ignitethestage, setIgnitethestage] = useState(null);
+  const [groupmembers, setGroupmembers] = useState(0);
   const max2 = ["PAPER-DE-FIESTA", "ADRENALINE RUSH"];
   const max3 = ["TECH QUEST", "IPL AUCTION"];
 
@@ -1091,6 +1053,23 @@ export default function RegistrationForm({
     console.log("event: ", eventname);
     console.log("paymentfile : ", paymentfile);
 
+    if(eventname == "IGNITE THE STAGE"){
+      if(!ignitethestage){
+        setShowerror(true);
+        setError(["Please select 'Solo' or 'Group'"]);
+        return;
+      }
+      if (!fullname) {
+        setShowerror(true);
+        setError(["Please enter your Team Name"]);
+        return;
+      }
+      if(ignitethestage == "Group" && groupmembers < 3){        
+        setShowerror(true);
+        setError(["Group performance requires minimum three members in a team"]);
+        return;
+      }
+    }
     if (!fullname) {
       setShowerror(true);
       setError(["Please enter your Full Name"]);
@@ -1216,7 +1195,7 @@ export default function RegistrationForm({
       },
       body: JSON.stringify({
         fullname,
-        teammembers: [teammember1, teammember2],
+        teammembers: [teammember1 +'\n'+ teammember2],
         email,
         phonenumber,
         collegename: collegename == "Other" ? othercollege : collegename,
@@ -1243,6 +1222,8 @@ export default function RegistrationForm({
       setPaymentfile(null);
       setTeammember1("");
       setTeammember2("");
+      setShowignitethestage(true);
+      setIgnitethestage(null);
     }
   };
 
@@ -1262,27 +1243,31 @@ export default function RegistrationForm({
   };
 
   const handleSoloClick = () => {
-    setIgnitethestage("solo");
+    setIgnitethestage("Solo");
     setShowignitethestage(false);
   };
 
   const handleGroupClick = () => {
-    setIgnitethestage("group");
+    setIgnitethestage("Group");
     setShowignitethestage(false);
   };
 
   const copyTextToClipboard = async (text) => {
-    alert(text + " copied");
     if ("clipboard" in navigator) {
-      return await navigator.clipboard.writeText(text);
+      return await navigator.clipboard.writeText(text).then(
+        alert(text + " copied"));
     } else {
-      return document.execCommand("copy", true, text);
+      return document.execCommand("copy", true, text).then(
+        alert(text + " copied"));
     }
   };
 
-  // if(eventname == "IGNITE THE STAGE"){
-  //   return setShowignitethestage(true);
-  // }
+  const addMemberHandler = () => {
+    let teamMember = teammember2 + teammember1 + '\n';
+    setTeammember2(teamMember);
+    setTeammember1('');
+    setGroupmembers(groupmembers + 1);
+  }
 
   return (
     <>
@@ -1302,6 +1287,12 @@ export default function RegistrationForm({
             onSubmit={handleSubmit}
             className="py-4 mt-1 flex flex-col gap-5 bg-[white] overflow-auto relative"
           >
+            {(eventname == "IGNITE THE STAGE" && showignitethestage) &&
+            <div>
+              <button type="button" onClick={handleSoloClick} className="border-spacing-y-2 text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium text-sm px-5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Solo</button>
+              <button type="button" onClick={handleGroupClick} className="border-spacing-y-2 text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium text-sm px-5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Group</button>
+            </div>
+            }
             <div>
               {/* <label htmlFor="fullname" or "teamname/> */}
               <input
@@ -1310,11 +1301,15 @@ export default function RegistrationForm({
                 value={fullname}
                 type="text"
                 id="fullname"
-                placeholder={
-                  max2.includes(eventname) || max3.includes(eventname)
-                    ? "Full name (Team member 1)"
-                    : "Full name"
-                }
+                placeholder={(() => {
+                  if (max2.includes(eventname) || max3.includes(eventname)) {
+                    return "Full name (Team member 1)";
+                  } else if (ignitethestage == "Group"){
+                    return "Team name";
+                  }else{
+                    return "Full name";
+                  }
+                })()}
               />
             </div>
             {max2.includes(eventname) && (
@@ -1365,7 +1360,31 @@ export default function RegistrationForm({
                 </div>
               </>
             )}
-
+            {ignitethestage == "Group" &&
+             <>
+              <div>
+                {/* <label htmlFor="teammember"/> */}
+                <input
+                  className="mt-4"
+                  onChange={(e) => setTeammember1(e.target.value)}
+                  value={teammember1}
+                  type="text"
+                  id="teammember"
+                  placeholder="Add member"
+                />
+                <button type="button" onClick={addMemberHandler} className="border-spacing-y-2 text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium text-sm px-5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">+</button>
+              </div>
+              <div>
+                <textarea 
+                id="teammembers"
+                name="teammembers"
+                placeholder="Team members"
+                value={teammember2}
+                rows="4"
+                cols="22"
+                />
+              </div>
+            </>}
             <div>
               {" "}
               {/* <label htmlFor="email">Email</label> */}
@@ -1534,8 +1553,16 @@ export default function RegistrationForm({
           onClose={handleCloseErrorBox}
         />
       )}
-      {showqr && <QRCode feeAmount={feeAmount} onClose={handleCloseQR} />}
-      {showignitethestage && <Ignitethestage />}
+      {showqr && <QRCode feeAmount={(() => {
+        if (ignitethestage == "Group") {
+          return feeAmount.group;
+        } else if(ignitethestage == "Solo"){
+          return feeAmount.solo;
+        }else{
+          return feeAmount
+        }
+        })()} 
+        onClose={handleCloseQR} />}
     </>
   );
 }

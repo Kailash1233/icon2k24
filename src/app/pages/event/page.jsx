@@ -11,8 +11,7 @@ const shadowStyle = "0px 4px 8px rgba(255, 255, 255, 0.8)";
 const technicalEvents = [
   {
     name: "PAPER-DE-FIESTA",
-    image:
-      "https://images.business.com/app/uploads/2014/11/16140502/A-call-to-action-slide.png",
+    image: "/design/paper.png",
     description:
       "Engage with the brightest minds as participants showcase their research prowess on diverse topics, spanning from groundbreaking innovations to pressing global issues. Witness a symphony of ideas, innovation, and eloquence as they vie for recognition and the coveted title. Join us for an inspiring celebration of knowledge, where academic excellence meets the thrill of competition.",
     date: "2024-01-15",
@@ -22,7 +21,9 @@ const technicalEvents = [
     rules: (
       <ol>
         <li>• Participants must present a valid college ID.</li>
-        <li>• Maximum of 2 participants per paper is allowed.</li>
+        <li>
+          • <b>2 Participants</b> per paper is allowed.
+        </li>
         <li>• The paper should adhere to the IEEE document format.</li>
         <li>• Participants must submit papers on any IT-related topic.</li>
         <li>
@@ -50,8 +51,7 @@ const technicalEvents = [
   },
   {
     name: "TECH QUEST",
-    image:
-      "https://www.hiya.ie/wp-content/uploads/2017/07/Treasure-Hunt-1024x522.jpg",
+    image: "/design/Designer.png",
     description: (
       <ul>
         <li>TECHNICAL TREASURE HUNT</li>
@@ -113,8 +113,7 @@ const technicalEvents = [
   },
   {
     name: "ALGO-RHYTHM",
-    image:
-      "https://media.licdn.com/dms/image/D4D12AQEhDfraZKQbwg/article-cover_image-shrink_600_2000/0/1696415621707?e=2147483647&v=beta&t=sbp5FHd0jjJ9XW2dD3Mz_Xc1dK1FP9Ii6CMf861mW-0",
+    image: "/design/algo.gif",
     description:
       "Join us for an exciting event where participants turn the given algorithm into actual code. This event isn't just about winning; it's about enjoying the journey of coding. They'll tackle different challenges and show off their coding abilities, from understanding the algorithm to finding better solutions in actual code",
     date: "2024-01-15",
@@ -126,8 +125,12 @@ const technicalEvents = [
         <li>• Participants are required to produce college ID without fail.</li>
         <li>• It is an individual event.</li>
         <li>
-          • Participants will be given an algorithm from which they have to
-          solve.
+          • Participants are requested to bring their own headphones for the
+          event.
+        </li>
+        <li>
+          • Participants will be given a rough algorithm before starting the
+          event.
         </li>
         <li>
           • Participants should know anyone of the programming languages
@@ -137,14 +140,10 @@ const technicalEvents = [
           • The decision made by judges is final and binding on all
           participants.
         </li>
-        <li>
-          • The event organizers reserve the right to change the rules and
-          regulations of the event at any time.
-        </li>
       </ol>
     ),
     shortDescription:
-      "Experience the thrill as participants transform algorithms into code, embracing the joy of coding. Engage in challenges that showcase their coding prowess and problem-solving skills.",
+      "Are you ready to dive into a world where melodies are composed by line of code, and rhythm is dictated by algorithm? Here, the tech enthusiast delves coding against distraction of music. Let the beats and coding begins.",
     feeDetails: "Registration Fee: ₹100",
     feeAmount: 100,
     coordinators: [
@@ -154,8 +153,7 @@ const technicalEvents = [
   },
   {
     name: "DATABASE DETECTIVES",
-    image:
-      "https://external-preview.redd.it/the-sql-murder-mystery-v0-Zu_P4esxGEjEWlvnmM2kGPGPirGMVMj3IGT72Ua--d4.jpg?auto=webp&s=98cf60e1f1a261ac451da48937e9a544fee34ea1",
+    image: "/design/datadetective.gif",
     description:
       "Investigate in the captivating world of SQL Police Department as you engage with our Crime-Solving Scenarios—a real-time challenge where participants must crack cases using SQL.",
     date: "2024-01-15",
@@ -190,8 +188,7 @@ const technicalEvents = [
 const nonTechnicalEvents = [
   {
     name: "VOXRECK",
-    image:
-      "https://lh3.googleusercontent.com/tBvtgfH8_D6xsRRp3sdZbk0_VFktkTFWIhGF0WoN6jis81yfunq-IMg20Q-UjL2g8fc2awEEd4LfMPxKURMgiXDY=w700-h280-e365-rj-sc0x00ffffff",
+    image: "/design/vox.jpg",
     description:
       "It is a round based on-stage event. The participants selected from the first round will be qualified for the second round and the winner will be decided. ROUND-1: Adzap - A product will be given to the participants and they have to perform a creative advertisement on it. ROUND-2: Shipwreck - Participants will be given a character and they will have to justify why they must be saved, by sticking to that character.",
     date: "2024-01-16",
@@ -234,8 +231,7 @@ const nonTechnicalEvents = [
   },
   {
     name: "IGNITE THE STAGE",
-    image:
-      "https://i.pinimg.com/736x/2f/9a/8a/2f9a8a127c509789c1820126c759e799.jpg",
+    image: "/design/ignite.jpg",
     description:
       "Get ready to witness a dazzling display of hidden talents, both bold and brilliant, independent and intertwined! This isn't just a competition; it's a celebration of human creativity in all its diverse forms. From fire-breathing dragons to dancing fairies, channel the epic spirit of ancient lore through your talent. Sing ballads of forgotten heroes, paint tales on canvas, tap-dance on Olympus's peaks, or juggle lightning bolts like Zeus himself!  Prepare to be captivated by: solo and group performances.",
     date: "2024-01-16",
@@ -269,8 +265,7 @@ const nonTechnicalEvents = [
   },
   {
     name: "ADRENALINE RUSH",
-    image:
-      "https://media.licdn.com/dms/image/D5612AQESaWZd_8zpxg/article-cover_image-shrink_720_1280/0/1682518375359?e=2147483647&v=beta&t=uVPtaV7KWMUtaaeS9Pg5NqUGbjSXg9PbwtVJfZY0R2Q",
+    image: "/design/adrenaline.jpg",
     description:
       "Adrenaline Rush is an exciting and challenging three-round event that will test your speed and agility. In each round, contestants will compete in a series of fun and thrilling games related to tamil, english and hindi movies and songs, where the winner of each round will advance to the next stage while the others will be eliminated. The first round- Lyric-oh-holic, where contestants must find the missing words or lines in the song lyrics. The second round- Connextions, where contestants should connect the picture displayed in the screen to guess the word. In the final round- Gesture guess, where the contestants  act out movies, phrases or words, creating a fun and lively guessing challenge for their teams.",
     date: "2024-01-16",
@@ -303,23 +298,22 @@ const nonTechnicalEvents = [
       </ol>
     ),
     shortDescription:
-      "Dive into Adrenaline Rush, a dynamic three-round event testing speed and agility in Tamil, English, and Hindi movies and songs. From Lyric-oh-holic to Connextions and Gesture Guess, participants face exciting challenges, with winners advancing and creating suspenseful eliminations in each round!",
+      "It is a fun-filled game based on movies and songs, which has 3 rounds. ROUND-1: The missing lyrics in the song should be found out. ROUND-2: Participants should find the word by connecting the pictures which will be displayed. ROUND-3: Participant must act the songs given to them letting their team member find with the mystery hindrance.",
     feeDetails: "Registration Fee: Per Team ₹200",
     feeAmount: 200,
     coordinators: [
       { name: "Suhail I", contact: "9789096170" },
-      { name: "Choummya M", contact: "8925059696" },
+      { name: "Choumya M", contact: "8925059696" },
     ],
   },
   {
     name: "IPL AUCTION",
-    image:
-      "https://cdn.dnaindia.com/sites/default/files/styles/full/public/2018/01/30/645915-csk-auction-iplt20.jpg",
+    image: "/design/ipl.jpg",
     description:
       "IPL AUCTION is an event where The Teams bid for the IPL players and create a squad. The teams will be given the names of the IPL teams and virtual money using which they can buy players in the auction.",
     date: "2024-01-16",
     time: "11:15 AM - 2:15 PM",
-    venue: "SEMINAR HALL 1 (or) Crescent Auditorium",
+    venue: "SEMINAR HALL 1",
     person: <RiTeamFill />,
     rules: (
       <ol>
@@ -365,17 +359,17 @@ const nonTechnicalEvents = [
 ];
 const workshops = [
   {
-    name: "DATA SCIENCE WORKSHOP",
-    image:
-      "https://fivedottwelve.com/wp-content/uploads/2021/06/27_workshop_2.png",
-    venue: "Will be announced",
+    name: "BOOT TO ROOT",
+    image: "/design/workshop.jpg",
+    venue: "TBA",
     person: <IoPerson />,
-    rules: "Should attend workshop from start to collect Certificates",
+    rules: "• Participants are required to produce college ID without fail.",
+    instructions:
+      "Enter into  the thrilling phase of cyber world where you will learn and enjoy experiencing the cyber games. Infographics! Shells! Code puzzles! Stop XSS! AI-powered cyber challenges await. Dive in! ",
     shortDescription:
-      "Explore data science essentials in our 2-hour workshop. Delve into analysis, machine learning basics, and practical applications guided by experts. Perfect for beginners and enthusiasts looking to elevate their skills.",
+      "Root is the highest privileged user. To boot as him, and to prove that u are a great hacker.",
     feeDetails: "Registration Fee: ₹100",
     feeAmount: 100,
-    speaker: "Speaker: Subramaniam Arumugam",
     coordinators: [
       { name: "Salman Fariz", contact: "1234567890" },
       { name: "Choumya", contact: "9876543210" },
@@ -432,9 +426,7 @@ const PopupCard = ({ event, onClose }) => {
           <p className="ml-auto">{event.person}</p>
         </div>
         <div className="mb-4">
-          <p className="font-bold">{event.speaker}</p>
-        </div>
-        <div className="mb-4">
+          <p>{event.instructions}</p>
           <h3 className="font-bold text-lg mt-2">Rules:</h3>
           {event.rules}
         </div>
@@ -509,9 +501,12 @@ const Event = () => {
           className=" max-w-7xl w-full h-auto bg-black p-8 rounded-lg shadow-lg mb-6"
           style={{ boxShadow: shadowStyle }}
         >
-          <h1 className="text-center mb-5 text-3xl font-bold text-orange-500">
-            TECHNICAL EVENTS
-          </h1>
+          <div className="text-center">
+            <h1 className="mb-5 text-3xl font-bold bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-transparent bg-clip-text">
+              TECHNICAL EVENTS
+            </h1>
+          </div>
+
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-4 ">
             {technicalEvents.map((event, index) => (
               <div
@@ -533,13 +528,13 @@ const Event = () => {
 
                 <div className="flex justify-center items-end h-full gap-4">
                   <button
-                    className="mb-3  bg-orange-500 rounded-lg px-4 py-2"
+                    className="mb-3  bg-orange-500 rounded-lg px-4 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-transparent text-slate-900"
                     onClick={() => handleKnowMoreClick(event)}
                   >
                     Know More
                   </button>
                   <button
-                    className="mb-3 bg-orange-500 rounded-lg px-4 py-2"
+                    className="mb-3 bg-orange-500 rounded-lg px-4 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-transparent text-slate-900"
                     onClick={() => handleRegisterClick(event)}
                   >
                     Register
@@ -558,9 +553,11 @@ const Event = () => {
           className=" max-w-7xl w-full h-auto bg-black p-8 rounded-lg shadow-lg mb-6"
           style={{ boxShadow: shadowStyle }}
         >
-          <h1 className="text-orange-500 text-center mb-5 text-3xl font-bold">
-            NON-TECHNICAL EVENTS
-          </h1>
+          <div className="text-center">
+            <h1 className="mb-5 text-3xl font-bold bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-transparent bg-clip-text">
+              NON-TECHNICAL EVENTS
+            </h1>
+          </div>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-4 ">
             {nonTechnicalEvents.map((event, index) => (
               <div
@@ -583,13 +580,13 @@ const Event = () => {
 
                 <div className="flex justify-center items-end h-full gap-4">
                   <button
-                    className="mb-3  bg-orange-500 rounded-lg px-4 py-2"
+                    className="mb-3 bg-orange-500 rounded-lg px-4 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-transparent text-slate-900"
                     onClick={() => handleKnowMoreClick(event)}
                   >
                     Know More
                   </button>
                   <button
-                    className="mb-3 bg-orange-500 rounded-lg px-4 py-2"
+                    className="mb-3 bg-orange-500 rounded-lg px-4 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-transparent text-slate-900"
                     onClick={() => handleRegisterClick(event)}
                   >
                     Register
@@ -608,9 +605,11 @@ const Event = () => {
           className="max-w-96 w-full h-auto bg-black p-8 rounded-lg shadow-lg mb-6 flex flex-col items-center"
           style={{ boxShadow: shadowStyle }}
         >
-          <h1 className="text-orange-500 text-center mb-5 text-3xl font-bold">
-            WORKSHOP
-          </h1>
+          <div className="text-center">
+            <h1 className="mb-5 text-3xl font-bold bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-transparent bg-clip-text">
+              MEGA EVENT
+            </h1>
+          </div>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-4 w-full">
             {workshops.map((event, index) => (
               <div
@@ -632,13 +631,13 @@ const Event = () => {
 
                 <div className="flex justify-center items-end h-full gap-4">
                   <button
-                    className="mb-3 bg-orange-500 rounded-lg px-4 py-2"
+                    className="mb-3 bg-orange-500 rounded-lg px-4 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-transparent text-slate-900"
                     onClick={() => handleKnowMoreClick(event)}
                   >
                     Know More
                   </button>
                   <button
-                    className="mb-3 bg-orange-500 rounded-lg px-4 py-2"
+                    className="mb-3 bg-orange-500 rounded-lg px-4 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-transparent text-slate-900"
                     onClick={() => handleRegisterClick(event)}
                   >
                     Register
