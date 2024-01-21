@@ -1,11 +1,11 @@
 import dynamic from "next/dynamic";
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./pages/Footer/footer";
 import connectDB from "./lib/mongodb";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "ICON 2K24",
@@ -18,7 +18,8 @@ export default function RootLayout() {
       <head>
         <link rel="icon" href="/favicon.png" sizes="any" />
       </head>
-      <body className={inter.className}>
+      {/* <body className={inter.className}> */}
+      <body>
         <Navbar />
 
         <LazyLoadedComponent dynamicImport={() => import("./page")} />
