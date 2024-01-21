@@ -16,13 +16,14 @@ const Register = ({ success, error, onClose }) => {
       className="fixed top-[-13px] left-0 w-full h-full flex items-center justify-center bg-opacity-50 backdrop-blur-sm rounded-lg z-50"
       onClick={handleCloseOnOverlayClick}
     >
-      <div className=" relative sm:w-[440px] h-[100px] bg-white bg-opacity-500 overflow-y-auto p-8 register-content border-2 border-red-500 rounded-lg">
+      <div className={success ? "relative sm:w-[440px] h-[350px] bg-white bg-opacity-500 p-8 register-content border-2 border-green-500 rounded-lg" :"relative sm:w-[440px] h-[100px] bg-white bg-opacity-500 overflow-y-auto p-8 register-content border-2 border-red-500 rounded-lg"}>
         <button
           className="absolute top-6 right-4 text-xl font-bold cursor-pointer bg-orange-500 rounded-lg px-2 py-1 mt-[7.6px]"
           onClick={onClose}
         >
           &times;
         </button>
+        {!success && 
         <h2
           className={`${
             success
@@ -30,8 +31,16 @@ const Register = ({ success, error, onClose }) => {
               : "text-red-600 text-lg flex justify-center items-center h-full backdrop:blur-sm"
           } px-5 py-2`}
         >
-          &#x26A0; {error}
+          &#x26A0; {error}          
         </h2>
+        }
+        {success && 
+        <img
+        src="/design/success.gif"
+        alt="success"
+        />
+        
+        }
       </div>
     </div>
   );
@@ -1098,20 +1107,11 @@ export default function RegistrationForm({
         return;
       }
     }
-    if (max2.includes(eventname)) {
-      if (!teammember1 || teammember1 == "") {
+    if (eventname == "ADRENALINE RUSH") {
+      if(!teammember1 || teammember1 == ''){
         setShowerror(true);
-        setError(["This event requires two members per team"]);
+        setError(["This event requires two members"]);
         return;
-      }
-      if (teammember1) {
-        var regex1 = /^[A-Za-z\s]{3,50}$/;
-        if (!regex1.test(teammember1)) {
-          setShowerror(true);
-          setTeammember1("");
-          setError(["Please enter a valid Name for Team member 2"]);
-          return;
-        }
       }
     }
     if (eventname == "TECH QUEST") {
@@ -1354,7 +1354,22 @@ export default function RegistrationForm({
                 })()}
               />
             </div>
-            {max2.includes(eventname) && (
+            {eventname == "PAPER-DE-FIESTA" && (
+              <>
+                <div>
+                  {" "}
+                  {/*  <label htmlFor="team member 1"/> */}
+                  <input
+                    type="text"
+                    className="input-field border-2 border-gray-300 rounded-md p-2 w-full"
+                    value={teammember1}
+                    onChange={(e) => setTeammember1(e.target.value)}
+                    placeholder="Team member 2 (optional)"
+                  />
+                </div>
+              </>
+            )}
+            {eventname == "ADRENALINE RUSH" && (
               <>
                 <div>
                   {" "}
