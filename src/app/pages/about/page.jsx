@@ -23,11 +23,11 @@ const About = () => {
         </div>
         <p className="text-lg mb-4 text-justify">
           ICON, a National-level symposium, is meticulously organized by the
-          professional society "Society of Information Technologists (SIT)," as
-          a platform to elevate the technical skills of students. This
-          symposium, hosted by the department, serves as a dynamic arena for
-          knowledge exchange and skill enhancement, fostering a vibrant
-          community of Information Technology enthusiasts.
+          professional society &quot;Society of Information Technologists
+          (SIT),&quot; as a platform to elevate the technical skills of
+          students. This symposium, hosted by the department, serves as a
+          dynamic arena for knowledge exchange and skill enhancement, fostering
+          a vibrant community of Information Technology enthusiasts.
         </p>
         <p className="text-lg text-justify">
           Join us at ICON to engage with cutting-edge insights, network with
@@ -70,9 +70,7 @@ const About = () => {
             className="w-full h-48 object-cover mb-4 rounded-md "
             style={{ boxShadow: shadowStyle }}
           />
-          <p className="text-center text-xl text-white font-bold">
-            SIT
-          </p>
+          <p className="text-center text-xl text-white font-bold">SIT</p>
         </div>
       </div>
     </div>

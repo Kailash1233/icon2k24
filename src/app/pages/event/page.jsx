@@ -129,14 +129,14 @@ const technicalEvents = [
       <ul>
         <li>TECHNICAL TREASURE HUNT</li>
         <li>
-          Dive into the captivating realm of technology with 'Tech Quest,' a
-          thrilling technical treasure hunt designed for tech enthusiasts!
-          Navigate through a series of challenges, puzzles, and clues spanning
-          coding, debugging, encryption/decryption techniques, technical
-          quizzes, and more. Showcase your technical prowess, compete for the
-          ultimate treasure, and immerse yourself in a dynamic and exhilarating
-          competition that celebrates innovation, creativity, and technical
-          expertise.
+          Dive into the captivating realm of technology with &apos;Tech
+          Quest,&apos; a thrilling technical treasure hunt designed for tech
+          enthusiasts! Navigate through a series of challenges, puzzles, and
+          clues spanning coding, debugging, encryption/decryption techniques,
+          technical quizzes, and more. Showcase your technical prowess, compete
+          for the ultimate treasure, and immerse yourself in a dynamic and
+          exhilarating competition that celebrates innovation, creativity, and
+          technical expertise.
         </li>
       </ul>
     ),

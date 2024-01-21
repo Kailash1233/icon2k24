@@ -52,7 +52,7 @@ const CountdownTimer = ({ targetDate }) => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [prevTimeLeft]);
+  }, [prevTimeLeft, calculateTimeLeft]);
 
   const renderFlippedElement = (unit, label) => (
     <div className="text-2xl">

@@ -47,7 +47,7 @@ const Home = () => {
               className="text-7xl bg-gradient-to-r from-red-500 via-yellow-300 to-orange-300 text-transparent bg-clip-text my-4 font-bold "
               style={{ fontSize: "4rem", fontWeight: "bold" }}
             >
-              ICON'2K24
+              ICON&apos;2K24
             </div>
 
             {/* <div className="font-bold mb-4">
