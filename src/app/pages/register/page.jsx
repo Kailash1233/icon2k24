@@ -16,9 +16,9 @@ const Register = ({ success, error, onClose }) => {
       onClick={handleCloseOnOverlayClick}
     >
       
-      <div className="relative w-[400px] h-[100px] bg-white bg-opacity-500 overflow-y-auto p-8 register-content border-2 border-red-500">
+      <div className=" relative sm:w-[440px] h-[100px] bg-white bg-opacity-500 overflow-y-auto p-8 register-content border-2 border-red-500 rounded-lg">
       <button
-          className="absolute top-6 right-4 text-xl font-bold cursor-pointer bg-orange-500 rounded-lg px-2 py-1 mt-2"
+          className="absolute top-6 right-4 text-xl font-bold cursor-pointer bg-orange-500 rounded-lg px-2 py-1 mt-[7.6px]"
           onClick={onClose}
         >
           &times;
@@ -26,7 +26,7 @@ const Register = ({ success, error, onClose }) => {
         <h2
           className={`${success ? "text-green-800" : "text-red-600 text-lg flex justify-center items-center h-full backdrop:blur-sm"} px-5 py-2`}
         >
-          {error}
+          &#x26A0; {error}
         </h2>
       </div>
     </div>
@@ -45,7 +45,7 @@ const QRCode = ({ feeAmount, onClose }) => {
       className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-50 backdrop-blur-sm rounded-lg z-50"
       onClick={handleCloseOnOverlayClick}
     >
-      <div className="w-[450px] h-[400px] bg-white overflow-y-auto p-8 qrcode-content relative flex justify-center">
+      <div className="w-[450px] h-[500px] bg-white overflow-y-auto p-8 qrcode-content relative flex justify-center">
         <button
           className="absolute top-6 right-4 text-xl font-bold cursor-pointer bg-orange-500 rounded-lg px-2 py-1"
           onClick={onClose}
@@ -1045,6 +1045,7 @@ export default function RegistrationForm({
 
   const handleSubmit = async (e) => {
     // e.preventDefault();
+    setSuccess(false);
     console.log("Full name: ", fullname);
     console.log("Team members ", teammember1 + teammember2);
     console.log("Email: ", email);
@@ -1280,7 +1281,7 @@ export default function RegistrationForm({
         className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-50 backdrop-blur-sm rounded-lg z-50"
         onClick={handleCloseOnOverlayClick}
       >
-        <div className="w-[450px] h-[450px] bg-white overflow-y-auto p-8 popup-card-content relative">
+        <div className="w-[500px] h-[550px] bg-white overflow-y-auto p-8 popup-card-content relative">
 
           <button
             className="absolute top-3 right-4 text-xl font-bold cursor-pointer bg-orange-500 rounded-lg px-2 py-1"
@@ -1376,14 +1377,14 @@ export default function RegistrationForm({
               <div>
                 {/* <label htmlFor="teammember"/> */}
                 <input
-                  className=" border-2 border-gray-300 rounded-md p-2 w-full"
+                  className="w-[87%] sm:w-[86%] border-2 border-gray-300 rounded-l-md p-2  gap-7"
                   onChange={(e) => setTeammember1(e.target.value)}
                   value={teammember1}
                   type="text"
                   id="teammember"
                   placeholder="Team member"
                 />
-                <button type="button" onClick={addMemberHandler} className="bg-black  px-4 py-2 text-white cursor-pointer mt-4 p-2 rounded-[0.5rem]">+</button>
+                <button type="button" onClick={addMemberHandler} className="bg-black px-4 py-2 h-[44px] text-white cursor-pointer mt-2 p-2 rounded-r-[0.5rem]">+</button>
               </div>
               <div>
                 <textarea 
@@ -1491,7 +1492,7 @@ export default function RegistrationForm({
               >
                 Pay using phone number
               </button>
-              <p className="flex justify-center text-[10px] text-gray-600">Click to copy phone number</p>
+              <p className="flex font-bold justify-center text-[10px] text-gray-400">Click to copy phone number</p>
               <p className="mb-2 flex justify-center text-[15px]">[or]</p>
               <button
                 title="Click to copy UPI ID"
@@ -1501,7 +1502,7 @@ export default function RegistrationForm({
               >
                 Pay using UPI ID
               </button>
-              <p className="flex justify-center text-[10px] text-gray-600 ">Click to copy UPI ID</p>
+              <p className="flex font-bold justify-center text-[10px] text-gray-400 ">Click to copy UPI ID</p>
               <p className=" mb-2 flex justify-center text-[15px]">[or]</p>
               <button
                 title="Click to show QR"

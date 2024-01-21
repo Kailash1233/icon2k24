@@ -7,7 +7,7 @@ const About = () => {
   return (
     <div
       id="about"
-      className="min-h-screen flex flex-col justify-center items-center bg-black text-white "
+      className="pt-20 min-h-screen flex flex-col justify-center items-center bg-black text-white "
       style={{ color: "white" }}
     >
       <div
@@ -37,12 +37,12 @@ const About = () => {
       </div>
 
       <div
-        className="max-w-4xl w-full bg-black p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center mb-6"
+        className="mt-20 max-w-4xl w-full bg-black p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center mb-6"
         style={{
           boxShadow: `0px 4px 8px rgba(255, 255, 255, ${reducedOpacity})`,
         }}
       >
-        <div className="md:w-1/2 mb-4 md:mb-0">
+        <div className=" md:w-1/2 mb-4 md:mb-0">
           <div className="text-center">
             <h1 className="text-3xl font-bold mb-4 md:mb-6 text-center bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-transparent bg-clip-text">
               ABOUT CRESCENT
@@ -67,7 +67,7 @@ const About = () => {
           <img
             src="/SIT/SIT1.jpeg"
             alt="College Image"
-            className="w-full h-48 object-cover mb-4 rounded-md border-2 border-green-300 box "
+            className="w-full h-48 object-cover mb-4 rounded-md "
             style={{ boxShadow: shadowStyle }}
           />
           <p className="text-center text-xl text-white font-bold">

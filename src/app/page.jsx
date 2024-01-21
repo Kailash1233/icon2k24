@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import CountdownTimer from "./components/CountdownTimer";
+import { Link } from "react-scroll";
 
 const Home = () => {
   const targetDate = new Date("2024-2-8");
@@ -28,26 +29,44 @@ const Home = () => {
           muted
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src={require("./images/Final.mp4")} autoPlay muted loop />
+          <source src={require("./images/globe.mp4")} autoPlay muted loop />
         </video>
         {/* Your content on top of the video */}
         <div className="relative z-10">
           <div className="flex flex-col text-white justify-center items-center h-60 mt-32 px-6">
-            {/* <div className="w-100 h-100 flex">
-              <img
-                src="/design/bg.gif"
-                alt="Join Us!"
-                className="w-100 h-100"
-              />
-            </div> */}
+            {/* Additional Text */}
+              <div className="sm:mt-2 text-xl bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 text-transparent bg-clip-text" >
+                <div className="text-[29px] sm:text-[70px] sm:mt-12">Society of Information Technologists</div>
+                 <div className="sm:text-center sm:text-[30px] text-xl mt-1 sm:mt-6 sm:mb-6">proudly presents</div>
+              </div>
             <div
-              className="text-7xl font-normal text-orange-600"
+              className="text-7xl bg-gradient-to-r from-red-500 via-yellow-300 to-orange-300 text-transparent bg-clip-text my-4 font-bold "
               style={{ fontSize: "4rem", fontWeight: "bold" }}
             >
-              ICON'2K24 BEGINS IN
+              ICON'2K24
             </div>
 
-            <div className="mt-24 px-9 ">
+            {/* <div className="font-bold mb-4">
+              <h1 className="bg-gradient-to-r from-rose-500 to-amber-300 text-transparent bg-clip-text">
+                <div className="text-3xl sm:text-center"><h1>By Students of</h1></div>
+              <span className="text-[30px] ">Society of Information Technologists</span></h1>
+            </div> */}
+            <div className="mt-5">
+            <Link
+              to="about"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              <button className="bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 text-black px-6 py-2 rounded-full font-bold text-lg hover:bg-yellow-600 outline-none border-2 border-black">
+                Get Started
+              </button>
+            </Link>
+            </div>
+
+            {/* Countdown Timer */}
+            <div className="mt-12 px-9">
               <CountdownTimer targetDate={targetDate} />
             </div>
           </div>

@@ -98,7 +98,7 @@ const Page = () => {
             SPONSOR
           </h1>
         </div>
-        <div className="flex flex-wrap justify-center">
+        <div className="flex flex-wrap gap-4 justify-center">
           {/* <div className="md:w-1/2 lg:w-1/4 mb-2">
             <img
               src="/sponsors/letsfame.png"
@@ -106,13 +106,14 @@ const Page = () => {
               className="object-contain w-40 h-40"
             />
           </div> */}
-          {/* <div className="md:w-1/2 lg:w-1/4 mb-2">
+          <div className="md:w-1/2 lg:w-1/4 mb-2">
             <img
-              src="/sponsors/greentrends.png"
+              src="/sponsors/astro.png"
               alt="Green Trends"
               className="object-contain w-40 h-40"
+              height={90}
             />
-          </div> */}
+          </div>
           <div className="mb-2">
             <img
               src="/sponsors/nizam.png"
@@ -135,36 +136,47 @@ const Page = () => {
         </div>
         <div className="flex flex-wrap justify-center cursor-pointer">
           <div className="mb-2 ml-2 mr-2">
-            <img
+            <a href="https://www.linkedin.com/in/kailash-g-831463241/" target="_blank">
+              <img
               src="/devs/Kailash.jpg"
               alt="Kailash G"
               className="object-contain w-20 h-20 rounded-full mb-2"
             />
             <p className="text-xs text-center">Kailash</p>
+            </a>
           </div>
+
           <div className="mb-2 ml-2 mr-2">
+            <a href="https://www.linkedin.com/in/prem-kumar-550866210/" target="_blank">
             <img
               src="/devs/Prem.jpg"
               alt="Prem"
               className="object-contain w-20 h-20 rounded-full mb-2 "
             />
+          
             <p className="text-xs text-center">Prem Kumar</p>
+            </a>
           </div>
           <div className="mb-2 ml-2 mr-2">
+          <a href="https://www.linkedin.com/in/ibrahim-fardeen-754770254" target="_blank">
             <img
               src="/devs/Fardeen.jpg"
               alt="Ibrahim Fardeen"
               className="object-contain w-20 h-20 rounded-full mb-2"
             />
+           
             <p className="text-xs text-center">Ibrahim</p>
+            </a>
           </div>
           <div className="mb-2 ml-2 mr-2">
+          <a href="https://www.linkedin.com/in/abdurrahmannashith/" target="_blank">
             <img
               src="/devs/Nashith.jpeg"
               alt="Abdur Rahman Nashith"
               className="object-contain w-20 h-20 rounded-full mb-2"
             />
             <p className="text-xs text-center">Nashith</p>
+            </a>
           </div>
         </div>
       </div>
