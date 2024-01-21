@@ -33,8 +33,8 @@ const Navbar = () => {
             <Image
               src={logo}
               alt="logo"
-              width={100}
-              height={160}
+              width={150}
+              height={240}
               className="cursor-pointer"
               priority
             />

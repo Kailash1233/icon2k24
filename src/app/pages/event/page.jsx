@@ -20,11 +20,11 @@ const technicalEvents = [
     person: <RiTeamFill />,
     rules: (
       <ol>
-        <span>•</span><li>Participants must present a valid college ID.</li>
-        <span>•</span><li>
+        <li>• Participants must present a valid college ID.</li>
+        <li>
           • <b>2 Participants</b> per paper is allowed.
         </li>
-        <span>•</span><li>The paper should adhere to the IEEE document format.</li>
+        <li>• The paper should adhere to the IEEE document format.</li>
         <li>• Participants must submit papers on any IT-related topic.</li>
         <li>
           • All participants are required to bring a hardcopy of their paper on
@@ -47,68 +47,6 @@ const technicalEvents = [
     coordinators: [
       { name: "Abdul Rahman M S", contact: "9884416875" },
       { name: "Shafla Fathima", contact: "7092763661" },
-    ],
-  },
-  {
-    name: "TECH QUEST",
-    image: "/design/Designer.png",
-    description: (
-      <ul>
-        <li>TECHNICAL TREASURE HUNT</li>
-        <li>
-          Dive into the captivating realm of technology with 'Tech Quest,' a
-          thrilling technical treasure hunt designed for tech enthusiasts!
-          Navigate through a series of challenges, puzzles, and clues spanning
-          coding, debugging, encryption/decryption techniques, technical
-          quizzes, and more. Showcase your technical prowess, compete for the
-          ultimate treasure, and immerse yourself in a dynamic and exhilarating
-          competition that celebrates innovation, creativity, and technical
-          expertise.
-        </li>
-      </ul>
-    ),
-    date: "2024-01-15",
-    time: "12:00 PM - 1:15 PM",
-    venue: "IT LAB 1",
-    person: <RiTeamFill />,
-    rules: (
-      <ol>
-        <li>• Participants are required to produce college ID without fail.</li>
-        <li>
-          • Teams should consist of 3 members, maintaining consistent members
-          throughout the event.
-        </li>
-        <li>
-          • Challenges will be presented in various formats, including coding
-          tasks, debugging exercises, encryption/decryption puzzles, and
-          technical quizzes.
-        </li>
-        <li>
-          • Participants must adhere to specified rules, guidelines, and time
-          frames for each challenge.
-        </li>
-        <li>
-          • Fair play is essential, and any form of cheating, plagiarism, or
-          unethical behavior will result in immediate disqualification.
-        </li>
-        <li>
-          • Winners will be determined based on overall performance, scores, and
-          completion of challenges, with prizes and recognition distributed
-          accordingly.
-        </li>
-        <li>
-          • The event organizers reserve the right to change the rules and
-          regulations of the event at any time.
-        </li>
-      </ol>
-    ),
-    shortDescription:
-      "Embark on 'Tech Quest,' a tech treasure hunt with challenges in coding, puzzles, and quizzes. Compete for the ultimate prize in a dynamic celebration of innovation and technical expertise!   ",
-    feeDetails: "Registration Fee: Per Team ₹250",
-    feeAmount: 250,
-    coordinators: [
-      { name: "Kailash G", contact: "7200580860" },
-      { name: "Kamalesh K B", contact: "8608125396" },
     ],
   },
   {
@@ -184,6 +122,65 @@ const technicalEvents = [
       { name: "Fariha Hiba", contact: "9962608021" },
     ],
   },
+  {
+    name: "TECH QUEST",
+    image: "/design/Designer.png",
+    description: (
+      <ul>
+        <li>TECHNICAL TREASURE HUNT</li>
+        <li>
+          Dive into the captivating realm of technology with 'Tech Quest,' a
+          thrilling technical treasure hunt designed for tech enthusiasts!
+          Navigate through a series of challenges, puzzles, and clues spanning
+          coding, debugging, encryption/decryption techniques, technical
+          quizzes, and more. Showcase your technical prowess, compete for the
+          ultimate treasure, and immerse yourself in a dynamic and exhilarating
+          competition that celebrates innovation, creativity, and technical
+          expertise.
+        </li>
+      </ul>
+    ),
+    date: "2024-01-15",
+    time: "12:00 PM - 1:15 PM",
+    venue: "IT LAB 1",
+    person: <RiTeamFill />,
+    rules: (
+      <ol>
+        <li>• Participants are required to produce college ID without fail.</li>
+        <li>• Team should consist of 2 or 3 members</li>
+        <li>
+          • Challenges will be presented in various formats, including coding
+          tasks, debugging exercises, encryption/decryption puzzles, and
+          technical quizzes.
+        </li>
+        <li>
+          • Participants must adhere to specified rules, guidelines, and time
+          frames for each challenge.
+        </li>
+        <li>
+          • Fair play is essential, and any form of cheating, plagiarism, or
+          unethical behavior will result in immediate disqualification.
+        </li>
+        <li>
+          • Winners will be determined based on overall performance, scores, and
+          completion of challenges, with prizes and recognition distributed
+          accordingly.
+        </li>
+        <li>
+          • The event organizers reserve the right to change the rules and
+          regulations of the event at any time.
+        </li>
+      </ol>
+    ),
+    shortDescription:
+      "Embark on 'Tech Quest,' a tech treasure hunt with challenges in coding, puzzles, and quizzes. Compete for the ultimate prize in a dynamic celebration of innovation and technical expertise!   ",
+    feeDetails: "Registration Fee: Per Team ₹250",
+    feeAmount: 250,
+    coordinators: [
+      { name: "Kailash G", contact: "7200580860" },
+      { name: "Kamalesh K B", contact: "8608125396" },
+    ],
+  },
 ];
 const nonTechnicalEvents = [
   {
@@ -244,6 +241,9 @@ const nonTechnicalEvents = [
         <li>• Solo performance: maximum of 2 minutes per person.</li>
         <li>• Group performance: maximum of 4 minutes per group.</li>
         <li>
+          • Minimum 3 participants per team is allowed for group performance.
+        </li>
+        <li>
           • The participants must bring their materials required for their
           performance. If songs needed to be played during the performance, it
           should be submitted prior.
@@ -278,14 +278,14 @@ const nonTechnicalEvents = [
         <li>ROUND 2: CONNEXTIONS</li>
         <li>ROUND 3: GESTURE GUESS</li>
         <li>• Participants are required to produce college ID without fail.</li>
-        <li>• Maximum 2 persons per team is allowed.</li>
+        <li>• 2 persons per team is allowed.</li>
         <li>
           • The event consist of three rounds, with the winner of each round
           advancing to the next stage.
         </li>
         <li>
-          • Participants who do not win a round will be eliminated from the
-          competition.
+          • Rounds are based on Tamil and English songs. First two rounds will
+          be Buzzer rounds.
         </li>
         <li>
           • The decision made by the judges is final and binding on all
@@ -361,17 +361,17 @@ const workshops = [
   {
     name: "BOOT TO ROOT",
     image: "/design/workshop.jpg",
-    venue: "TBA",
+    venue: "To be Announced",
     person: <IoPerson />,
     rules: "• Participants are required to produce college ID without fail.",
     instructions:
-      "Enter into  the thrilling phase of cyber world where you will learn and enjoy experiencing the cyber games. Infographics! Shells! Code puzzles! Stop XSS! AI-powered cyber challenges await. Dive in! ",
-    shortDescription:
       "Root is the highest privileged user. To boot as him, and to prove that u are a great hacker.",
+    shortDescription:
+      "Enter into  the thrilling phase of cyber world where you will learn and enjoy experiencing the cyber games. Infographics! Shells! Code puzzles! Stop XSS! AI-powered cyber challenges await. Dive in! ",
     feeDetails: "Registration Fee: ₹100",
     feeAmount: 100,
     coordinators: [
-      { name: "Salman Fariz", contact: "1234567890" },
+      { name: "Imran Khan", contact: "7338774116" },
       { name: "Choumya", contact: "9876543210" },
     ],
   },
@@ -407,7 +407,7 @@ const PopupCard = ({ event, onClose }) => {
       className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-50 backdrop-blur-sm rounded-lg z-50"
       onClick={handleCloseOnOverlayClick}
     >
-      <div className="w-[400px] h-[400px] bg-white overflow-y-auto p-8 popup-card-content relative">
+      <div className="w-[500px] h-[550px] bg-white overflow-y-auto p-8 popup-card-content relative">
         <button
           className="absolute top-6 right-4 text-xl font-bold cursor-pointer bg-orange-500 rounded-lg px-2 py-1"
           onClick={onClose}
@@ -418,7 +418,7 @@ const PopupCard = ({ event, onClose }) => {
         <img
           src={event.image}
           alt={event.name}
-          className="mb-4 h-[150px] w-[400px]"
+          className="mb-4 h-[250px] w-[450px]"
           width={400}
         />
         <div className="flex gap-3 items-center mb-4">
@@ -494,16 +494,13 @@ const Event = () => {
 
   return (
     <>
-      <div
-        id="events"
-        className="min-h-screen flex justify-center items-center bg-black"
-      >
+      <div id="events" className=" flex justify-center items-center bg-black">
         <div
           className="mt-16 max-w-7xl w-full h-auto bg-black p-8 rounded-lg shadow-lg mb-6"
           style={{ boxShadow: shadowStyle }}
         >
           <div className="text-center">
-            <h1 className="mb-5 text-3xl font-bold bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-transparent bg-clip-text">
+            <h1 className="mb-10 text-3xl font-bold bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-transparent bg-clip-text">
               TECHNICAL EVENTS
             </h1>
           </div>
@@ -541,7 +538,6 @@ const Event = () => {
                     Register
                   </button>
                 </div>
-                
               </div>
             ))}
           </div>
@@ -549,14 +545,14 @@ const Event = () => {
       </div>
       <div
         id="events"
-        className="pt-16 min-h-screen flex justify-center items-center bg-black"
+        className="pt-16 flex justify-center items-center bg-black"
       >
         <div
           className=" max-w-7xl w-full h-auto bg-black p-8 rounded-lg shadow-lg mb-6"
           style={{ boxShadow: shadowStyle }}
         >
           <div className="text-center">
-            <h1 className="mb-5 text-3xl font-bold bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-transparent bg-clip-text">
+            <h1 className="mb-10 text-3xl font-bold bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-transparent bg-clip-text">
               NON-TECHNICAL EVENTS
             </h1>
           </div>
@@ -608,7 +604,7 @@ const Event = () => {
           style={{ boxShadow: shadowStyle }}
         >
           <div className="text-center">
-            <h1 className="mb-5 text-3xl font-bold bg-gradient-to-r from-orange-300 via-yellow-300 to-red-800 inline-block text-transparent bg-clip-text">
+            <h1 className="mb-10 text-3xl font-bold bg-gradient-to-r from-orange-300 via-yellow-300 to-red-800 inline-block text-transparent bg-clip-text">
               MEGA EVENT
             </h1>
           </div>

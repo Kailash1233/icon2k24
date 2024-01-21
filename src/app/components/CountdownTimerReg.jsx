@@ -58,13 +58,13 @@ const CountdownTimer = ({ targetDate }) => {
     <div className="text-2xl">
       <div className={typeof window !== "undefined" ? "no-js" : ""}>
         <ReactCardFlip isFlipped={flippedStates[unit]} flipDirection="vertical">
-          <div key="front" className="countdown-card">
-            <div className="countdown-value">{timeLeft[unit]}</div>
-            <span className="text-gray-500 countdown-label">{label}</span>
+          <div key="front" className="countdown-card-reg bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800">
+            <div className="countdown-value-reg">{timeLeft[unit]}</div>
+            <span className="text-gray-500 countdown-label-reg">{label}</span>
           </div>
-          <div key="back" className="countdown-card">
-            <div className="countdown-value">{timeLeft[unit]}</div>
-            <span className="text-gray-500 countdown-label">{label}</span>
+          <div key="back" className="countdown-card-reg bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800">
+            <div className="countdown-value-reg">{timeLeft[unit]}</div>
+            <span className="text-gray-500 countdown-label-reg">{label}</span>
           </div>
         </ReactCardFlip>
       </div>
