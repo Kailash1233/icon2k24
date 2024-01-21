@@ -256,7 +256,7 @@ const nonTechnicalEvents = [
     ),
     shortDescription:
       "Experience a celebration of diverse talents in a dazzling showcase! From mythical tales to dance and more, participants bring forth bold and brilliant performances. Join us for a captivating display of creativity, featuring solo and group acts that promise to enchant and inspire!",
-    feeDetails: "Registration Fee: SOLO: ₹100 TEAM: ₹300",
+    feeDetails: "Registration Fee: SOLO: ₹100 GROUP: ₹300",
     feeAmount: { solo: 100, group: 300 },
     coordinators: [
       { name: "Salman", contact: "6380393289" },

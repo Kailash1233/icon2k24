@@ -112,45 +112,34 @@ const Footer = () => {
 
       <div className="border-t border-gray-500 h-5 mx-4 md:mx-20 mt-4"></div>
 
-      <div className="text-gray-500 flex flex-wrap text-xs items-center mt-4 ml-2 md:ml-20">
+      <div className="text-gray-500 flex flex-wrap text-xs items-center mt-4 ml-2 md:ml-20 cursor-pointer">
         <p className="mr-2 md:mr-4 mb-2 md:mb-0">Privacy Policy</p>
         <p className="mr-2 md:mr-4 mb-2 md:mb-0">Terms & Conditions</p>
         <p className="mr-2 md:mr-4 mb-2 md:mb-0">Code of Conduct</p>
-        <p className="md:mr-4 mb-2 md:mb-0">Copyright @2024 SIT</p>
-        <p className="md:mr-64 mb-2 md:mb-0"></p>
+        <p className="md:mr-4 mb-2 md:mb-0 mr-2">Copyright @2024 SIT</p>
+        <p className="md:mr-64 mb-2 md:mb-0">icon2k24symposium@gmail.com</p>
         <p className="md:mr-64 mb-2 md:mb-0"></p>
 
-        <div className="flex items-center ml-2 md:ml-52 mb-2">
+        <div className="flex items-center md:ml-96">
           <a
             href="https://www.instagram.com/icon_2k24?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
             target="_blank"
             rel="noopener noreferrer"
             className="ml-2"
           >
-            <svg
-              className="h-4 w-4 text-white"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              strokeWidth="2"
-              stroke="currentColor"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path stroke="none" d="M0 0h24v24H0z" />
-              <rect x="4" y="4" width="16" height="16" rx="4" />
-              <circle cx="12" cy="12" r="3" />
-              <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
-            </svg>
+            <img
+              src="/design/instagram.png"
+              alt="Instagram"
+              className="h-6 w-6 mr-2"
+            />
           </a>
           <a
             href="https://www.instagram.com/icon_2k24?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs text-gray-300 ml-0 md:ml-0"
+            className="text-md text-gray-300 ml-0 md:ml-0"
           >
-            Icon2k24
+            ICON2K24
           </a>
         </div>
       </div>

@@ -136,10 +136,14 @@ const Page = () => {
         <div className="flex flex-wrap justify-center cursor-pointer">
           <div className="mb-2 ml-2 mr-2">
             <img
+              // href="https://www.github.com/Kailash1233"
+              // target="_blank"
+              // rel="noopener noreferrer"
               src="/devs/Kailash.jpg"
               alt="Kailash G"
               className="object-contain w-20 h-20 rounded-full mb-2"
             />
+
             <p className="text-xs text-center">Kailash</p>
           </div>
           <div className="mb-2 ml-2 mr-2">
