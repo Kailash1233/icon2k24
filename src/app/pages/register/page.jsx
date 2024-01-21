@@ -19,7 +19,7 @@ const Register = ({ success, error, onClose }) => {
         <h2
           className={`${success ? "text-green-800" : "text-red-600 text-lg flex justify-center items-center h-full backdrop:blur-sm"} px-5 py-2`}
         >
-          {error}
+          &#x26A0; {error}
         </h2>
       </div>
     </div>
@@ -1038,6 +1038,7 @@ export default function RegistrationForm({
 
   const handleSubmit = async (e) => {
     // e.preventDefault();
+    setSuccess(false);
     console.log("Full name: ", fullname);
     console.log("Team members ", teammember1 + teammember2);
     console.log("Email: ", email);
@@ -1484,7 +1485,7 @@ export default function RegistrationForm({
               >
                 Pay using phone number
               </button>
-              <p className="flex justify-center text-[10px] text-gray-600">Click to copy phone number</p>
+              <p className="flex font-bold justify-center text-[10px] text-gray-400">Click to copy phone number</p>
               <p className="mb-2 flex justify-center text-[15px]">[or]</p>
               <button
                 title="Click to copy UPI ID"
@@ -1494,7 +1495,7 @@ export default function RegistrationForm({
               >
                 Pay using UPI ID
               </button>
-              <p className="flex justify-center text-[10px] text-gray-600 ">Click to copy UPI ID</p>
+              <p className="flex font-bold justify-center text-[10px] text-gray-400 ">Click to copy UPI ID</p>
               <p className=" mb-2 flex justify-center text-[15px]">[or]</p>
               <button
                 title="Click to show QR"
