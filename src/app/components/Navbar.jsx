@@ -34,7 +34,7 @@ const Navbar = () => {
               src={lazyone}
               alt="logo"
               width={90}
-              height={90}
+              height={80}
               className="cursor-pointer"
               priority
             />

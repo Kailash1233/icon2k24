@@ -63,11 +63,11 @@ const About = () => {
             making our institution a lifelong home.
           </p>
         </div>
-        <div className="md:w-1/2 ml-2">
+        <div className="md:w-1/2 ml-2 ">
           <img
             src="/SIT/SIT1.jpeg"
             alt="College Image"
-            className="w-full h-48 object-cover mb-4 rounded-md"
+            className="w-full h-48 object-cover mb-4 rounded-md border-2 border-green-300 box "
             style={{ boxShadow: shadowStyle }}
           />
           <p className="text-center text-xl text-white font-bold">

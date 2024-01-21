@@ -15,7 +15,14 @@ const Register = ({ success, error, onClose }) => {
       className="fixed top-[-13px] left-0 w-full h-full flex items-center justify-center bg-opacity-50 backdrop-blur-sm rounded-lg z-50"
       onClick={handleCloseOnOverlayClick}
     >
+      
       <div className="relative w-[400px] h-[100px] bg-white bg-opacity-500 overflow-y-auto p-8 register-content border-2 border-red-500">
+      <button
+          className="absolute top-6 right-4 text-xl font-bold cursor-pointer bg-orange-500 rounded-lg px-2 py-1 mt-2"
+          onClick={onClose}
+        >
+          &times;
+        </button>
         <h2
           className={`${success ? "text-green-800" : "text-red-600 text-lg flex justify-center items-center h-full backdrop:blur-sm"} px-5 py-2`}
         >
@@ -1290,7 +1297,7 @@ export default function RegistrationForm({
                 <label htmlFor="fee">{fee}</label>
               </span>
             </div>
-            <div className=" text-green-600 mt-2">Lunch will be provided for registered people.</div>
+            <div className=" text-green-600 mt-2">Lunch will be provided for registered participants.</div>
           <form
             action={handleSubmit}
             className="py-4 mt-1 flex flex-col gap-5 bg-[white] overflow-auto relative"
@@ -1376,7 +1383,7 @@ export default function RegistrationForm({
                   id="teammember"
                   placeholder="Team member"
                 />
-                <button type="button" onClick={addMemberHandler} className="bg-black rounded-lg px-4 py-2 text-white cursor-pointer mt-4 p-2 rounded-[0.5rem]">+</button>
+                <button type="button" onClick={addMemberHandler} className="bg-black  px-4 py-2 text-white cursor-pointer mt-4 p-2 rounded-[0.5rem]">+</button>
               </div>
               <div>
                 <textarea 
@@ -1504,7 +1511,7 @@ export default function RegistrationForm({
               >
                 Show QR
               </button>
-                <label htmlFor="file" className="flex justify-center mb-2.5 bg-black rounded-lg px-4 py-2 text-white cursor-pointer mt-5 p-2 rounded-[0.5rem]">
+                <label htmlFor="file" className="flex justify-center mb-2.5 bg-black px-4 py-2 text-white cursor-pointer mt-5 p-2 rounded-[0.5rem]">
                   {paymentfile
                     ? "✅ Screenshot uploaded"
                     : "Upload screenshot of payment"}

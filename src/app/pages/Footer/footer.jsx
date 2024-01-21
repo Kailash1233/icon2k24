@@ -120,7 +120,7 @@ const Footer = () => {
         <p className="md:mr-64 mb-2 md:mb-0"></p>
         <p className="md:mr-64 mb-2 md:mb-0"></p>
 
-        <div className="flex items-center ml-2 md:ml-52 mb-2">
+        
           <a
             href="https://www.instagram.com/icon_2k24?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
             target="_blank"
@@ -148,11 +148,10 @@ const Footer = () => {
             href="https://www.instagram.com/icon_2k24?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs text-gray-300 ml-0 md:ml-0"
+            className="text-xl text-gray-300 ml-0 md:ml-0"
           >
             Icon2k24
           </a>
-        </div>
       </div>
     </div>
   );
