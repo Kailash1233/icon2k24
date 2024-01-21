@@ -458,6 +458,7 @@ const PopupCard = ({ event, onClose }) => {
           <div className="mb-4">
             {createPortal(
               <Registrationmodal
+                feeAmount={event.feeAmount}
                 fee={event.feeDetails}
                 eventname={event.name}
                 onClose={handleRegistrationModalClose}

@@ -50,7 +50,8 @@ const QRCode = ({ feeAmount, onClose }) => {
             src={`/qrcode/${feeAmount}.jpg`}
             width={316}
             height={248}
-            alt="QR code.jpg"
+            alt={`Please wait...
+                  or go back and click the button again`}
           />
         </div>
       </div>
@@ -1078,15 +1079,10 @@ export default function RegistrationForm({
         return;
       }
     }
-    if (eventname == "TECH QUEST") {
-      if (
-        !teammember1 ||
-        teammember1 == "" ||
-        !teammember2 ||
-        teammember2 == ""
-      ) {
+    if( max2.includes(eventname)){
+      if (!teammember1 || teammember1 == "") {
         setShowerror(true);
-        setError(["This event requires three members per team"]);
+        setError(["This event requires two members per team"]);
         return;
       }
       if (teammember1) {
@@ -1098,12 +1094,19 @@ export default function RegistrationForm({
           return;
         }
       }
-      if (teammember2) {
+    }
+    if (eventname == "TECH QUEST") {
+      if (!teammember1 || teammember1 == "") {
+        setShowerror(true);
+        setError(["This event requires atleast two members per team"]);
+        return;
+      }
+      if (teammember1) {
         var regex1 = /^[A-Za-z\s]{3,50}$/;
-        if (!regex1.test(teammember2)) {
+        if (!regex1.test(teammember1)) {
           setShowerror(true);
-          setTeammember2("");
-          setError(["Please enter a valid Name for Team member 3"]);
+          setTeammember1("");
+          setError(["Please enter a valid Name for Team member 2"]);
           return;
         }
       }
@@ -1256,10 +1259,12 @@ export default function RegistrationForm({
   };
 
   const addMemberHandler = () => {
-    let teamMember = teammember2 + teammember1 + '\n';
-    setTeammember2(teamMember);
-    setTeammember1('');
-    setGroupmembers(groupmembers + 1);
+    if(teammember1 && teammember1 != ''){
+      let teamMember = teammember2 + teammember1 + '\n';
+      setTeammember2(teamMember);
+      setTeammember1('');
+      setGroupmembers(groupmembers + 1);
+    }
   }
 
   return (
@@ -1291,9 +1296,9 @@ export default function RegistrationForm({
             className="py-4 mt-1 flex flex-col gap-5 bg-[white] overflow-auto relative"
           >
             {(eventname == "IGNITE THE STAGE" && showignitethestage) &&
-            <div>
-              <button type="button" onClick={handleSoloClick} className="border-spacing-y-2 text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium text-sm px-5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Solo</button>
-              <button type="button" onClick={handleGroupClick} className="border-spacing-y-2 text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium text-sm px-5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Group</button>
+            <div className="flex flex-row justify-center">
+              <button type="button" onClick={handleSoloClick} className="mr-4 grow bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 rounded-lg px-4 py-2">Solo</button>
+              <button type="button" onClick={handleGroupClick} className="ml-4 grow bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 rounded-lg px-4 py-2">Group</button>
             </div>
             }
             <div>
@@ -1325,7 +1330,7 @@ export default function RegistrationForm({
                     className="input-field border-2 border-gray-300 rounded-md p-2 w-full"
                     value={teammember1}
                     onChange={(e) => setTeammember1(e.target.value)}
-                    placeholder="Team member 2 (optional)"
+                    placeholder="Team member 2 (required)"
                   />
                 </div>
               </>
@@ -1354,11 +1359,7 @@ export default function RegistrationForm({
                     className="input-field border-2 border-gray-300 rounded-md p-2 w-full"
                     value={teammember2}
                     onChange={(e) => setTeammember2(e.target.value)}
-                    placeholder={
-                      eventname == "TECH QUEST"
-                        ? "Team member 3 (required)"
-                        : "Team member 3 (optional)"
-                    }
+                    placeholder="Team member 3 (optional)"
                   />
                 </div>
               </>
@@ -1368,21 +1369,21 @@ export default function RegistrationForm({
               <div>
                 {/* <label htmlFor="teammember"/> */}
                 <input
-                  className="mt-4 border-2 border-gray-300 rounded-md p-2 w-full"
+                  className=" border-2 border-gray-300 rounded-md p-2 w-full"
                   onChange={(e) => setTeammember1(e.target.value)}
                   value={teammember1}
                   type="text"
                   id="teammember"
-                  placeholder="Add member"
+                  placeholder="Team member"
                 />
-                <button type="button" onClick={addMemberHandler} className="border-spacing-y-2 text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium text-sm px-5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">+</button>
+                <button type="button" onClick={addMemberHandler} className="bg-black rounded-lg px-4 py-2 text-white cursor-pointer mt-4 p-2 rounded-[0.5rem]">+</button>
               </div>
               <div>
                 <textarea 
                 className="border-2 border-gray-300 rounded-md p-2 w-full"
                 id="teammembers"
                 name="teammembers"
-                placeholder="Team members"
+                placeholder="Team members (minimum 3)"
                 value={teammember2}
                 rows="4"
                 cols="22"
@@ -1483,8 +1484,8 @@ export default function RegistrationForm({
               >
                 Pay using phone number
               </button>
-              <p className="  flex justify-center text-[10px] text-gray-600">Click to copy phone number</p>
-              <p className="mb-1 flex justify-center text-[15px]">[or]</p>
+              <p className="flex justify-center text-[10px] text-gray-600">Click to copy phone number</p>
+              <p className="mb-2 flex justify-center text-[15px]">[or]</p>
               <button
                 title="Click to copy UPI ID"
                 type="button"
@@ -1494,7 +1495,7 @@ export default function RegistrationForm({
                 Pay using UPI ID
               </button>
               <p className="flex justify-center text-[10px] text-gray-600 ">Click to copy UPI ID</p>
-              <p className=" mb-1 flex justify-center text-[15px]">[or]</p>
+              <p className=" mb-2 flex justify-center text-[15px]">[or]</p>
               <button
                 title="Click to show QR"
                 type="button"
@@ -1503,17 +1504,11 @@ export default function RegistrationForm({
               >
                 Show QR
               </button>
-              <br />
-              <button
-                type="button"
-                className="mb-3 bg-black rounded-lg px-4 py-2 text-white"
-              >
-                <label htmlFor="file">
+                <label htmlFor="file" className="flex justify-center mb-2.5 bg-black rounded-lg px-4 py-2 text-white cursor-pointer mt-5 p-2 rounded-[0.5rem]">
                   {paymentfile
                     ? "✅ Screenshot uploaded"
                     : "Upload screenshot of payment"}
                 </label>
-              </button>
               <input
                 className="hidden"
                 onChange={(e) => convertTobase64(e)}
