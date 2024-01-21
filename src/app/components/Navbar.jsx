@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import lazyone from "../images/lazyone.gif";
+import logo from "../images/logo.png";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
@@ -20,7 +20,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full h-24 shadow-xl bg-neutral-950 sticky top-0 z-50">
+    <nav className="w-full h-20 shadow-xl bg-black sticky top-0 z-50">
       <div className="flex justify-between items-center h-full w-full px-5 2xl:px-16 text-white">
         <div>
           <ScrollLink
@@ -31,10 +31,10 @@ const Navbar = () => {
             duration={500}
           >
             <Image
-              src={lazyone}
+              src={logo}
               alt="logo"
-              width={90}
-              height={90}
+              width={100}
+              height={160}
               className="cursor-pointer"
               priority
             />

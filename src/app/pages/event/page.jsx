@@ -20,11 +20,11 @@ const technicalEvents = [
     person: <RiTeamFill />,
     rules: (
       <ol>
-        <li>• Participants must present a valid college ID.</li>
-        <li>
+        <span>•</span><li>Participants must present a valid college ID.</li>
+        <span>•</span><li>
           • <b>2 Participants</b> per paper is allowed.
         </li>
-        <li>• The paper should adhere to the IEEE document format.</li>
+        <span>•</span><li>The paper should adhere to the IEEE document format.</li>
         <li>• Participants must submit papers on any IT-related topic.</li>
         <li>
           • All participants are required to bring a hardcopy of their paper on
@@ -121,7 +121,7 @@ const technicalEvents = [
     venue: "IT LAB 2",
     person: <IoPerson />,
     rules: (
-      <ol>
+      <ul>
         <li>• Participants are required to produce college ID without fail.</li>
         <li>• It is an individual event.</li>
         <li>
@@ -140,7 +140,7 @@ const technicalEvents = [
           • The decision made by judges is final and binding on all
           participants.
         </li>
-      </ol>
+      </ul>
     ),
     shortDescription:
       "Are you ready to dive into a world where melodies are composed by line of code, and rhythm is dictated by algorithm? Here, the tech enthusiast delves coding against distraction of music. Let the beats and coding begins.",
@@ -441,13 +441,13 @@ const PopupCard = ({ event, onClose }) => {
         </ul>
         <div className="flex justify-center items-end gap-5">
           <button
-            className="mt-3 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 rounded-lg px-4 py-2"
+            className="mt-3 border-2 border-black rounded-lg px-4 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800  py-2"
             onClick={handleRegisterClick}
           >
             Register
           </button>
           <button
-            className="mt-3 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 rounded-lg px-4 py-2"
+            className="mt-3 border-2 border-black rounded-lg px-7 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800  py-2"
             onClick={onClose}
           >
             Close
@@ -499,7 +499,7 @@ const Event = () => {
         className="min-h-screen flex justify-center items-center bg-black"
       >
         <div
-          className=" max-w-7xl w-full h-auto bg-black p-8 rounded-lg shadow-lg mb-6"
+          className="mt-16 max-w-7xl w-full h-auto bg-black p-8 rounded-lg shadow-lg mb-6"
           style={{ boxShadow: shadowStyle }}
         >
           <div className="text-center">
@@ -529,13 +529,13 @@ const Event = () => {
 
                 <div className="flex justify-center items-end h-full gap-4">
                   <button
-                    className="mb-3 border-[3px] border-black rounded-lg px-4 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block  text-slate-900 text-[18px]"
+                    className="mb-3 border-2 border-black rounded-lg px-4 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block  text-slate-900 text-[18px]"
                     onClick={() => handleKnowMoreClick(event)}
                   >
                     Know More
                   </button>
                   <button
-                    className="mb-3 border-[3px] border-black rounded-lg px-4 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block  text-slate-900 text-[18px]"
+                    className="mb-3 border-2 border-black rounded-lg px-6 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block  text-slate-900 text-[18px]"
                     onClick={() => handleRegisterClick(event)}
                   >
                     Register
@@ -549,7 +549,7 @@ const Event = () => {
       </div>
       <div
         id="events"
-        className="min-h-screen flex justify-center items-center bg-black"
+        className="pt-16 min-h-screen flex justify-center items-center bg-black"
       >
         <div
           className=" max-w-7xl w-full h-auto bg-black p-8 rounded-lg shadow-lg mb-6"
@@ -582,13 +582,13 @@ const Event = () => {
 
                 <div className="flex justify-center items-end h-full gap-4">
                   <button
-                    className="mb-3 border-[3px] border-black rounded-lg px-4 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block  text-slate-900 text-[18px]"
+                    className="mb-3 border-2 border-black rounded-lg px-4 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block  text-slate-900 text-[18px]"
                     onClick={() => handleKnowMoreClick(event)}
                   >
                     Know More
                   </button>
                   <button
-                    className="mb-3 border-[3px] border-black rounded-lg px-4 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block  text-slate-900 text-[18px]"
+                    className="mb-3 border-2 border-black rounded-lg px-6 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block  text-slate-900 text-[18px]"
                     onClick={() => handleRegisterClick(event)}
                   >
                     Register
@@ -604,7 +604,7 @@ const Event = () => {
         className="min-h-screen flex justify-center items-center bg-black"
       >
         <div
-          className="max-w-96 w-full h-auto bg-black p-8 rounded-lg shadow-lg mb-6 flex flex-col items-center"
+          className=" max-w-96 w-full h-auto bg-black p-8 rounded-lg shadow-lg mb-6 flex flex-col items-center"
           style={{ boxShadow: shadowStyle }}
         >
           <div className="text-center">
@@ -633,13 +633,13 @@ const Event = () => {
 
                 <div className="flex justify-center items-end h-full gap-4">
                   <button
-                    className="mb-3 rounded-lg px-4 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block  text-slate-900 text-[18px]"
+                    className="mb-3 border-2 border-black rounded-lg px-4 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block  text-slate-900 text-[18px]"
                     onClick={() => handleKnowMoreClick(event)}
                   >
                     Know More
                   </button>
                   <button
-                    className="mb-3 rounded-lg px-4 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block  text-slate-900 text-[18px]"
+                    className="mb-3 border-2 border-black rounded-lg px-6 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block  text-slate-900 text-[18px]"
                     onClick={() => handleRegisterClick(event)}
                   >
                     Register

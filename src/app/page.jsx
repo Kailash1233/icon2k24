@@ -29,28 +29,29 @@ const Home = () => {
           muted
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src={require("./images/Final.mp4")} autoPlay muted loop />
+          <source src={require("./images/globe.mp4")} autoPlay muted loop />
         </video>
         {/* Your content on top of the video */}
         <div className="relative z-10">
           <div className="flex flex-col text-white justify-center items-center h-60 mt-32 px-6">
             {/* Additional Text */}
-            <div className="text-2xl font-bold text-white mb-4">
-              B.S. Abdur Rahman Crescent Institute of Science and Technology
-              proudly presents
-            </div>
-
+              <div className="sm:mt-2 text-xl bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 text-transparent bg-clip-text" >
+                <div className="text-[29px] sm:text-[70px] sm:mt-12">Society of Information Technologists</div>
+                 <div className="sm:text-center sm:text-[30px] text-xl mt-1 sm:mt-6 sm:mb-6">proudly presents</div>
+              </div>
             <div
-              className="text-7xl font-normal text-orange-600 mb-4"
+              className="text-7xl bg-gradient-to-r from-red-500 via-yellow-300 to-orange-300 text-transparent bg-clip-text my-4 font-bold "
               style={{ fontSize: "4rem", fontWeight: "bold" }}
             >
               ICON'2K24
             </div>
 
-            <div className="text-4xl font-bold text-purple-500 mb-4">
-              By Students of Society of Information Technologists
-            </div>
-
+            {/* <div className="font-bold mb-4">
+              <h1 className="bg-gradient-to-r from-rose-500 to-amber-300 text-transparent bg-clip-text">
+                <div className="text-3xl sm:text-center"><h1>By Students of</h1></div>
+              <span className="text-[30px] ">Society of Information Technologists</span></h1>
+            </div> */}
+            <div className="mt-5">
             <Link
               to="about"
               spy={true}
@@ -58,13 +59,14 @@ const Home = () => {
               offset={-70}
               duration={500}
             >
-              <button className="bg-yellow-500 text-white px-6 py-2 rounded-full font-bold text-lg hover:bg-yellow-600">
+              <button className="bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 text-black px-6 py-2 rounded-full font-bold text-lg hover:bg-yellow-600 outline-none border-2 border-black">
                 Get Started
               </button>
             </Link>
+            </div>
 
             {/* Countdown Timer */}
-            <div className="mt-24 px-9">
+            <div className="mt-12 px-9">
               <CountdownTimer targetDate={targetDate} />
             </div>
           </div>
