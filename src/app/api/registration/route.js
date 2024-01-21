@@ -39,10 +39,10 @@ export async function POST(req) {
       for (let e in error.errors) {
         errorList.push(error.errors[e].message);
       }
-      console.log(errorList);
+      // console.log(errorList);
       return NextResponse.json({ msg: errorList });
     } else {
-      console.log(error);
+      // console.log(error);
       return NextResponse.json({ msg: ["Unable to register."] });
     }
   }

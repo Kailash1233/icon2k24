@@ -16,31 +16,31 @@ const Register = ({ success, error, onClose }) => {
       className="fixed top-[-13px] left-0 w-full h-full flex items-center justify-center bg-opacity-50 backdrop-blur-sm rounded-lg z-50"
       onClick={handleCloseOnOverlayClick}
     >
-      <div className={success ? "relative sm:w-[440px] h-[350px] bg-white bg-opacity-500 p-8 register-content border-2 border-green-500 rounded-lg" :"relative sm:w-[440px] h-[100px] bg-white bg-opacity-500 overflow-y-auto p-8 register-content border-2 border-red-500 rounded-lg"}>
+      <div
+        className={
+          success
+            ? "relative sm:w-[440px] h-[350px] bg-white bg-opacity-500 p-8 register-content border-2 border-green-500 rounded-lg"
+            : "relative sm:w-[440px] h-[100px] bg-white bg-opacity-500 overflow-y-auto p-8 register-content border-2 border-red-500 rounded-lg"
+        }
+      >
         <button
           className="absolute top-6 right-4 text-xl font-bold cursor-pointer bg-orange-500 rounded-lg px-2 py-1 mt-[7.6px]"
           onClick={onClose}
         >
           &times;
         </button>
-        {!success && 
-        <h2
-          className={`${
-            success
-              ? "text-green-800"
-              : "text-red-600 text-lg flex justify-center items-center h-full backdrop:blur-sm"
-          } px-5 py-2`}
-        >
-          &#x26A0; {error}          
-        </h2>
-        }
-        {success && 
-        <img
-        src="/design/success.gif"
-        alt="success"
-        />
-        
-        }
+        {!success && (
+          <h2
+            className={`${
+              success
+                ? "text-green-800"
+                : "text-red-600 text-lg flex justify-center items-center h-full backdrop:blur-sm"
+            } px-5 py-2`}
+          >
+            &#x26A0; {error}
+          </h2>
+        )}
+        {success && <img src="/design/success.gif" alt="success" />}
       </div>
     </div>
   );
@@ -1053,7 +1053,6 @@ export default function RegistrationForm({
     try {
       reader.onload = function (e) {
         setPaymentfile(e.target.result);
-        console.log("Base64 Data:", paymentfile);
       };
       reader.readAsDataURL(file);
     } catch (err) {
@@ -1064,15 +1063,6 @@ export default function RegistrationForm({
   const handleSubmit = async (e) => {
     // e.preventDefault();
     setSuccess(false);
-    console.log("Full name: ", fullname);
-    console.log("Team members ", teammember1 + teammember2);
-    console.log("Email: ", email);
-    console.log("phonenumber: ", phonenumber);
-    console.log("collegename: ", collegename);
-    console.log("department: ", department);
-    console.log("year: ", year);
-    console.log("event: ", eventname);
-    console.log("paymentfile : ", paymentfile);
 
     if (eventname == "IGNITE THE STAGE") {
       if (!ignitethestage) {
@@ -1108,7 +1098,7 @@ export default function RegistrationForm({
       }
     }
     if (eventname == "ADRENALINE RUSH") {
-      if(!teammember1 || teammember1 == ''){
+      if (!teammember1 || teammember1 == "") {
         setShowerror(true);
         setError(["This event requires two members"]);
         return;
