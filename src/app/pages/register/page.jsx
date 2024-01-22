@@ -1522,7 +1522,7 @@ export default function RegistrationForm({
               </span>
             </div>
             <div className="flex flex-col justify-center">
-              <button
+              {/* <button
                 title="Click to copy phone number"
                 type="button"
                 className="bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 rounded-lg px-4 py-2"
@@ -1545,7 +1545,7 @@ export default function RegistrationForm({
               <p className="flex font-bold justify-center text-[10px] text-gray-400 ">
                 Click to copy UPI ID
               </p>
-              <p className=" mb-2 flex justify-center text-[15px]">[or]</p>
+              <p className=" mb-2 flex justify-center text-[15px]">[or]</p> */}
               <button
                 title="Click to show QR"
                 type="button"
