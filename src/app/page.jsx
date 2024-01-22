@@ -32,7 +32,7 @@ const Home = () => {
           <source src={require("./images/globe.mp4")} autoPlay muted loop />
         </video>
         {/* Your content on top of the video */}
-        <div className="relative z-10 mt-64">
+        <div className="relative z-10 mt-52">
           <div className="flex flex-col text-white justify-center items-center h-60 mt-32 px-6">
             {/* Additional Text */}
             <div className="sm:mt-2 text-xl bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 text-transparent bg-clip-text">
@@ -72,6 +72,9 @@ const Home = () => {
             {/* Countdown Timer */}
             <div className="mt-12 px-9">
               <CountdownTimer targetDate={targetDate} />
+            </div>
+            <div>
+              <h1 className="text-center mt-5 font-bold text-xl">Remaining</h1>
             </div>
           </div>
         </div>
