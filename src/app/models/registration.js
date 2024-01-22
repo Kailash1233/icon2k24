@@ -57,6 +57,11 @@ const contactSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  
+  verified: {
+    type: Boolean,
+    default: false
+  }
 });
 
 const Contact = mongoose.models.Contact || mongoose.model("Contact", contactSchema);

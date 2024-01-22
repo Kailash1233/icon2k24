@@ -3,14 +3,13 @@
 @tailwind utilities;
 
 * {
-  font-family: "Permanent Marker", cursive;
+  font-family: "Permanent Marker",serif ;
 }
-
 
 /* Styling for the countdown card */
 .countdown-card {
-  width: 70px;
-  height: 100px;
+  width: 150px;
+  height: 200px;
   background-color: #1a202c;
   border-radius: 8px;
   display: flex;
@@ -23,48 +22,75 @@
 
 /* Styling for the countdown value */
 .countdown-value {
-  font-size: 24px;
+  font-size: 54px;
   font-weight: bold;
-  color: #fff;
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
 
 /* Styling for the countdown label */
 .countdown-label {
-  font-size: 12px;
+  margin-top: 25px;
+  font-size: 28px;
   color: #ccc;
 }
 
+@media screen and (max-width: 786px) {
+  .countdown-card {
+    width: 70px;
+    height: 100px;
+  }
+  .countdown-value {
+    font-size: 24px;
+    font-weight: bold;
+  }
 
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  /* Styling for the countdown label */
+  .countdown-label {
+    margin-top: 0;
+    font-size: 12px;
+  }
 }
-body{
-    background-color:white;
-    color: black;
+
+/* Styling for the countdown card Registration */
+.countdown-card-reg {
+  width: 70px;
+  height: 100px;
+  background-color: #1a202c;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  opacity: 80%;
 }
-li {
-    list-style-type: none;
+
+/* Styling for the countdown value Registration*/
+.countdown-value-reg {
+  font-size: 24px;
+  font-weight: bold;
 }
-ul li a {
-    list-style-type: none;
-    color:black;
+
+/* Styling for the countdown label Registration*/
+.countdown-label-reg {
+  font-size: 12px;
+  color: black;
+  font-weight: bold;
 }
-.container {
-    margin: 20px;
-    padding: 10px;
+
+@media screen and (max-width: 786px) {
+  .countdown-card-reg {
+    width: 70px;
+    height: 100px;
+  }
+  .countdown-value-reg {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  /* Styling for the countdown label Registration*/
+  .countdown-label-reg {
+    margin-top: 0;
+    font-size: 12px;
+  }
 }
-.container::after{
-    content: '';
-    display: block;
-    margin-top: 15px;
-    height: 2px;
-    width: 100%;
-    background-color: aquamarine;
-}
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-} */
