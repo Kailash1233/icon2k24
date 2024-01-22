@@ -1258,15 +1258,45 @@ export default function RegistrationForm({
   };
 
   const copyTextToClipboard = async (text) => {
-    if ("clipboard" in navigator) {
-      return await navigator.clipboard
-        .writeText(text)
-        .then(alert(text + " copied"));
-    } else {
-      return document
-        .execCommand("copy", true, text)
-        .then(alert(text + " copied"));
-    }
+    // if ("clipboard" in navigator) {
+    //   return await navigator.clipboard
+    //     .writeText(text)
+    //     .then(alert(text + " copied"));
+    // } else {
+    //   return document
+    //     .execCommand("copy", true, text)
+    //     .then(alert(text + " copied"));
+    // }
+      try {
+        if ("clipboard" in navigator) {
+          await navigator.clipboard.writeText(text);
+          alert(text + " copied");
+        } else {
+          const textArea = document.createElement("textarea");
+          textArea.value = text;
+          document.body.appendChild(textArea);
+          textArea.select();
+    
+          const successful = document.execCommand("copy");
+          document.body.removeChild(textArea);
+    
+          if (successful) {
+            alert(text + " copied");
+          } else {
+            alert("Copy to clipboard is not supported in your browser.");
+          }
+        }
+      } catch (error) {
+        console.error("Unable to copy to clipboard:", error);
+        alert("An error occurred while copying to clipboard.");
+      }
+    
+    // Example usage:
+    // Trigger this function on a user gesture, like a button click
+    document.getElementById("copyButton").addEventListener("click", function() {
+      copyToClipboard("Hello, clipboard!");
+    });
+    
   };
 
   const addMemberHandler = () => {
@@ -1522,7 +1552,8 @@ export default function RegistrationForm({
               </span>
             </div>
             <div className="flex flex-col justify-center">
-              {/* <button
+              <button
+                // id="copyButton"
                 title="Click to copy phone number"
                 type="button"
                 className="bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 rounded-lg px-4 py-2"
@@ -1545,7 +1576,7 @@ export default function RegistrationForm({
               <p className="flex font-bold justify-center text-[10px] text-gray-400 ">
                 Click to copy UPI ID
               </p>
-              <p className=" mb-2 flex justify-center text-[15px]">[or]</p> */}
+              <p className=" mb-2 flex justify-center text-[15px]">[or]</p>
               <button
                 title="Click to show QR"
                 type="button"

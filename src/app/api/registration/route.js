@@ -11,15 +11,15 @@ export async function POST(req) {
     await connectDB();
 
     if(email && phonenumber && eventname){
-      var alreadyRegistered = await Contact.findOne({email, phonenumber, eventname});    
+      var alreadyRegistered = await Contact.findOne({email:email, phonenumber:phonenumber, eventname:eventname});    
       if(alreadyRegistered){
         return NextResponse.json({ msg: ["Email and phone number is already registered for this event"] });
       }
-      var emailExists = await Contact.findOne({email, eventname});  
+      var emailExists = await Contact.findOne({email:email, eventname:eventname});  
       if(emailExists){
         return NextResponse.json({ msg: ["Email is already registered for this event"] });
       }
-      var phoneNumberExists = await Contact.findOne({phonenumber, eventname});  
+      var phoneNumberExists = await Contact.findOne({phonenumber:phonenumber, eventname:eventname});  
       if(phoneNumberExists){
         return NextResponse.json({ msg: ["Phone number is already registered for this event"] });
       }
@@ -42,7 +42,7 @@ export async function POST(req) {
       // console.log(errorList);
       return NextResponse.json({ msg: errorList });
     } else {
-      // console.log(error);
+      console.log(error);
       return NextResponse.json({ msg: ["Unable to register."] });
     }
   }
