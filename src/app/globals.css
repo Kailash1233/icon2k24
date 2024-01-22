@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+/* * {
   font-family: "Permanent Marker", cursive;
-}
+} */
 
 /* Styling for the countdown card */
 .countdown-card {
