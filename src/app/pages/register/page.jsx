@@ -1173,15 +1173,15 @@ export default function RegistrationForm({
       setError(["Please enter your Department"]);
       return;
     }
-    if (department) {
-      var regex4 = /^\S{2,100}$/;
-      if (!regex4.test(department)) {
-        setShowerror(true);
-        setDepartment("");
-        setError(["Please enter a valid department name"]);
-        return;
-      }
-    }
+    // if (department) {
+    //   var regex4 = /^\S{2,100}$/;
+    //   if (!regex4.test(department)) {
+    //     setShowerror(true);
+    //     setDepartment("");
+    //     setError(["Please enter a valid department name"]);
+    //     return;
+    //   }
+    // }
     if (!year) {
       setShowerror(true);
       setError(["Please select your year of study"]);
