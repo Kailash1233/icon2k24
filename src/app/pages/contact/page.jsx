@@ -99,13 +99,6 @@ const Page = () => {
           </h1>
         </div>
         <div className="flex flex-wrap gap-4 justify-center">
-          {/* <div className="md:w-1/2 lg:w-1/4 mb-2">
-            <img
-              src="/sponsors/letsfame.png"
-              alt="Lets Fame"
-              className="object-contain w-40 h-40"
-            />
-          </div> */}
           <div className="md:w-1/2 lg:w-1/4 mb-2">
             <img
               src="/sponsors/Astro.png"
@@ -113,25 +106,32 @@ const Page = () => {
               className="object-contain w-40 h-40"
               height={90}
             />
+            {/* <div className="md:w-1/2 lg:w-1/4 mb-2">
+            <img
+              src="/sponsors/letsfame.png"
+              alt="Lets Fame"
+              className="object-contain w-40 h-40"
+            />
+          </div> */}
           </div>
-          <div className="mb-2">
+          <div className="md:w-1/2 lg:w-1/4 mb-2">
             <img
               src="/sponsors/nizam.png"
               alt="Nizam Pakku"
               className="object-contain w-40 h-40"
             />
           </div>
-          {/* <div className="md:w-1/2 lg:w-1/4 mb-2">
+          <div className="md:w-1/2 lg:w-1/4 mb-2">
             <img
-              src="/sponsors/poorvika.png"
-              alt="Poorvika"
+              src="/sponsors/Fareast.jpg"
+              alt="Fareast"
               className="object-contain w-40 h-40"
             />
-          </div> */}
+          </div>
         </div>
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-6 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-transparent bg-clip-text">
-            Dev Team
+            Development Team
           </h1>
         </div>
         <div className="flex flex-wrap justify-center cursor-pointer">
