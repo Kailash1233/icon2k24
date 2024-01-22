@@ -1267,36 +1267,29 @@ export default function RegistrationForm({
     //     .execCommand("copy", true, text)
     //     .then(alert(text + " copied"));
     // }
-      try {
-        if ("clipboard" in navigator) {
-          await navigator.clipboard.writeText(text);
+    try {
+      if ("clipboard" in navigator) {
+        await navigator.clipboard.writeText(text);
+        alert(text + " copied");
+      } else {
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+
+        const successful = document.execCommand("copy");
+        document.body.removeChild(textArea);
+
+        if (successful) {
           alert(text + " copied");
         } else {
-          const textArea = document.createElement("textarea");
-          textArea.value = text;
-          document.body.appendChild(textArea);
-          textArea.select();
-    
-          const successful = document.execCommand("copy");
-          document.body.removeChild(textArea);
-    
-          if (successful) {
-            alert(text + " copied");
-          } else {
-            alert("Copy to clipboard is not supported in your browser.");
-          }
+          alert("Copy to clipboard is not supported in your browser.");
         }
-      } catch (error) {
-        console.error("Unable to copy to clipboard:", error);
-        alert("An error occurred while copying to clipboard.");
       }
-    
-    // Example usage:
-    // Trigger this function on a user gesture, like a button click
-    document.getElementById("copyButton").addEventListener("click", function() {
-      copyToClipboard("Hello, clipboard!");
-    });
-    
+    } catch (error) {
+      console.error("Unable to copy to clipboard:", error);
+      alert("An error occurred while copying to clipboard.");
+    }
   };
 
   const addMemberHandler = () => {
