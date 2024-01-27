@@ -23,10 +23,10 @@ const technicalEvents = [
       <ol>
         <li>• Participants must present a valid college ID.</li>
         <li>
-          • <b>2 Participants</b> per paper is allowed.
+          • Maximum <b>2 Participants</b> per paper is allowed.
         </li>
         <li>• The paper should adhere to the IEEE document format.</li>
-        <li>• Participants must submit papers on any IT-related topic.</li>
+        <li>• Participants can submit papers on any topic.</li>
         <li>
           • All participants are required to bring a hardcopy of their paper on
           the event day.
@@ -449,7 +449,7 @@ const PopupCard = ({ event, onClose}) => {
         </ul>
         <div className="flex justify-center items-end gap-5">
           <button
-            className="mt-3 border-2 border-black rounded-lg px-4 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800  py-2"
+            className="mt-3 border-2 border-black rounded-lg px-5 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800  py-2"
             onClick={handleRegisterClick}
           >
             Register
