@@ -43,8 +43,8 @@ const technicalEvents = [
     ),
     shortDescription:
       "Experience a dynamic showcase of cutting-edge research and global insights, where brilliant minds compete for recognition in a celebration of academic excellence and innovation. Join us for a thrilling symphony of ideas and eloquence.",
-    feeDetails: "Registration Fee: Per Team ₹250",
-    feeAmount: 250,
+    feeDetails: "Registration Fee: Per Team ₹200",
+    feeAmount: 200,
     coordinators: [
       { name: "Abdul Rahman M S", contact: "9884416875" },
       { name: "Shafla Fathima", contact: "7092763661" },
@@ -306,8 +306,8 @@ const nonTechnicalEvents = [
     ),
     shortDescription:
       "It is a fun-filled game based on movies and songs, which has 3 rounds. ROUND-1: The missing lyrics in the song should be found out. ROUND-2: Participants should find the word by connecting the pictures which will be displayed. ROUND-3: Participant must act the songs given to them letting their team member find with the mystery hindrance.",
-    feeDetails: "Registration Fee: Per Team ₹250",
-    feeAmount: 250,
+    feeDetails: "Registration Fee: Per Team ₹200",
+    feeAmount: 200,
     coordinators: [
       { name: "Suhail I", contact: "9789096170" },
       { name: "Choumya M", contact: "8925059696" },
