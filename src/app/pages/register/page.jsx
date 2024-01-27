@@ -1323,15 +1323,11 @@ export default function RegistrationForm({
           >
             &times;
           </button>
-          <div className="flex justify-between items-center mt-6">
-          <h1 className="font-semibold text-3xl">
-            {<input className="outline-none" value={eventname} readOnly />}
 
-          </h1>
-          <div className="">
+          <h1 className="font-semibold text-2xl flex sm:justify-between mt-6">
+            {<input className="outline-none" value={eventname} readOnly />}
             {solo || (eventname == "IGNITE THE STAGE" && ignitethestage !== "Group") ? <IoPerson /> : (eventname == "BOOT TO ROOT") ? "" : <RiTeamFill />}
-          </div>
-          </div>
+          </h1>
           <div className="mt-2">
             {/* <label htmlFor="fee">Fee details</label> */}
             <span>
