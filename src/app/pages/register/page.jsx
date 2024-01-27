@@ -1324,7 +1324,7 @@ export default function RegistrationForm({
             &times;
           </button>
 
-          <h1 className="font-semibold text-2xl flex sm:justify-between mt-6">
+          <h1 className="font-semibold text-2xl flex justify-center gap-4 sm:justify-between mt-6">
             {<input className="outline-none" value={eventname} readOnly />}
             {solo || (eventname == "IGNITE THE STAGE" && ignitethestage !== "Group") ? <IoPerson /> : (eventname == "BOOT TO ROOT") ? "" : <RiTeamFill />}
           </h1>
