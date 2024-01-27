@@ -2,6 +2,8 @@
 import Button from "@/app/components/Button";
 import CountdownTimerReg from "@/app/components/CountdownTimerReg";
 import { useState, useEffect } from "react";
+import { IoPerson } from "react-icons/io5";
+import { RiTeamFill } from "react-icons/ri"
 import Select from "react-select";
 
 const Register = ({ success, error, onClose }) => {
@@ -88,6 +90,7 @@ export default function RegistrationForm({
   fee,
   eventname,
   onClose,
+  solo
 }) {
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
@@ -97,6 +100,12 @@ export default function RegistrationForm({
   const [department, setDepartment] = useState("");
   const [year, setYear] = useState(null);
   const [paymentfile, setPaymentfile] = useState("");
+  const note = 
+    {
+      solo:"*NOTE: Upon registering for a SINGLE SOLO event, you gain access to participate in all solo events.*",
+      group:"*NOTE:  Upon registering for a SINGLE GROUP event, you gain access to participate in all group events.*",
+    }
+  
   const collegeOptions = [
     {
       value: "1",
@@ -1314,9 +1323,15 @@ export default function RegistrationForm({
           >
             &times;
           </button>
-          <h1 className="font-semibold text-3xl mt-6">
+          <div className="flex justify-between items-center mt-6">
+          <h1 className="font-semibold text-3xl">
             {<input className="outline-none" value={eventname} readOnly />}
+
           </h1>
+          <div className="">
+            {solo || (eventname == "IGNITE THE STAGE" && ignitethestage !== "Group") ? <IoPerson /> : (eventname == "BOOT TO ROOT") ? "" : <RiTeamFill />}
+          </div>
+          </div>
           <div className="mt-2">
             {/* <label htmlFor="fee">Fee details</label> */}
             <span>
@@ -1326,6 +1341,10 @@ export default function RegistrationForm({
           <div className=" text-green-600 mt-2">
             Lunch will be provided for registered participants.
           </div>
+          <div className="text-red-500 pt-2">
+            {solo || (eventname == "IGNITE THE STAGE" && ignitethestage !== "Group") ? note.solo : (eventname == "BOOT TO ROOT") ? " " : note.group}
+          </div>
+
           <form
             action={handleSubmit}
             className="py-4 mt-1 flex flex-col gap-5 bg-[white] overflow-auto relative"
