@@ -10,6 +10,7 @@ const shadowStyle = "0px 4px 8px rgba(255, 255, 255, 0.8)";
 
 const technicalEvents = [
   {
+    solo:false,
     name: "PAPER-DE-FIESTA",
     image: "/design/paper.png",
     description:
@@ -42,14 +43,15 @@ const technicalEvents = [
     ),
     shortDescription:
       "Experience a dynamic showcase of cutting-edge research and global insights, where brilliant minds compete for recognition in a celebration of academic excellence and innovation. Join us for a thrilling symphony of ideas and eloquence.",
-    feeDetails: "Registration Fee: Per Team ₹200",
-    feeAmount: 200,
+    feeDetails: "Registration Fee: Per Team ₹250",
+    feeAmount: 250,
     coordinators: [
       { name: "Abdul Rahman M S", contact: "9884416875" },
       { name: "Shafla Fathima", contact: "7092763661" },
     ],
   },
   {
+    solo:true,
     name: "ALGO-RHYTHM",
     image: "/design/algo.gif",
     description:
@@ -90,6 +92,7 @@ const technicalEvents = [
     ],
   },
   {
+    solo:true,
     name: "DATABASE DETECTIVES",
     image: "/design/datadetective.gif",
     description:
@@ -123,6 +126,7 @@ const technicalEvents = [
     ],
   },
   {
+    solo:true,
     name: "TECH QUEST",
     image: "/design/Designer.png",
     description: (
@@ -184,6 +188,7 @@ const technicalEvents = [
 ];
 const nonTechnicalEvents = [
   {
+    solo:true,
     name: "VOXRECK",
     image: "/design/vox.jpg",
     description:
@@ -227,6 +232,7 @@ const nonTechnicalEvents = [
     ],
   },
   {
+    solo:false,
     name: "IGNITE THE STAGE",
     image: "/design/ignite.jpg",
     description:
@@ -256,14 +262,15 @@ const nonTechnicalEvents = [
     ),
     shortDescription:
       "Experience a celebration of diverse talents in a dazzling showcase! From mythical tales to dance and more, participants bring forth bold and brilliant performances. Join us for a captivating display of creativity, featuring solo and group acts that promise to enchant and inspire!",
-    feeDetails: "Registration Fee: SOLO: ₹100 GROUP: ₹300",
-    feeAmount: { solo: 100, group: 300 },
+    feeDetails: "Registration Fee: SOLO: ₹100 GROUP: ₹250",
+    feeAmount: { solo: 100, group: 250 },
     coordinators: [
       { name: "Salman", contact: "6380393289" },
       { name: "Jabir", contact: "9500332770" },
     ],
   },
   {
+    solo:false,
     name: "ADRENALINE RUSH",
     image: "/design/adrenaline.jpg",
     description:
@@ -299,14 +306,15 @@ const nonTechnicalEvents = [
     ),
     shortDescription:
       "It is a fun-filled game based on movies and songs, which has 3 rounds. ROUND-1: The missing lyrics in the song should be found out. ROUND-2: Participants should find the word by connecting the pictures which will be displayed. ROUND-3: Participant must act the songs given to them letting their team member find with the mystery hindrance.",
-    feeDetails: "Registration Fee: Per Team ₹200",
-    feeAmount: 200,
+    feeDetails: "Registration Fee: Per Team ₹250",
+    feeAmount: 250,
     coordinators: [
       { name: "Suhail I", contact: "9789096170" },
       { name: "Choumya M", contact: "8925059696" },
     ],
   },
   {
+    solo:false,
     name: "IPL AUCTION",
     image: "/design/ipl.jpg",
     description:
@@ -377,7 +385,7 @@ const workshops = [
   },
 ];
 
-const PopupCard = ({ event, onClose }) => {
+const PopupCard = ({ event, onClose}) => {
   const handleKnowMoreClick = () => {
     setPopupVisible(true);
   };
@@ -462,6 +470,7 @@ const PopupCard = ({ event, onClose }) => {
                 fee={event.feeDetails}
                 eventname={event.name}
                 onClose={handleRegistrationModalClose}
+                eventtype={event.solo}
               />,
               document.body
             )}
@@ -476,6 +485,7 @@ const Event = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [isPopupVisible, setPopupVisible] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [ showtype, setShowType ] = useState(null)
 
   const handleKnowMoreClick = (event) => {
     setSelectedEvent(event);
@@ -653,6 +663,7 @@ const Event = () => {
             fee={selectedEvent.feeDetails}
             eventname={selectedEvent.name}
             onClose={() => setShowModal(false)}
+            eventtype={selectedEvent.solo}
           />,
           document.body
         )}
