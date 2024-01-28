@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./pages/Footer/footer";
 import connectDB from "./lib/mongodb";
+import { Analytics } from '@vercel/analytics/react';
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default function RootLayout() {
       </head>
       {/* <body className={inter.className}> */}
       <body>
+        <Analytics />
         <Navbar />
 
         <LazyLoadedComponent dynamicImport={() => import("./page")} />
