@@ -63,25 +63,24 @@ async function sendConfirmationEmail(fullname, email) {
     from: 'your@icon2k24symposium@gmail.com',
   to: email,
   subject: `Confirmation for ICON Registration`,
-  text: `Dear ${fullname},
+  html: `Dear <b>${fullname}</b>,
 
-    We trust this message finds you well. On behalf of Team ICON, we extend our sincere appreciation for registering to attend our upcoming symposium.
+<p>We trust this message finds you well. On behalf of <b>Team ICON</b>, we extend our sincere appreciation for registering to attend our upcoming symposium.</p>
 
-    Key Details:
-    - Date: 08/02/2024
-    - Time: 09:00 AM
-    - Venue: Convention Centre, B.S.Abdur Rahman Crescent Institute of Science and Technology
+<p><span style="font-weight: bold; background-color: yellow;">Key Details:</span><br>
+- Date: 08/02/2024<br>
+- Time: 09:00 AM<br>
+- Venue: Convention Centre, B.S.Abdur Rahman Crescent Institute of Science and Technology</p>
 
-    For any inquiries or to enhance your symposium experience, please contact us at icon2k24symposium@gmail.com or call the undersigned team members:
-    - Choumya: +91 8925059696
-    - Salman Fariz: +91 6380393289
+<p>For any inquiries or to enhance your symposium experience, please contact us at icon2k24symposium@gmail.com or call the undersigned team members:<br>
+- Choumya: +91 8925059696<br>
+- Salman Fariz: +91 6380393289</p>
 
-    Your Event Pass for the registered event will be dispatched within 24 hours.
+<p>Your Event Pass for the registered event will be dispatched within 24 hours.</p>
 
-    Best Regards,
-
-    Team ICON`
-  };
+<p>Best Regards,<br>
+Team ICON</p>`
+};
 
   // Send the email
   await transporter.sendMail(mailOptions);
