@@ -529,9 +529,8 @@ const Event = () => {
                     className="h-[200px] w-[300px]"
                   />
                 </div>
-                <div className="text-justify p-3 my-4 relative">
+                <div className="text-justify p-3 my-4">
                   <h1 className="text-2xl font-bold text-center">{event.name}</h1>
-                  <p className="absolute top-4 right-2 text-xl">{event.person}</p>
                   <p className="text-pretty">{event.shortDescription}</p>
                 </div>
 
@@ -581,9 +580,8 @@ const Event = () => {
                     className="h-[200px] w-[300px]"
                   />
                 </div>
-                <div className="text-justify p-3 my-4 relative">
+                <div className="text-justify p-3 my-4">
                   <h1 className="text-2xl font-bold text-center">{event.name}</h1>
-                  <p className="absolute top-4 right-2 text-xl">{event.person}</p>
                   <p className="text-pretty">{event.shortDescription}</p>
                 </div>
 
