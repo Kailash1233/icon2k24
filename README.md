@@ -71,13 +71,13 @@ We appreciate contributions from the community to make this project better. The 
 
 ### License
 
-This project is licensed under the MIT License - see the LICENSE.md file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ### Contact
 
 If you have any questions or concerns, please feel free to reach out to the project maintainers:
 
-Kailash
-Ibrahim Fardeen
-PremKumar V
-Nashith
+Kailash,
+Ibrahim Fardeen,
+PremKumar V,
+Nashith,
