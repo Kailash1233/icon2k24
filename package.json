@@ -14,6 +14,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@hookform/resolvers": "^3.3.4",
     "@vercel/analytics": "^1.1.2",
+    "@vercel/speed-insights": "^1.0.9",
     "autoprefixer": "^10.4.16",
     "file-loader": "^6.2.0",
     "mongoose": "^8.0.4",

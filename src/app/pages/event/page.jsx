@@ -21,6 +21,9 @@ const technicalEvents = [
     person: <RiTeamFill />,
     rules: (
       <ol>
+        <li>
+         • <span className="bg-yellow-300">Online participation is permitted.</span>
+        </li>
         <li>• Participants must present a valid college ID.</li>
         <li>
           • Maximum <b>2 Participants</b> per paper is allowed.
