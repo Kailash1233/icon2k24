@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./pages/Footer/footer";
 import connectDB from "./lib/mongodb";
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function RootLayout() {
       {/* <body className={inter.className}> */}
       <body>
         <Analytics />
+        <SpeedInsights />
         <Navbar />
 
         <LazyLoadedComponent dynamicImport={() => import("./page")} />
