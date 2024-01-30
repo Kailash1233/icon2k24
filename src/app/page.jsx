@@ -74,7 +74,7 @@ const Home = () => {
               <CountdownTimer targetDate={targetDate} />
             </div>
             <div>
-              <h1 className="text-center mt-5 font-bold text-xl">Remaining</h1>
+              <h1 className="text-gray-300 text-center mt-5 font-bold text-xl">Remaining</h1>
             </div>
           </div>
         </div>
