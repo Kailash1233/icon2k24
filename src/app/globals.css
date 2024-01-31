@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 * {
-  font-family: "Permanent Marker",serif ;
+  font-family: "Permanent Marker",cursive ;
 }
 
 /* Styling for the countdown card */

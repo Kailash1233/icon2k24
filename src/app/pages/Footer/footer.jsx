@@ -120,7 +120,7 @@ const Footer = () => {
         <p className="md:mr-64 mb-2 md:mb-0">icon2k24symposium@gmail.com</p>
         <p className="md:mr-64 mb-2 md:mb-0"></p>
 
-        <div className="flex items-center md:ml-96">
+        <div className="flex items-center md:ml-72">
           <a
             href="https://www.instagram.com/icon_2k24?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
             target="_blank"
