@@ -112,15 +112,14 @@ const Footer = () => {
 
       <div className="border-t border-gray-500 h-5 mx-4 md:mx-20 mt-4"></div>
 
-      <div className="text-gray-500 flex flex-wrap text-xs items-center mt-4 ml-2 md:ml-20 cursor-pointer">
+      <div className="text-gray-500 flex flex-wrap text-xs mt-4 ml-2 md:ml-20 cursor-pointer">
         <p className="mr-2 md:mr-4 mb-2 md:mb-0">Privacy Policy</p>
         <p className="mr-2 md:mr-4 mb-2 md:mb-0">Terms & Conditions</p>
         <p className="mr-2 md:mr-4 mb-2 md:mb-0">Code of Conduct</p>
         <p className="md:mr-4 mb-2 md:mb-0 mr-2">Copyright @2024 SIT</p>
-        <p className="md:mr-64 mb-2 md:mb-0">icon2k24symposium@gmail.com</p>
-        <p className="md:mr-64 mb-2 md:mb-0"></p>
+        <p className="md:mr-16 mb-2 md:mb-0">icon2k24symposium@gmail.com</p>
 
-        <div className="flex items-center md:ml-72">
+        <div className="flex items-center">
           <a
             href="https://www.instagram.com/icon_2k24?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
             target="_blank"
