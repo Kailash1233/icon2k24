@@ -1238,6 +1238,7 @@ export default function RegistrationForm({
       setPaymentfile(null);
       setTeammember1("");
       setTeammember2("");
+      setTeammember3("");
       setShowignitethestage(true);
       setIgnitethestage(null);
     }
