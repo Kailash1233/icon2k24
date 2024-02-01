@@ -10,7 +10,7 @@ export default function Button() {
   return (
     <div className='flex justify-center w-full'>
        <button
-              className="bg-green-700 p-3 text-white font-bold hover:bg-green-800 hover:shadow-black-500 active:bg-green-900 w-full rounded-lg"
+              className="bg-green-700 p-3 text-white hover:bg-green-800 hover:shadow-black-500 active:bg-green-900 w-full rounded-lg"
               type="submit"
               disabled={pending}
             >
