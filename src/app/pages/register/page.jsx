@@ -1050,11 +1050,13 @@ export default function RegistrationForm({
   const [showerror, setShowerror] = useState(false);
   const [teammember1, setTeammember1] = useState("");
   const [teammember2, setTeammember2] = useState("");
+  const [ teammember3 , setTeammember3] = useState("");
   const [showignitethestage, setShowignitethestage] = useState(true);
   const [ignitethestage, setIgnitethestage] = useState(null);
   const [groupmembers, setGroupmembers] = useState(0);
   const max2 = ["PAPER-DE-FIESTA", "ADRENALINE RUSH"];
-  const max3 = ["TECH QUEST", "IPL AUCTION"];
+  const max3 = ["TECH QUEST"];
+  const max4 = ["IPL AUCTION"];
   const targetDate = new Date("Febraury 7, 2024 18:00:00");
   const convertTobase64 = async (e) => {
     let file = e.target.files[0];
@@ -1210,7 +1212,7 @@ export default function RegistrationForm({
       },
       body: JSON.stringify({
         fullname,
-        teammembers: [teammember1 + "\n" + teammember2],
+        teammembers: [teammember1 + "\n" + teammember2 + "\n" + teammember3],
         email,
         phonenumber,
         collegename: collegename == "Other" ? othercollege : collegename,
@@ -1372,7 +1374,7 @@ export default function RegistrationForm({
                 type="text"
                 id="fullname"
                 placeholder={(() => {
-                  if (max2.includes(eventname) || max3.includes(eventname)) {
+                  if (max2.includes(eventname) || max3.includes(eventname) || max4.includes(eventname)) {
                     return "Full name (Team member 1)";
                   } else if (ignitethestage == "Group") {
                     return "Team name";
@@ -1422,11 +1424,7 @@ export default function RegistrationForm({
                     className="input-field border-2 border-gray-300 rounded-md p-2 w-full"
                     value={teammember1}
                     onChange={(e) => setTeammember1(e.target.value)}
-                    placeholder={
-                      eventname == "TECH QUEST"
-                        ? "Team member 2 (required)"
-                        : "Team member 2 (optional)"
-                    }
+                    placeholder="Team member 2 (required)"
                   />
                 </div>
                 <div className="input-wrap">
@@ -1440,6 +1438,32 @@ export default function RegistrationForm({
                   />
                 </div>
               </>
+            )}
+            {max4.includes(eventname) && (
+              <><div className="input-wrap">
+                <input
+                  type="text"
+                  className="input-field border-2 border-gray-300 rounded-md p-2 w-full"
+                  value={teammember1}
+                  onChange={(e) => setTeammember1(e.target.value)}
+                  placeholder="Team member 2 (optional)" />
+              </div>
+                <div className="input-wrap">
+                  <input
+                    type="text"
+                    className="input-field border-2 border-gray-300 rounded-md p-2 w-full"
+                    value={teammember2}
+                    onChange={(e) => setTeammember2(e.target.value)}
+                    placeholder="Team member 3 (optional)" />
+                </div>
+                <div className="input-wrap">
+                  <input
+                    type="text"
+                    className="input-field border-2 border-gray-300 rounded-md p-2 w-full"
+                    value={teammember3}
+                    onChange={(e) => setTeammember3(e.target.value)}
+                    placeholder="Team member 4 (optional)" />
+                </div></>
             )}
             {ignitethestage == "Group" && (
               <>
