@@ -118,8 +118,10 @@ const Footer = () => {
         <p className="mr-2 md:mr-4 mb-2 md:mb-0">Code of Conduct</p>
         <p className="md:mr-4 mb-2 md:mb-0 mr-2">Copyright @2024 SIT</p>
         <p className="md:mr-16 mb-2 md:mb-0">icon2k24symposium@gmail.com</p>
+        <p className="md:mr-64 mb-2 md:mb-0"></p>
+        <p className="md:mr-64 mb-2 md:mb-0"></p>
 
-        <div className="flex items-center">
+        <div className="flex items-center md:ml-96">
           <a
             href="https://www.instagram.com/icon_2k24?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
             target="_blank"

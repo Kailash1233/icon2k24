@@ -49,7 +49,7 @@ const Page = () => {
               <img
                 src={member.image}
                 alt="SIT"
-                className="rounded-full w-30 h-20 ml-16 mb-2"
+                className="rounded-full w-30 h-20 ml-14 mb-2"
               />
               <h2 className="text-2xl font-semibold mb-2">{member.name}</h2>
               <p className="text-sm text-gray-300 mb-1">{member.role}</p>

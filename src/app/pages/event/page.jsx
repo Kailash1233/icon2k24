@@ -10,7 +10,7 @@ const shadowStyle = "0px 4px 8px rgba(255, 255, 255, 0.8)";
 
 const technicalEvents = [
   {
-    solo:false,
+    solo: false,
     name: "PAPER-DE-FIESTA",
     image: "/design/paper.png",
     description:
@@ -22,7 +22,10 @@ const technicalEvents = [
     rules: (
       <ol>
         <li>
-         • <span className="bg-yellow-300">Online participation is permitted.</span>
+          •{" "}
+          <span className="bg-yellow-300">
+            Online participation is permitted.
+          </span>
         </li>
         <li>• Participants must present a valid college ID.</li>
         <li>
@@ -54,7 +57,7 @@ const technicalEvents = [
     ],
   },
   {
-    solo:true,
+    solo: true,
     name: "ALGO-RHYTHM",
     image: "/design/algo.gif",
     description:
@@ -95,7 +98,7 @@ const technicalEvents = [
     ],
   },
   {
-    solo:true,
+    solo: true,
     name: "DATABASE DETECTIVES",
     image: "/design/datadetective.gif",
     description:
@@ -129,7 +132,7 @@ const technicalEvents = [
     ],
   },
   {
-    solo:false,
+    solo: false,
     name: "TECH QUEST",
     image: "/design/Designer.png",
     description: (
@@ -191,7 +194,7 @@ const technicalEvents = [
 ];
 const nonTechnicalEvents = [
   {
-    solo:true,
+    solo: true,
     name: "VOXRECK",
     image: "/design/vox.jpg",
     description:
@@ -235,7 +238,7 @@ const nonTechnicalEvents = [
     ],
   },
   {
-    solo:false,
+    solo: false,
     name: "IGNITE THE STAGE",
     image: "/design/ignite.jpg",
     description:
@@ -273,7 +276,7 @@ const nonTechnicalEvents = [
     ],
   },
   {
-    solo:false,
+    solo: false,
     name: "ADRENALINE RUSH",
     image: "/design/adrenaline.jpg",
     description:
@@ -317,7 +320,7 @@ const nonTechnicalEvents = [
     ],
   },
   {
-    solo:false,
+    solo: false,
     name: "IPL AUCTION",
     image: "/design/ipl.jpg",
     description:
@@ -388,7 +391,7 @@ const workshops = [
   },
 ];
 
-const PopupCard = ({ event, onClose}) => {
+const PopupCard = ({ event, onClose }) => {
   const handleKnowMoreClick = () => {
     setPopupVisible(true);
   };
@@ -488,7 +491,7 @@ const Event = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [isPopupVisible, setPopupVisible] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [ showtype, setShowType ] = useState(null)
+  const [showtype, setShowType] = useState(null);
 
   const handleKnowMoreClick = (event) => {
     setSelectedEvent(event);
@@ -512,10 +515,16 @@ const Event = () => {
           className="mt-16 max-w-7xl w-full h-auto bg-black p-8 rounded-lg shadow-lg mb-6"
           style={{ boxShadow: shadowStyle }}
         >
-          <div className="text-center">
-            <h1 className="mb-10 text-3xl font-bold bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-transparent bg-clip-text">
+          <div className="text-center flex justify-center">
+            <h1 className="text-3xl font-bold bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-transparent bg-clip-text">
               TECHNICAL EVENTS
             </h1>
+          </div>
+          <div className="items-center flex flex-col">
+            <img src="/design/cash.png" alt="prize" className="w-40 h-40 " />
+            <p className="text-white pb-5 text-center">
+              *Only applicable for Technical Events and IPL Auction
+            </p>
           </div>
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-4 ">
@@ -533,7 +542,9 @@ const Event = () => {
                   />
                 </div>
                 <div className="text-justify p-3 my-4">
-                  <h1 className="text-2xl font-bold text-center">{event.name}</h1>
+                  <h1 className="text-2xl font-bold text-center">
+                    {event.name}
+                  </h1>
                   <p className="text-pretty">{event.shortDescription}</p>
                 </div>
 
@@ -564,10 +575,16 @@ const Event = () => {
           className=" max-w-7xl w-full h-auto bg-black p-8 rounded-lg shadow-lg mb-6"
           style={{ boxShadow: shadowStyle }}
         >
-          <div className="text-center">
-            <h1 className="mb-10 text-3xl font-bold bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-transparent bg-clip-text">
+          <div className="text-center flex justify-center">
+            <h1 className="text-3xl font-bold bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-transparent bg-clip-text">
               NON-TECHNICAL EVENTS
             </h1>
+          </div>
+          <div className="items-center flex flex-col">
+            <img src="/design/Trophy.png" alt="prize" className="w-40 h-40 " />
+            <p className="text-white pb-5 text-center">
+              *Applicable for Non-Technical Events Except IPL Auction
+            </p>
           </div>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-4 ">
             {nonTechnicalEvents.map((event, index) => (
@@ -584,7 +601,9 @@ const Event = () => {
                   />
                 </div>
                 <div className="text-justify p-3 my-4">
-                  <h1 className="text-2xl font-bold text-center">{event.name}</h1>
+                  <h1 className="text-2xl font-bold text-center">
+                    {event.name}
+                  </h1>
                   <p className="text-pretty">{event.shortDescription}</p>
                 </div>
 

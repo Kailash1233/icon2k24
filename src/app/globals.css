@@ -2,8 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* * {
+  font-family: "Permanent Marker", serif;
+} */
 * {
-  font-family: "Permanent Marker",serif ;
+  font-family: "Acme", sans-serif;
 }
 
 /* Styling for the countdown card */

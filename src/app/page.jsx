@@ -27,6 +27,7 @@ const Home = () => {
           autoPlay
           loop
           muted
+          playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src={require("./images/globe.mp4")} autoPlay muted loop />
@@ -74,7 +75,9 @@ const Home = () => {
               <CountdownTimer targetDate={targetDate} />
             </div>
             <div>
-              <h1 className="text-gray-300 text-center mt-5 font-bold text-xl">Remaining</h1>
+              <h1 className="text-gray-300 text-center mt-5 font-bold text-xl">
+                Remaining
+              </h1>
             </div>
           </div>
         </div>

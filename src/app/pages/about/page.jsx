@@ -34,6 +34,28 @@ const About = () => {
           industry experts, and empower your journey in the ever-evolving field
           of technology.
         </p>
+        <div className="flex justify-center pt-8">
+          <a
+            href="https://www.instagram.com/icon_2k24?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-2"
+          >
+            <img
+              src="/design/instagram.png"
+              alt="Instagram"
+              className="h-6 w-6 mr-2"
+            />
+          </a>
+          <a
+            href="https://www.instagram.com/icon_2k24?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-md text-gray-300 ml-0 md:ml-0"
+          >
+            ICON2K24
+          </a>
+        </div>
       </div>
 
       <div
