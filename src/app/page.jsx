@@ -58,7 +58,7 @@ const Home = () => {
             </div> */}
             <div className="mt-5">
               <Link
-                to="about"
+                to="events"
                 spy={true}
                 smooth={true}
                 offset={-70}
