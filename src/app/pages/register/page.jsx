@@ -1074,6 +1074,9 @@ export default function RegistrationForm({
   const handleSubmit = async (e) => {
     // e.preventDefault();
     setSuccess(false);
+    if(eventname == "IPL AUCTION" ){
+      
+    }
 
     if (eventname == "IGNITE THE STAGE") {
       if (!ignitethestage) {

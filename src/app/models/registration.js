@@ -3,7 +3,7 @@ import mongoose, { Schema } from "mongoose";
 const contactSchema = new Schema({
   fullname: {
     type: String,
-    required: [true, "Please enter your name."],
+    required: [true, "Please enter your nafgfgfgfgfgfgfgjhdfme."],
     trim: true,
   },
 
@@ -14,7 +14,7 @@ const contactSchema = new Schema({
 
   email: {
     type: String,
-    required: [true, "Please enter your email."],
+    required: [true, "Please enter yoursfdhhhhh email."],
   },
 
   phonenumber: {
@@ -37,7 +37,7 @@ const contactSchema = new Schema({
 
   year: {
     type: String,
-    required: [true, "Please select your year of study."],
+    required: [true, "Please select your year of sdssssssstudy."],
     trim: true,
   },
 

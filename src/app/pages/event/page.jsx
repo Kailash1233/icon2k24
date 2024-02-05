@@ -488,7 +488,7 @@ const PopupCard = ({ event, onClose }) => {
 };
 
 const Event = () => {
-  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [selectedEvent, setSelectedEvent] = useState('');
   const [isPopupVisible, setPopupVisible] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [showtype, setShowType] = useState(null);
@@ -607,7 +607,7 @@ const Event = () => {
                   <p className="text-pretty">{event.shortDescription}</p>
                 </div>
 
-                <div className="flex justify-center items-end h-full gap-4">
+                {event.name == "IPL AUCTION" ? <h1 className="text-center text-red-500">REGISTRATION CLOSED</h1> : <div className="flex justify-center items-end h-full gap-4">
                   <button
                     className="mb-3 border-2 border-black rounded-lg px-4 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block  text-slate-900 text-[18px]"
                     onClick={() => handleKnowMoreClick(event)}
@@ -620,7 +620,7 @@ const Event = () => {
                   >
                     Register
                   </button>
-                </div>
+                </div>}
               </div>
             ))}
           </div>
@@ -665,7 +665,7 @@ const Event = () => {
                   >
                     Know More
                   </button>
-                  <button
+                 <button
                     className="mb-3 border-2 border-black rounded-lg px-6 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block  text-slate-900 text-[18px]"
                     onClick={() => handleRegisterClick(event)}
                   >
@@ -677,7 +677,7 @@ const Event = () => {
           </div>
         </div>
       </div>
-      {showModal &&
+      {showModal && 
         createPortal(
           <Registrationmodal
             feeAmount={selectedEvent.feeAmount}
