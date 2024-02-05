@@ -607,20 +607,26 @@ const Event = () => {
                   <p className="text-pretty">{event.shortDescription}</p>
                 </div>
 
-                <div className="flex justify-center items-end h-full gap-4">
-                  <button
-                    className="mb-3 border-2 border-black rounded-lg px-4 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block  text-slate-900 text-[18px]"
-                    onClick={() => handleKnowMoreClick(event)}
-                  >
-                    Know More
-                  </button>
-                  <button
-                    className="mb-3 border-2 border-black rounded-lg px-6 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block  text-slate-900 text-[18px]"
-                    onClick={() => handleRegisterClick(event)}
-                  >
-                    Register
-                  </button>
-                </div>
+                {event.name != "IPL AUCTION" ? (
+                  <div className="flex justify-center items-end h-full gap-4">
+                    <button
+                      className="mb-3 border-2 border-black rounded-lg px-4 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block text-slate-900 text-[18px]"
+                      onClick={() => handleKnowMoreClick(event)}
+                    >
+                      Know More
+                    </button>
+                    <button
+                      className="mb-3 border-2 border-black rounded-lg px-6 py-2 bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 inline-block  text-slate-900 text-[18px]"
+                      onClick={() => handleRegisterClick(event)}
+                    >
+                      Register
+                    </button>
+                  </div>
+                ) : (
+                  <p className="text-center text-lg pt-6 font-bold text-red-600">
+                    * Registration Closed! *
+                  </p>
+                )}
               </div>
             ))}
           </div>
