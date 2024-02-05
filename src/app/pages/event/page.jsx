@@ -642,7 +642,7 @@ const Event = () => {
         >
           <div className="text-center">
             <h1 className="mb-10 text-3xl font-bold bg-gradient-to-r from-orange-300 via-yellow-300 to-red-800 inline-block text-transparent bg-clip-text">
-              MEGA EVENT
+              MEGA EVENT (WORKSHOP)
             </h1>
           </div>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-4 w-full">
