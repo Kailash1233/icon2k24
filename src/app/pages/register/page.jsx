@@ -3,7 +3,7 @@ import Button from "@/app/components/Button";
 import CountdownTimerReg from "@/app/components/CountdownTimerReg";
 import { useState, useEffect } from "react";
 import { IoPerson } from "react-icons/io5";
-import { RiTeamFill } from "react-icons/ri"
+import { RiTeamFill } from "react-icons/ri";
 import Select from "react-select";
 
 const Register = ({ success, error, onClose }) => {
@@ -90,7 +90,7 @@ export default function RegistrationForm({
   fee,
   eventname,
   onClose,
-  solo
+  solo,
 }) {
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
@@ -100,12 +100,12 @@ export default function RegistrationForm({
   const [department, setDepartment] = useState("");
   const [year, setYear] = useState(null);
   const [paymentfile, setPaymentfile] = useState("");
-  const note = 
-    {
-      solo:"*NOTE: Upon registering for a SINGLE SOLO event, you gain access to participate in all solo events.*",
-      group:"*NOTE:  Upon registering for a SINGLE GROUP event, you gain access to participate in all group events.*",
-    }
-  
+  const note = {
+    solo: "*NOTE: Upon registering for a SINGLE SOLO event, you gain access to participate in all solo events.*",
+    group:
+      "*NOTE:  Upon registering for a SINGLE GROUP event, you gain access to participate in all group events.*",
+  };
+
   const collegeOptions = [
     {
       value: "1",
@@ -1050,7 +1050,7 @@ export default function RegistrationForm({
   const [showerror, setShowerror] = useState(false);
   const [teammember1, setTeammember1] = useState("");
   const [teammember2, setTeammember2] = useState("");
-  const [ teammember3 , setTeammember3] = useState("");
+  const [teammember3, setTeammember3] = useState("");
   const [showignitethestage, setShowignitethestage] = useState(true);
   const [ignitethestage, setIgnitethestage] = useState(null);
   const [groupmembers, setGroupmembers] = useState(0);
@@ -1074,6 +1074,13 @@ export default function RegistrationForm({
   const handleSubmit = async (e) => {
     // e.preventDefault();
     setSuccess(false);
+
+    // other collage change
+    if (othercollege) {
+      let split = othercollege.split(" ");
+      setOthercollege(split.join("-"));
+      console.log(othercollege);
+    }
 
     if (eventname == "IGNITE THE STAGE") {
       if (!ignitethestage) {
@@ -1329,7 +1336,14 @@ export default function RegistrationForm({
 
           <div className="font-semibold text-2xl mt-6 w-full flex item-center">
             <input className="outline-none" value={eventname} readOnly />
-            {solo || (eventname == "IGNITE THE STAGE" && ignitethestage !== "Group") ? <IoPerson /> : (eventname == "BOOT TO ROOT") ? "" : <RiTeamFill />}
+            {solo ||
+            (eventname == "IGNITE THE STAGE" && ignitethestage !== "Group") ? (
+              <IoPerson />
+            ) : eventname == "BOOT TO ROOT" ? (
+              ""
+            ) : (
+              <RiTeamFill />
+            )}
           </div>
           <div className="mt-2">
             {/* <label htmlFor="fee">Fee details</label> */}
@@ -1341,7 +1355,12 @@ export default function RegistrationForm({
             Lunch will be provided for registered participants.
           </div>
           <div className="text-red-500 pt-2">
-            {solo || (eventname == "IGNITE THE STAGE" && ignitethestage !== "Group") ? note.solo : (eventname == "BOOT TO ROOT") ? " " : note.group}
+            {solo ||
+            (eventname == "IGNITE THE STAGE" && ignitethestage !== "Group")
+              ? note.solo
+              : eventname == "BOOT TO ROOT"
+              ? " "
+              : note.group}
           </div>
 
           <form
@@ -1375,7 +1394,11 @@ export default function RegistrationForm({
                 type="text"
                 id="fullname"
                 placeholder={(() => {
-                  if (max2.includes(eventname) || max3.includes(eventname) || max4.includes(eventname)) {
+                  if (
+                    max2.includes(eventname) ||
+                    max3.includes(eventname) ||
+                    max4.includes(eventname)
+                  ) {
                     return "Full name (Team member 1)";
                   } else if (ignitethestage == "Group") {
                     return "Team name";
@@ -1441,21 +1464,24 @@ export default function RegistrationForm({
               </>
             )}
             {max4.includes(eventname) && (
-              <><div className="input-wrap">
-                <input
-                  type="text"
-                  className="input-field border-2 border-gray-300 rounded-md p-2 w-full"
-                  value={teammember1}
-                  onChange={(e) => setTeammember1(e.target.value)}
-                  placeholder="Team member 2 (optional)" />
-              </div>
+              <>
+                <div className="input-wrap">
+                  <input
+                    type="text"
+                    className="input-field border-2 border-gray-300 rounded-md p-2 w-full"
+                    value={teammember1}
+                    onChange={(e) => setTeammember1(e.target.value)}
+                    placeholder="Team member 2 (optional)"
+                  />
+                </div>
                 <div className="input-wrap">
                   <input
                     type="text"
                     className="input-field border-2 border-gray-300 rounded-md p-2 w-full"
                     value={teammember2}
                     onChange={(e) => setTeammember2(e.target.value)}
-                    placeholder="Team member 3 (optional)" />
+                    placeholder="Team member 3 (optional)"
+                  />
                 </div>
                 <div className="input-wrap">
                   <input
@@ -1463,8 +1489,10 @@ export default function RegistrationForm({
                     className="input-field border-2 border-gray-300 rounded-md p-2 w-full"
                     value={teammember3}
                     onChange={(e) => setTeammember3(e.target.value)}
-                    placeholder="Team member 4 (optional)" />
-                </div></>
+                    placeholder="Team member 4 (optional)"
+                  />
+                </div>
+              </>
             )}
             {ignitethestage == "Group" && (
               <>
