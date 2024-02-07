@@ -554,7 +554,7 @@ const Event = () => {
                   </p>
                   </div> */}
 
-                {event.name == "PAPER-DE-FIESTA" || event.name == "TECH QUEST" ? (
+                {event.name != null ? (
                   <p className="text-center text-lg font-bold text-red-600">
                     * Registration Closed! *
                   </p>
@@ -620,8 +620,8 @@ const Event = () => {
                   <p className="text-pretty">{event.shortDescription}</p>
                 </div>
 
-                {event.name == "ADRENALINE RUSH"  ? (
-                  <p className="text-center text-lg font-bold text-red-600">
+                {event.name != null ? (
+                  <p className="text-center text-lg font-bold text-red-600 ">
                     * Registration Closed! *
                   </p>
                 ) :
