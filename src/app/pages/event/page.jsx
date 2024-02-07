@@ -90,8 +90,8 @@ const technicalEvents = [
     ),
     shortDescription:
       "Are you ready to dive into a world where melodies are composed by line of code, and rhythm is dictated by algorithm? Here, the tech enthusiast delves coding against distraction of music. Let the beats and coding begins.",
-    feeDetails: "Registration Fee: ₹100",
-    feeAmount: 100,
+    feeDetails: "Registration Fee: ₹200",
+    feeAmount: 200,
     coordinators: [
       { name: "Mohamed Moideen Halith", contact: "8248725391" },
       { name: "Prem Kumar V", contact: "9884497635" },
@@ -124,8 +124,8 @@ const technicalEvents = [
     ),
     shortDescription:
       "Explore the SQL Police Department's Crime-Solving Scenarios, a real-time challenge requiring participants to crack cases using SQL. Immerse yourself in this captivating investigation!",
-    feeDetails: "Registration Fee: ₹100",
-    feeAmount: 100,
+    feeDetails: "Registration Fee: ₹200",
+    feeAmount: 200,
     coordinators: [
       { name: "Syed Riyaz K", contact: "7010651296" },
       { name: "Fariha Hiba", contact: "9962608021" },
@@ -230,8 +230,8 @@ const nonTechnicalEvents = [
     ),
     shortDescription:
       "Engage in our on-stage event featuring two exciting rounds! In Round 1, showcase your creativity with Adzap as you perform a creative advertisement for a given product. Round 2, Shipwreck, challenges participants to justify their survival as assigned characters. The winner emerges after these dynamic rounds!    ",
-    feeDetails: "Registration Fee: ₹100",
-    feeAmount: 100,
+    feeDetails: "Registration Fee: ₹200",
+    feeAmount: 200,
     coordinators: [
       { name: "Ameerdeen S", contact: "9159385501" },
       { name: "Jeevida R", contact: "7305712495" },
@@ -268,8 +268,8 @@ const nonTechnicalEvents = [
     ),
     shortDescription:
       "Experience a celebration of diverse talents in a dazzling showcase! From mythical tales to dance and more, participants bring forth bold and brilliant performances. Join us for a captivating display of creativity, featuring solo and group acts that promise to enchant and inspire!",
-    feeDetails: "Registration Fee: SOLO: ₹100 GROUP: ₹250",
-    feeAmount: { solo: 100, group: 250 },
+    feeDetails: "Registration Fee: SOLO: ₹100 GROUP: ₹400",
+    feeAmount: { solo: 100, group: 400 },
     coordinators: [
       { name: "Salman", contact: "6380393289" },
       { name: "Jabir", contact: "9500332770" },
@@ -620,7 +620,7 @@ const Event = () => {
                   <p className="text-pretty">{event.shortDescription}</p>
                 </div>
 
-                {event.name == "ADRENALINE RUSH" || event.name == "IPL AUCTION" ? (
+                {event.name == "ADRENALINE RUSH"  ? (
                   <p className="text-center text-lg font-bold text-red-600">
                     * Registration Closed! *
                   </p>

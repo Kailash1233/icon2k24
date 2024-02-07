@@ -1333,6 +1333,7 @@ export default function RegistrationForm({
           >
             &times;
           </button>
+          {eventname == "BOOT TO ROOT" ? "" : <div className=" text-red-500 text-xl text-center"> &#x26A0; only Limited seats available &#x26A0; </div>}
 
           <div className="font-semibold text-2xl mt-6 w-full flex item-center">
             <input className="outline-none" value={eventname} readOnly />
