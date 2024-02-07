@@ -363,8 +363,8 @@ const nonTechnicalEvents = [
     ),
     shortDescription:
       "IPL AUCTION is an event where The Teams bid for the IPL players and create a squad. The teams will be given the names of the IPL teams and virtual money using which they can buy players in the auction.",
-    feeDetails: "Registration Fee: Per Team ₹250",
-    feeAmount: 250,
+    feeDetails: "Registration Fee: Per Team ₹400",
+    feeAmount: 400,
     coordinators: [
       { name: "Mohamed Afsar", contact: "9443059885" },
       { name: "Mohamed Suhail B", contact: "9962292623" },
