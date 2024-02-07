@@ -548,13 +548,13 @@ const Event = () => {
                   <p className="text-pretty">{event.shortDescription}</p>
                 </div>
 
-                <div className="">
+                {/* <div className="">
                   <p className="text-center text-lg font-bold text-red-600">
                     * Registration Closed! *
                   </p>
-                  </div>
+                  </div> */}
 
-                {/* {event.name == "PAPER-DE-FIESTA" || event.name == "TECH QUEST" || event.name == "ALGO-RHYTHM" ? (
+                {event.name == "PAPER-DE-FIESTA" || event.name == "TECH QUEST" ? (
                   <p className="text-center text-lg font-bold text-red-600">
                     * Registration Closed! *
                   </p>
@@ -574,7 +574,7 @@ const Event = () => {
                       Register
                     </button>
                   </div>
-                )} */}
+                )}
               </div>
             ))}
           </div>
