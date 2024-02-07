@@ -548,6 +548,12 @@ const Event = () => {
                   <p className="text-pretty">{event.shortDescription}</p>
                 </div>
 
+                {/* <div className="">
+                  <p className="text-center text-lg font-bold text-red-600">
+                    * Registration Closed! *
+                  </p>
+                  </div> */}
+
                 {event.name == "PAPER-DE-FIESTA" || event.name == "TECH QUEST" ? (
                   <p className="text-center text-lg font-bold text-red-600">
                     * Registration Closed! *
