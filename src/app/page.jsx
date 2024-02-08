@@ -74,7 +74,7 @@ const Home = () => {
             <div className="mt-8 px-9">
               {/* <CountdownTimer targetDate={targetDate} /> */}
               <h1 className="bg-gradient-to-r from-orange-300 via-yellow-600 to-red-800 text-black px-6 py-2 font-bold text-lg hover:bg-yellow-600 outline-none border-2 border-black text-center font-bold text-6xl">
-                Thank you for your cooperation in making ICON'2K24 a success!
+                Thank you for your cooperation in making ICON&apos;2K24 a success!
               </h1>
             </div>
           </div>
